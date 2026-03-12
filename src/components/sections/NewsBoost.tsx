@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { TrendingUp, Zap, Newspaper, ArrowRight } from "lucide-react"
+import { TrendingUp, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const TRENDS = [

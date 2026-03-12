@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import { motion, useScroll, useSpring, useTransform } from "framer-motion"
+import { motion, useScroll, useSpring } from "framer-motion"
 import { ShieldCheck, MessageSquareText, Timer, Lock, HeartHandshake, Zap, Sparkles } from "lucide-react"
 
 export function FeaturesTimeline() {
