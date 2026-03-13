@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Heart, Palette, Calendar, ArrowUpRight, Sparkles, X, CheckCircle2 } from "lucide-react"
+import { Heart, Palette, Calendar, ArrowUpRight, Users2, X, CheckCircle2 } from "lucide-react"
 
 const CARDS = [
   {
@@ -36,16 +36,13 @@ export function WellnessHub() {
   const [isKitModalOpen, setIsKitModalOpen] = useState(false)
 
   return (
-    <section className="py-24 bg-transparent relative overflow-hidden">
-      {/* Smooth Background Transition Elment */}
-      <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-background to-transparent pointer-events-none" />
-
-      <div className="container px-4 mx-auto relative z-10">
+    <section className="py-16 bg-transparent relative overflow-hidden">
+      <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12 mb-20">
           <div className="max-w-4xl">
             <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-6">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-400 to-cyan-400">
-                Bienestar y Red de Expertos
+                Bienestar y red de expertos
               </span>
             </h2>
             <p className="text-xl text-muted-foreground font-medium max-w-2xl leading-relaxed">
@@ -58,10 +55,11 @@ export function WellnessHub() {
             viewport={{ once: true }}
             className="hidden lg:block relative"
           >
-            <div className="w-48 h-48 bg-primary/10 rounded-full flex items-center justify-center p-8 backdrop-blur-xl border-2 border-primary/20">
-              <Sparkles className="w-20 h-20 text-primary animate-pulse" />
+            <div className="w-48 h-48 bg-indigo-500/10 rounded-full flex items-center justify-center p-8 backdrop-blur-3xl border-2 border-indigo-500/20 shadow-[0_0_50px_rgba(99,102,241,0.1)]">
+              <Users2 className="w-20 h-20 text-indigo-500" />
             </div>
-            <div className="absolute -top-4 -right-4 w-12 h-12 bg-indigo-500 rounded-full blur-xl opacity-50 animate-bounce" />
+            <div className="absolute -top-4 -right-4 w-16 h-16 bg-purple-500/20 rounded-full blur-2xl animate-pulse" />
+            <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-cyan-500/20 rounded-full blur-xl animate-bounce" />
           </motion.div>
         </div>
 
@@ -74,7 +72,7 @@ export function WellnessHub() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
-              className={`group relative p-12 rounded-[4rem] bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xl border-2 ${card.neonColor} ${card.hoverNeon} transition-all duration-700 hover:-translate-y-6 flex flex-col items-center text-center`}
+              className={`group relative p-12 rounded-[4rem] bg-background/20 backdrop-blur-md border-2 ${card.neonColor} ${card.hoverNeon} transition-all duration-700 hover:-translate-y-6 flex flex-col items-center text-center`}
             >
               {/* Novelty: Animated Background Glow per card - ALWAYS VISIBLE */}
               <div className={`absolute inset-0 bg-gradient-to-br ${card.color} opacity-[0.05] group-hover:opacity-[0.1] transition-opacity duration-700 pointer-events-none rounded-[4rem]`} />

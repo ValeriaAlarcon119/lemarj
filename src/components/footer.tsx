@@ -3,57 +3,57 @@ import { WhatsAppIcon } from "./comparison-table"
 export function Footer() {
   return (
     <>
-      {/* SECCIÓN FORMULARIO / DEMO */}
-      <section id="contacto" className="py-32 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="bg-white/80 dark:bg-zinc-950/80 backdrop-blur-3xl border-2 border-indigo-500/20 rounded-[4rem] p-10 sm:p-20 relative overflow-hidden shadow-[0_30px_100px_rgba(168,85,247,0.1)] flex flex-col lg:flex-row items-center justify-between gap-16 group">
+      {/* SECCIÓN FORMULARIO / DEMO - ESTILO SLIM & PRO */}
+      <section id="contacto" className="py-20 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="bg-white/40 dark:bg-black/40 backdrop-blur-2xl border border-white/20 dark:border-white/5 rounded-[3.5rem] p-8 sm:p-14 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] flex flex-col lg:flex-row items-center justify-between gap-12 group">
           
           {/* Fondo animado sutil - Más vibrante */}
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-500/10 dark:bg-indigo-500/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none group-hover:scale-110 transition-transform duration-1000" />
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 dark:bg-cyan-500/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none group-hover:scale-110 transition-transform duration-1000" />
           
-          <div className="flex-1 space-y-8 relative z-10 text-center lg:text-left">
-            <h2 className="text-5xl sm:text-6xl lg:text-[4.5rem] font-black tracking-tight leading-[1] text-foreground">
+          <div className="flex-1 space-y-6 relative z-10 text-center lg:text-left">
+            <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black tracking-tight leading-[1.1] text-foreground">
               Automatiza <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 drop-shadow-sm">
                 hoy mismo.
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground/80 max-w-sm mx-auto lg:mx-0 font-medium leading-relaxed">
+            <p className="text-lg text-muted-foreground/70 max-w-sm mx-auto lg:mx-0 font-medium leading-relaxed">
               Déjanos tus datos o escríbenos a WhatsApp. En menos de 24h empezamos a construir tu IA.
             </p>
           </div>
 
           <div className="flex-1 w-full max-w-md relative z-10">
-            <div className="bg-white/50 dark:bg-black/40 backdrop-blur-2xl border border-white dark:border-white/10 rounded-[2.5rem] p-8 sm:p-10 space-y-6 shadow-xl relative overflow-hidden">
+            <div className="bg-white/40 dark:bg-white/5 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-[2.5rem] p-6 sm:p-8 space-y-4 shadow-sm relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-cyan-500/5 pointer-events-none" />
               <input 
                 type="text" 
                 placeholder="Nombre de tu negocio" 
-                className="w-full bg-white/80 dark:bg-black/40 border border-border/50 rounded-2xl px-6 h-16 text-foreground placeholder-muted-foreground/50 focus:outline-none focus:ring-2 ring-indigo-500/50 transition-all font-bold relative z-10"
+                className="w-full bg-white/60 dark:bg-black/20 border border-border/30 rounded-2xl px-5 h-14 text-foreground placeholder-muted-foreground/40 focus:outline-none focus:ring-2 ring-indigo-500/30 transition-all font-bold relative z-10 text-sm"
               />
               <input 
                 type="email" 
                 placeholder="Correo electrónico" 
-                className="w-full bg-white/80 dark:bg-black/40 border border-border/50 rounded-2xl px-6 h-16 text-foreground placeholder-muted-foreground/50 focus:outline-none focus:ring-2 ring-indigo-500/50 transition-all font-bold relative z-10"
+                className="w-full bg-white/60 dark:bg-black/20 border border-border/30 rounded-2xl px-5 h-14 text-foreground placeholder-muted-foreground/40 focus:outline-none focus:ring-2 ring-indigo-500/30 transition-all font-bold relative z-10 text-sm"
               />
-              <button className="w-full bg-gradient-to-r from-indigo-500 transition-all duration-300 to-cyan-500 hover:scale-[1.02] active:scale-95 text-white font-black uppercase tracking-widest text-xs h-16 rounded-2xl shadow-lg flex items-center justify-center gap-3 group relative z-10">
+              <button className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:scale-[1.01] active:scale-95 text-white font-black uppercase tracking-widest text-[10px] h-14 rounded-2xl shadow-xl shadow-indigo-500/10 flex items-center justify-center gap-3 group relative z-10 transition-all">
                 Solicitar Ingeniería AI
               </button>
               
-              <div className="relative flex items-center py-2 z-10">
-                <div className="flex-grow border-t border-border/50"></div>
-                <span className="flex-shrink-0 mx-4 text-muted-foreground/40 text-[10px] font-black uppercase tracking-widest tracking-[0.3em]">O</span>
-                <div className="flex-grow border-t border-border/50"></div>
+              <div className="relative flex items-center py-1 z-10">
+                <div className="flex-grow border-t border-border/20"></div>
+                <span className="flex-shrink-0 mx-4 text-muted-foreground/30 text-[9px] font-black uppercase tracking-[0.3em]">O</span>
+                <div className="flex-grow border-t border-border/20"></div>
               </div>
 
               <a 
                 href="https://wa.me/573017219288?text=Hola%20LEMARJ!%20quiero%20una%20demo%20para%20mi%20negocio" 
                 target="_blank" 
                 rel="noreferrer"
-                className="w-full bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#25D366] border border-[#25D366]/30 font-bold h-14 rounded-2xl transition-all flex items-center justify-center gap-2"
+                className="w-full bg-emerald-500/5 hover:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-bold h-12 rounded-xl transition-all flex items-center justify-center gap-2 text-sm"
               >
-                <WhatsAppIcon className="w-5 h-5" />
-                Vía WhatsApp Directo
+                <WhatsAppIcon className="w-4 h-4" />
+                WhatsApp Directo
               </a>
             </div>
           </div>
@@ -92,25 +92,22 @@ export function Footer() {
           </div>
 
           {/* Footer End Credits */}
-          <div className="flex flex-col items-center gap-6 mt-6 pb-12 w-full">
+          <div className="flex flex-col items-center gap-6 mt-4 pb-8 w-full">
             <div className="flex flex-col items-center gap-2">
-              <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-primary/60 shadow-[0_0_30px_rgba(168,85,247,0.5)] mb-4 bg-black backdrop-blur-md relative group shadow-indigo-500/20">
-                <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full animate-pulse" />
+              <div className="w-16 h-16 rounded-[1.25rem] overflow-hidden border border-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.4)] mb-3 bg-black relative group transition-all duration-500 hover:shadow-[0_0_25px_rgba(168,85,247,0.6)] hover:scale-105 p-2.5">
+                <div className="absolute inset-0 bg-purple-500/5 blur-lg animate-pulse" />
                 <img 
                   src="/logo-lemarj.jpg" 
                   alt="LEMARJ Logo" 
-                  className="w-full h-full object-cover relative z-10 transition-transform group-hover:scale-110 rounded-full"
+                  className="w-full h-full object-contain relative z-10 transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="font-extrabold text-3xl tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-foreground to-indigo-500 leading-none">
-                LEMARJ
-              </div>
-              <div className="text-[11px] font-bold text-muted-foreground/60 uppercase tracking-[0.3em] mt-1">
-                Tecnología e Inteligencia
+              <div className="text-[10px] font-black text-foreground/70 dark:text-white/60 uppercase tracking-[0.2em] mt-2 text-center max-w-[200px] leading-relaxed">
+                Impulsa tus ventas <br /> y mejora tu atención
               </div>
             </div>
             
-            <div className="text-xs text-muted-foreground/60 text-center font-medium">
+            <div className="text-[10px] text-muted-foreground/40 text-center font-medium tracking-tight">
               © 2026 LEMARJ en San Juan de Pasto, Colombia. <br className="sm:hidden" />Todo automatizado, todo seguro.
             </div>
           </div>

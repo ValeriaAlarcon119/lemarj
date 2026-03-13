@@ -1,4 +1,4 @@
-import { CheckCircle2, MessageSquare, ClipboardList, ImagePlus, ArrowLeft } from "lucide-react"
+import { CheckCircle2, MessageSquare, ClipboardList, ImagePlus, ArrowLeft, UserCircle2 } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export function DemoSection() {
@@ -7,12 +7,13 @@ export function DemoSection() {
   useEffect(() => {
     let mounted = true
     const chatSequence = [
-      { t: 'out', html: 'Hola q tienen?', d: 1500 },
-      { t: 'in', html: '¡Buenas! 💜 En LEVJ tenemos amigurumis desde $18K, joyería espiritual desde $32K y cajitas de regalo desde $65K. ¿Cuál te llama la atención?', d: 3500 },
-      { t: 'out', html: 'quiero algo para regalar en una boda', d: 5500 },
-      { t: 'in', html: 'Tenemos la **Box Boda Real** 💜 Pareja de novios amigurumi, chocolates y tarjeta en caligrafía dorada. Precio: **$135.000 COP**. Domicilio en Pasto GRATIS.', d: 8000 },
-      { t: 'out', html: 'perfecto! como pago?', d: 10500 },
-      { t: 'in', html: 'Con gusto 😊 Para confirmar necesito nombre y dirección. Pago por **Nequi al 3017219288**.', d: 13000 },
+      { t: 'out', html: 'Hola! Tienen catálogo?', d: 1500 },
+      { t: 'in', html: '¡Hola! Claro que sí. Tenemos amigurumis, joyería espiritual y cajitas de regalo personalizadas. ¿Te gustaría ver el catálogo completo?', d: 3500 },
+      { t: 'out', html: 'Sí por favor, envíamelo', d: 5500 },
+      { t: 'in', html: '¡Con gusto! Aquí tienes nuestro catálogo actualizado con precios y existencias en tiempo real.', d: 7500 },
+      { t: 'in', html: '<div className="flex items-center gap-3 p-3 bg-[#111b21] rounded-xl border border-white/10"><div className="w-10 h-10 bg-red-500/20 rounded flex items-center justify-center text-red-500 font-bold text-[10px]">PDF</div><div className="flex-1"><div className="text-[13px] font-bold">Catálogo_Oficial.pdf</div><div className="text-[11px] text-gray-400">2.4 MB • Documento</div></div></div>', d: 8500 },
+      { t: 'out', html: 'Me gusta la Box Boda Real, cómo hago el pedido?', d: 11000 },
+      { t: 'in', html: '¡Excelente elección! Para confirmar necesito tu nombre y dirección. El pago se realiza de forma segura por transferencia bancaria o Nequi.', d: 13500 },
     ]
 
     const runChat = () => {
@@ -43,7 +44,7 @@ export function DemoSection() {
   }, [])
 
   return (
-    <section id="demo" className="py-24 relative overflow-hidden bg-gradient-to-b from-transparent via-background to-transparent">
+    <section id="demo" className="py-12 relative overflow-hidden bg-transparent">
       {/* Background glow for this section */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-indigo-500/5 blur-[100px] rounded-full pointer-events-none -z-10" />
       
@@ -87,7 +88,6 @@ export function DemoSection() {
         {/* PHONE SIDE */}
         <div className="relative mx-auto w-full max-w-[340px]">
           {/* Decorative frame */}
-          <div className="absolute -inset-1 bg-gradient-to-b from-indigo-500 to-emerald-500 rounded-[3rem] blur opacity-30 animate-pulse" />
           
           <div id="chat-container" className="relative bg-[#0b141a] border-[8px] border-[#111b21] rounded-[2.5rem] h-[650px] overflow-hidden shadow-2xl flex flex-col font-sans">
             
@@ -95,10 +95,12 @@ export function DemoSection() {
             <div className="bg-[#202c33] px-3 py-3 flex items-center gap-3 shadow-sm shadow-black/20 z-10 shrink-0">
               <div className="flex items-center gap-1 cursor-pointer">
                 <ArrowLeft className="w-5 h-5 text-[#8696a0]" />
-                <div className="w-10 h-10 rounded-full bg-indigo-900 flex items-center justify-center text-lg drop-shadow-sm">💜</div>
+                <div className="w-10 h-10 rounded-full bg-indigo-900/40 flex items-center justify-center text-indigo-400 drop-shadow-sm border border-indigo-500/20">
+                  <UserCircle2 className="w-6 h-6" />
+                </div>
               </div>
               <div className="flex-1 min-w-0">
-                <div className="font-semibold text-[#e9edef] text-[16px] truncate leading-tight">LEVJ Artesanías</div>
+                <div className="font-semibold text-[#e9edef] text-[16px] truncate leading-tight">Asistente Virtual</div>
                 <div className="text-[13px] text-[#8696a0] font-medium mt-0.5">en línea</div>
               </div>
             </div>
@@ -127,7 +129,7 @@ export function DemoSection() {
               ))}
               
               {/* Typing indicator */}
-              {messages.length > 0 && messages.length < 6 && messages.length % 2 !== 0 && (
+              {messages.length > 0 && messages.length < 8 && messages.length % 2 !== 0 && (
                 <div className="bg-[#202c33] rounded-2xl rounded-tl-sm px-4 py-4 self-start shadow-[0_1px_0.5px_rgba(0,0,0,0.13)] w-auto flex items-center gap-1.5 animate-in fade-in duration-200">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#8696a0] animate-bounce" style={{animationDelay: '0ms'}} />
                   <span className="w-1.5 h-1.5 rounded-full bg-[#8696a0] animate-bounce" style={{animationDelay: '150ms'}} />

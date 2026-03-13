@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import { motion, useScroll, useSpring } from "framer-motion"
-import { ShieldCheck, MessageSquareText, Timer, Lock, HeartHandshake, Zap, Sparkles } from "lucide-react"
+import { ShieldCheck, MessageSquareText, Timer, Lock, HeartHandshake, Zap } from "lucide-react"
 
 export function FeaturesTimeline() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -22,8 +22,8 @@ export function FeaturesTimeline() {
       icon: <MessageSquareText className="w-5 h-5 sm:w-6 sm:h-6" />,
       color: "from-purple-500 to-indigo-600",
       glow: "bg-purple-500/20",
-      title: "IA con Contexto Nariñense",
-      desc: "Un agente amable, no un bot rígido. Entiende la jerga local, resuelve dudas complejas y guía directo al pago basándose 100% en tu catálogo.",
+      title: "IA con Contexto Regional",
+      desc: "Un agente amable, no un bot rígido. Entiende el vocabulario de tu región, resuelve dudas complejas y guía directo al pago basándose 100% en tu catálogo.",
     },
     {
       num: "2",
@@ -81,12 +81,12 @@ export function FeaturesTimeline() {
         className="text-center space-y-6 mb-24 relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-[10px] font-black uppercase tracking-[0.2em] mb-4">
-          <Sparkles className="w-3 h-3" /> Ingeniería Local
+          <Zap className="w-3 h-3" /> Ingeniería Local
         </div>
         <h2 className="text-4xl sm:text-5xl md:text-[3.5rem] font-black tracking-tight leading-[1.1] text-foreground">
           Tecnología que <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500">
-            impulsa las ventas en Pasto
+            impulsa las ventas en tu región
           </span>
         </h2>
       </motion.div>

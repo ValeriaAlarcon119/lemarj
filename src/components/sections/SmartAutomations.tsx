@@ -27,8 +27,8 @@ const FEATURES = [
 
 export function SmartAutomations() {
   return (
-    <section className="py-24 bg-transparent">
-      <div className="container px-4 mx-auto">
+    <section className="py-16 bg-transparent">
+      <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}

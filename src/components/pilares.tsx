@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
-import { ArrowRight, Fingerprint, Target, Shield, Cpu, X, CheckCircle2 } from "lucide-react"
+import { ArrowRight, Fingerprint, Target, Shield, RefreshCw, X, CheckCircle2 } from "lucide-react"
 
 export function PilaresSection() {
   const [selectedModulo, setSelectedModulo] = useState<typeof modulos[0] | null>(null)
@@ -19,7 +19,7 @@ export function PilaresSection() {
     {
       num: "01",
       title: "Identidad y Reputación Algorítmica",
-      desc: "Tu marca tiene un tono único. Entrenamos a la IA para que respete tu voz, use jerga local de Nariño y construya confianza en cada chat.",
+      desc: "Tu marca tiene un tono único. Entrenamos a la IA para que respete tu voz, use jerga local de tu región y construya confianza en cada chat.",
       icon: <Fingerprint className="w-8 h-8" />,
       color: "from-indigo-500/20 to-transparent border-indigo-500/20 text-indigo-500",
       accent: "text-indigo-600 dark:text-indigo-400",
@@ -28,7 +28,7 @@ export function PilaresSection() {
       modalDesc: "Nuestra ingeniería moldea a la IA para que absorba por completo el tono, la personalidad y hasta la jerga de tu marca. El resultado es un vendedor virtual experto que genera empatía instantánea y confianza absoluta desde el primer mensaje.",
       modalBenefits: [
         "Mantiene tu misma personalidad, carisma y calidez al 100%.",
-        "Soporta jerga local (nariñense) e interactúa naturalmente.",
+        "Soporta jerga local (de tu región) e interactúa naturalmente.",
         "Evita por completo las respuestas robóticas y menús numéricos aburridos."
       ],
       modalColor: "from-indigo-500/10 to-transparent",
@@ -77,7 +77,7 @@ export function PilaresSection() {
       num: "04",
       title: "Autonomía Transaccional 24/7",
       desc: "Sincronización exacta con tu catálogo real. La IA no solo responde, guía al cliente directamente al pago (Nequi, Daviplata, etc.).",
-      icon: <Cpu className="w-8 h-8" />,
+      icon: <RefreshCw className="w-8 h-8" />,
       color: "from-violet-500/20 to-transparent border-violet-500/20 text-violet-500",
       accent: "text-violet-600 dark:text-violet-400",
       modalTitle: "Autonomía Transaccional 24/7",
