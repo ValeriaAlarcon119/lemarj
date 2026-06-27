@@ -1,0 +1,500 @@
+{
+  "hero": {
+    "title1": "Autonomous Sales.",
+    "title2": "AI with a",
+    "titleHighlight": "Regional Heart.",
+    "subtitle": "The most advanced AI engineering in Colombia, trained with your region's warmth and vocabulary to sell 24/7 without lifting a finger.",
+    "cta": "I want my AI now"
+  },
+  "sidebar": {
+    "dashboard": "My Dashboard",
+    "catalog": "Catalog",
+    "explorer": "Explorer",
+    "ecosystem": "Ecosystem",
+    "chat": "AI Chat",
+    "support": "Support",
+    "adminOverview": "Central Management",
+    "adminClients": "Clients",
+    "adminLogs": "AI Logs",
+    "adminSettings": "Settings",
+    "home": "Home",
+    "engineering": "Engineering",
+    "whatsapp": "WhatsApp",
+    "boost": "Boost",
+    "adminPanel": "Admin Panel",
+    "clientPanel": "Client Panel",
+    "logout": "Logout",
+    "session": "2026 Session",
+    "activeSales": "Active Sales"
+  },
+  "layout": {
+    "languageToggle": "Change Language",
+    "themeToggle": "Change Theme",
+    "login": "Login",
+    "bookDemo": "Book Demo"
+  },
+  "auth": {
+    "loginTab": "Login",
+    "registerTab": "Register",
+    "welcome": "Welcome",
+    "createAccount": "Create your account",
+    "accessAccount": "Access your account",
+    "fullName": "Full name",
+    "email": "Enter your email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "phone": "Your phone",
+    "submitRegister": "Create account",
+    "submitLogin": "Continue",
+    "or": "OR",
+    "continueWithGoogle": "Continue with Google",
+    "errorInvalidEmail": "Please enter a valid email address",
+    "errorFullName": "Please enter your full name",
+    "errorPasswordMatch": "Passwords do not match",
+    "errorPasswordLength": "Password must be at least 6 characters",
+    "successRegister": "Registered! You can now log in with",
+    "errorUnconfirmedEmail": "You must confirm your email. Please check your inbox or disable confirmation in Supabase Auth.",
+    "errorInvalidCredentials": "Incorrect email or password. Verify in Supabase > Users if the user exists."
+  },
+  "onboarding": {
+    "stepProfile": "Profile",
+    "stepSocial": "Social Network",
+    "stepDashboard": "Dashboard",
+    "titleProfile": "Profile ",
+    "titleProfileHighlight": "Setup",
+    "roleOwner": "Owner / Entrepreneur",
+    "roleOwnerDesc": "I will automate my sales and scale my business.",
+    "roleExpert": "Agency / Expert",
+    "roleExpertDesc": "I will manage clients and set up advanced integrations.",
+    "nextStep": "Next Step",
+    "titleSocial": "Connect your ",
+    "titleSocialHighlight": "first social network",
+    "socialMeta": "Meta (Facebook/IG)",
+    "socialMetaDesc": "Connect your page",
+    "socialTiktok": "TikTok",
+    "socialTiktokDesc": "Connect your profile",
+    "back": "Back",
+    "skip": "Skip",
+    "connect": "Connect",
+    "titleFinish": "All ",
+    "titleFinishHighlight": "set",
+    "finishDesc": "Your ecosystem is configured. Welcome to your new main Dashboard.",
+    "goToDashboard": "Go to Dashboard",
+    "next": "Next",
+    "finish": "Start"
+  },
+  "ecosystem": {
+    "title": "Connections Ecosystem",
+    "subtitle": "Connect your favorite tools and automate your workflow from start to finish.",
+    "searchPlaceholder": "Search connectors or categories...",
+    "filterAll": "All",
+    "filterActives": "Active",
+    "filterBeta": "Beta",
+    "securityOverview": "Overview",
+    "securityAccess": "Access and Roles",
+    "socialContent": "Social Content",
+    "connectorsOverview": "Connectors Overview",
+    "connectorsCatalog": "Catalog",
+    "integrations": "Integrations",
+    "securingApp": "Securing your app",
+    "promotingApp": "Promoting your app",
+    "connectors": "Connectors"
+  },
+  "footer": {
+    "title1": "Automate ",
+    "title2": "today.",
+    "subtitle": "Leave us your details or write to us on WhatsApp. In less than 24h we start building your AI.",
+    "businessName": "Your business name",
+    "emailPlaceholder": "Email address",
+    "submitBtn": "Request AI Engineering",
+    "whatsappBtn": "Direct WhatsApp",
+    "slogan": "Boost your sales <br /> and improve your service",
+    "copyright": "© 2026 LEMARJ in San Juan de Pasto, Colombia. <br className='sm:hidden' />Everything automated, everything secure."
+  },
+  "pricing": {
+    "badge": "Plans & Pricing",
+    "title1": "Custom ",
+    "title2": "plans",
+    "subtitle": "We don't charge per module, we charge for impact. We adjust to all budgets depending on your network flow.",
+    "popularBadge": "MOST POPULAR",
+    "plans": {
+      "p0": {
+        "tier": "Starter",
+        "name": "Entrepreneur AI",
+        "desc": "For local entrepreneurs starting their digital journey.",
+        "f0": "1 WhatsApp number",
+        "f1": "AI with PDF catalog",
+        "f2": "24/7 Responses",
+        "cta": "Request Quote"
+      },
+      "p1": {
+        "tier": "Growth",
+        "name": "Business Pro AI",
+        "desc": "Our most advanced engineering for scaling businesses.",
+        "note": "The price dynamically adjusts based on your message volume and followers.",
+        "f0": "AI with Smart Catalog + Memory",
+        "f1": "Unlimited Messaging with Training",
+        "f2": "Notifications and Re-engagement CRM",
+        "f3": "Priority Engineering Support",
+        "cta": "Start Investment"
+      },
+      "p2": {
+        "tier": "Large Scale",
+        "name": "Corporate",
+        "desc": "Multi-channel structures and dedicated systems.",
+        "f0": "Multiple WhatsApp numbers",
+        "f1": "External ERP/POS Integration",
+        "f2": "Administrative Control Panel",
+        "cta": "Talk to Consultant"
+      }
+    }
+  },
+  "trustBadges": {
+    "title1": "Built on ",
+    "title2": "real trust",
+    "subtitle": "Solid guarantees to keep your investment 100% protected.",
+    "uptime": "Guaranteed uptime",
+    "uptimeValue": "99.9%",
+    "uptimeDesc": "Certified infrastructure availability.",
+    "refund": "Refund guarantee",
+    "refundValue": "14 days",
+    "refundDesc": "Time to evaluate with zero risk.",
+    "security": "Banking security",
+    "securityValue": "256-bit",
+    "securityDesc": "End-to-end encryption and Law 1581 compliance.",
+    "support": "Dedicated support",
+    "supportValue": "< 4h",
+    "supportDesc": "Guaranteed engineering response."
+  },
+  "legalFooter": {
+    "terms": "Terms and Conditions",
+    "privacy": "Data Processing Policy (Law 1581)",
+    "rights": "All rights reserved."
+  },
+  "stats": {
+    "activity": "Sales activity",
+    "fidelity": "True to your catalog",
+    "clients": "Clients at once",
+    "various": "Multiple"
+  },
+  "salesComparison": {
+    "problemLabel": "The common problem",
+    "problemTitle": "Frustrated by waiting for an answer?",
+    "problemDesc": "You write to a business and hours (or days) pass. Personalized attention is slow, messages are lost and the client ends up buying elsewhere.",
+    "problemList1": "Seen without response",
+    "problemList2": "Pricing errors",
+    "problemList3": "Impatient client",
+    "solutionLabel": "LEMARJ Solution",
+    "solutionTitle1": "Smart sales and ",
+    "solutionTitle2": "immediate advice",
+    "solutionDesc": "Our AI advises instantly, sends personalized photos of your products and PDF documents in seconds.",
+    "solutionFeature1": "PDF Delivery",
+    "solutionFeature2": "Pro Photos",
+    "solutionFeature3": "High Fidelity 24/7 Advice"
+  },
+  "featuresTimeline": {
+    "step1Title": "AI with Regional Context",
+    "step1Desc": "A friendly agent, not a rigid bot. Understands your region's vocabulary, resolves complex doubts and guides straight to payment based 100% on your catalog.",
+    "step2Title": "Immediate Response",
+    "step2Desc": "90% of sales drop after 5 minutes. Your AI responds in less than 2 seconds, closing sales before your competition even opens.",
+    "step3Title": "Armored Sales",
+    "step3Desc": "Zero risk of blocks. We use the official Meta API to give your business the highest digital hygiene and verification seal.",
+    "step4Title": "Data Privacy",
+    "step4Desc": "Your clients are yours. Full compliance with Law 1581 with encrypted and private databases. Maximum legal authority for your peace of mind.",
+    "step5Title": "Human Warmth",
+    "step5Desc": "Recommends products and closes deals transmitting the warmth and excellent customer service characteristic of our region.",
+    "step6Title": "Live Catalog in 24h",
+    "step6Desc": "Zero code. Send us your PDF and in less than a day we transform it into the smart brain of your business. It's that fast.",
+    "label": "Local Engineering",
+    "title1": "Technology that ",
+    "title2": "boosts sales in your region"
+  },
+  "comparisonTable": {
+    "title1": "What changes when you use ",
+    "title2": "LEMARJ?",
+    "humanTitle": "Human Staff",
+    "human1": "Available only 8h/day, risk of human errors.",
+    "human2": "Slow response during traffic peaks and attention delays.",
+    "human3": "High fixed monthly operational costs for salary and benefits.",
+    "human4": "No capacity to attend and inform multiple clients at once.",
+    "human5": "Emotional and schedule dependence to provide good service.",
+    "aiTitle": "LEMARJ Engineering",
+    "ai1": "Available 24/7, guaranteed 10x lower cost.",
+    "ai2": "Expert and precise response in less than 2 seconds.",
+    "ai3": "Armored sales without information or inventory errors.",
+    "ai4": "Infinite operational capacity; attends to 1000 clients at once.",
+    "ai5": "Standardization of quality and total warmth in every message."
+  },
+  "pilares": {
+    "title1": "LEMARJ Engineering: ",
+    "title2": "Our 4 Power Modules",
+    "subtitle": "Software architecture precisely designed to automate trust, privacy, and cash flow.",
+    "explore": "Explore module",
+    "moduleLabel": "Power Module",
+    "whatsappLink": "Learn about the architecture on WhatsApp",
+    "close": "Close",
+    "m1": {
+      "title": "Algorithmic Identity and Reputation",
+      "desc": "Your brand has a unique tone. We train the AI to respect your voice, use your region's local slang, and build trust in every chat.",
+      "modalTitle": "Algorithmic Identity and Reputation",
+      "modalSubtitle": "The DNA of your business, now automated to sell more.",
+      "modalDesc": "Our engineering molds the AI to completely absorb the tone, personality, and even the slang of your brand. The result is an expert virtual seller that generates instant empathy and absolute trust from the first message.",
+      "b1": "Maintains 100% of your personality, charisma, and warmth.",
+      "b2": "Supports local slang (from your region) and interacts naturally.",
+      "b3": "Completely avoids robotic responses and boring numerical menus."
+    },
+    "m2": {
+      "title": "Traffic with Purchase Intent",
+      "desc": "We don't generate noise, we generate conversions. We optimize the arrival of clients so the AI receives them at the moment of maximum intent.",
+      "modalTitle": "Traffic with Purchase Intent",
+      "modalSubtitle": "We turn curious onlookers into loyal and frequent buyers.",
+      "modalDesc": "Once the client clicks on your ads, the artificial intelligence smartly profiles them. Instead of just answering prices, our technology asks strategic questions to scale purchase intent and guide them to final checkout.",
+      "b1": "Dynamic calls to action depending on the client's intent.",
+      "b2": "Strategic profiling to close complex sales without your intervention.",
+      "b3": "Less time wasted on curious people, higher conversion rate."
+    },
+    "m3": {
+      "title": "Data Architecture and Privacy",
+      "desc": "End-to-end encryption and Law 1581 compliance. Your data and your clients' are private property, guarded under banking security standards.",
+      "modalTitle": "Data Architecture and Privacy",
+      "modalSubtitle": "Banking security for your local database.",
+      "modalDesc": "Your clients are your biggest asset and they belong to you. We structure an armored platform where every piece of data and statistic is completely protected under end-to-end encryption, giving you legal authority.",
+      "b1": "Meticulous compliance with data protection laws.",
+      "b2": "Encrypted storage on next-generation high-security servers.",
+      "b3": "Your clients will never be shared or leaked to your competition."
+    },
+    "m4": {
+      "title": "24/7 Transactional Autonomy",
+      "desc": "Exact synchronization with your real catalog. The AI doesn't just respond, it guides the client directly to checkout.",
+      "modalTitle": "24/7 Transactional Autonomy",
+      "modalSubtitle": "Your own virtual office that never closes operations.",
+      "modalDesc": "We build an uninterrupted transactional flow. The digital agent manages your catalog in real time with updated prices and sends the correct billing methods without depending on fatigue or daylight hours.",
+      "b1": "Millimetric and instant synchronization of your smart catalog on WhatsApp.",
+      "b2": "Integration of direct payment methods.",
+      "b3": "Ability to bill transactions at dawn while you rest."
+    }
+  },
+  "demoSection": {
+    "title1": "See how your AI",
+    "title2": "advises and closes sales",
+    "f1Title": "Understands real language",
+    "f1Desc": "Works even if the client makes typos, uses local slang, or speaks informally.",
+    "f2Title": "Recommends specific products",
+    "f2Desc": "With exact prices from your catalog. It doesn't invent or confuse.",
+    "f3Title": "Closes the order",
+    "f3Desc": "Asks for name, address, and payment method naturally and politely.",
+    "f4Title": "Processes photos and documents",
+    "f4Desc": "Sends PDFs, understands photos sent by the client, and responds by sending photos of recommended products.",
+    "assistantName": "Virtual Assistant",
+    "onlineStatus": "online",
+    "todayLabel": "TODAY",
+    "messagePlaceholder": "Message",
+    "msg1": "Hi! Do you have a catalog?",
+    "msg2": "Hello! Of course. We have amigurumis, spiritual jewelry, and custom gift boxes. Would you like to see the full catalog?",
+    "msg3": "Yes please, send it to me",
+    "msg4": "With pleasure! Here is our updated catalog with real-time prices and stock.",
+    "pdfName": "Official_Catalog.pdf",
+    "pdfDesc": "2.4 MB • Document",
+    "msg5": "I like the Royal Wedding Box, how do I order?",
+    "msg6": "Excellent choice! To confirm, I need your name and address. Payment is made securely via bank transfer."
+  },
+  "personalizationShowcase": {
+    "badge": "ZERO BORING ROBOTIC MENUS",
+    "title1": "Reads like you, ",
+    "title2": "convinces like you.",
+    "desc1": "We eliminated the annoying \"Press 1 for sales\". Our linguistic engineering adapts the AI's brain so it absorbs the ",
+    "desc2": "accent, warmth, and specific slang",
+    "desc3": " that your real clients fall in love with.",
+    "choosePersonality": "Choose Personality",
+    "comparisonLabel": "Live Agent Comparison",
+    "genericBot": "Generic Bot",
+    "lemarjEngine": "LEMARJ Engineering",
+    "t0": {
+      "name": "Warm and Artisanal",
+      "desc": "Ideal for brands with soul, looking to create an instant emotional connection.",
+      "robotMsg": "Greetings. For purchases, select option 3 in the main menu.",
+      "lemarjMsg": "Hello! So nice to greet you. Of course, our boxes are handmade with a lot of love. Who is this special gift for?"
+    },
+    "t1": {
+      "name": "Clinical and Professional",
+      "desc": "Absolute authority. Transmits security, cleanliness, and professional status.",
+      "robotMsg": "Please send your requirement to schedule a medical appointment.",
+      "lemarjMsg": "Good afternoon, dear patient. It will be a pleasure to schedule your dental assessment. Would it be better for you to join us in the morning or in the afternoon?"
+    },
+    "t2": {
+      "name": "Urban Regional",
+      "desc": "Relaxed, fast, and with the exact accent of your food spot.",
+      "robotMsg": "The cost of the order is 25000 pesos. Send confirmation.",
+      "lemarjMsg": "What's up! Done king, the double burger promo comes out to 25K with free shipping. Should I send them right away with extra house sauce?"
+    }
+  },
+  "freeWebsiteOffer": {
+    "badge": "Special LEMARJ Announcement",
+    "title1": "Do you want to boost your",
+    "title2": "online visibility?",
+    "desc1": "We gift you your website completely ",
+    "descFree": "FREE",
+    "desc2": " with a shopping cart and connected to all your networks.",
+    "f1": "Sales Cart",
+    "f2": "Own Domain",
+    "f3": "Network Connection",
+    "cta": "Start journey in LEMARJ"
+  },
+  "expertTips": {
+    "badge": "LEMARJ Added Value",
+    "title1": "More than a tool, ",
+    "title2": "your strategic ally",
+    "desc": "We help you with the best tips on design, finances, marketing, online visibility, and the latest in commerce so you can connect with your best clients and suppliers.",
+    "tips": {
+      "design": { "title": "Viral Design", "desc": "Striking business image" },
+      "finance": { "title": "Finances", "desc": "Income optimization" },
+      "marketing": { "title": "Marketing", "desc": "Growth strategies" },
+      "visibility": { "title": "Visibility", "desc": "Solid digital presence" }
+    }
+  },
+  "newsBoost": {
+    "badge": "Viral Boost",
+    "title1": "News and Boost",
+    "title2": " for your sector",
+    "desc1": "Visualize local trends and finance tips. ",
+    "descBold": "We give you the best tips to sell yourself on the web",
+    "desc2": " with strategies updated weekly for your entrepreneurship.",
+    "viewAll": "View all news",
+    "trends": {
+      "t0": { "title": "Sales 2.0: The latest to sell makeup in your city", "category": "Makeup & Beauty" },
+      "t1": { "title": "Viral Strategy: How to dominate sales on TikTok and Instagram", "category": "Social Selling" },
+      "t2": { "title": "TikTok & Reels: Tips to make your videos go viral in days", "category": "Design & Video" }
+    },
+    "readMore": "Read more",
+    "modalTitle": "Trend Center",
+    "modalDesc": "We are working to bring you all the updated news minute by minute in your sector.",
+    "modalQuote": "\"The best tips to improve the image of your business with design, videos, and reels that will go viral in days.\"",
+    "modalFooter": "Coming soon dedicated section for viral content.",
+    "modalBtn": "Understood"
+  },
+  "smartAutomations": {
+    "title1": "Automations",
+    "title2": " that work for you",
+    "desc": "We free up your time. Our AI engines manage reminders, collections, and customer reconnection without you lifting a finger.",
+    "features": {
+      "t0": { "title": "Smart Reminders", "desc": "Automatic notifications for promotions, combos, or personalized launches." },
+      "t1": { "title": "Re-connection Trigger", "desc": "Automatically activates users who haven't made a purchase in over 60 days." },
+      "t2": { "title": "24/7 Automatic Sales", "desc": "Your business keeps operating and quoting even when physical doors are closed." }
+    },
+    "mock": {
+      "version": "crm_automations.v1",
+      "name": "Luis Castillo",
+      "inactivity": "Inactivity: 62 days",
+      "trigger": "Active Trigger",
+      "msg": "WhatsApp sent: \"We missed you Luis! Check out this special combo for you.\"",
+      "conversion": "Conversion: Purchase made ($30 USD) - 15:30h",
+      "success": "Automation success"
+    }
+  },
+  "erpDashboard": {
+    "title1": "Personalized Finance Advice",
+    "title2": "based on your sales with AI",
+    "desc1": "We keep updating the ",
+    "descBold": "best marketing recommendations",
+    "desc2": " for your sector and entrepreneurship, driven by a deep analysis of your cash flow.",
+    "advisor": {
+      "title": "Financial Advisor",
+      "desc": "Real-time cash flow analysis",
+      "badge": "Connected to Financial APIs",
+      "incomeLabel": "Income this month",
+      "incomeValue": "$12.450.000 COP",
+      "incomeDiff": "+12% vs last month",
+      "expenseLabel": "Operating expenses",
+      "expenseValue": "$4.200.000 COP",
+      "expenseDiff": "-5% optimized by AI",
+      "strategyTitle": "Growth Strategy",
+      "strategyQuote": "\"Your sector is showing an upward trend in night orders. We recommend activating the custom 'Marketing Boost' for your current catalog and optimizing the stock of your star products for next weekend.\"",
+      "strategyBtn": "Activate Custom Recommendation"
+    },
+    "recruitment": {
+      "title": "Smart Recruitment",
+      "searchPlaceholder": "Searching: Sales Specialist...",
+      "roles": {
+        "r0": "Senior Designer",
+        "r1": "Growth Hacker",
+        "r2": "Customer Support"
+      },
+      "publishBtn": "Publish Vacancy"
+    },
+    "inventory": {
+      "title": "Inventory Optimization",
+      "desc": "Our system identifies products with low rotation (delayed products) and suggests exit strategies to free up working capital immediately.",
+      "delayedStock": "Delayed Stock",
+      "averageRotation": "Average Rotation",
+      "freeCapital": "Free Capital",
+      "suggestCombos": "Suggest combos"
+    }
+  },
+  "wellnessHub": {
+    "title": "Wellness and expert network",
+    "desc1": "You are not alone in this. We connect you with the ",
+    "descBold": "best professionals",
+    "desc2": " and tools to grow exponentially without neglecting your peace of mind.",
+    "cards": {
+      "c0": {
+        "title": "Business Mindset and Wellness",
+        "desc": "Connection with psychologists specialized in emotional well-being for entrepreneurs.",
+        "tag": "Wellness",
+        "subtitle": "Your mind, your most valuable asset",
+        "details": "We understand that the entrepreneur's path is demanding. We connect you with a network of psychologists who understand business stress, giving you tools to maintain balance and clarity.",
+        "f0": { "title": "Emotional Support", "desc": "Private consultations with specialists in burnout and stress management." },
+        "f1": { "title": "Healthy Productivity", "desc": "Focus techniques that don't sacrifice your mental health or your rest." },
+        "cta": "Schedule Wellness Session"
+      },
+      "c1": {
+        "title": "Design Hub",
+        "desc": "Advice on branding, logos, and advertising with high-level designers.",
+        "tag": "Creativity",
+        "subtitle": "Branding that breathes your essence",
+        "details": "We don't make logos, we create identities that make you fall in love. Our hub of designers transforms your vision into a luxury editorial brand, ready to capture eyes on social media.",
+        "f0": { "title": "Visual Identity", "desc": "Complete brand redesign, color palettes, and premium typography." },
+        "f1": { "title": "Catalog Design", "desc": "Professional product layout with fashion magazine aesthetics." },
+        "cta": "Start Creative Project"
+      },
+      "c2": {
+        "title": "Strategic Scheduling",
+        "desc": "Alerts for special dates and seasonal trends to stay one step ahead.",
+        "tag": "Strategy",
+        "subtitle": "One step ahead in the market",
+        "details": "We master trends before they go mainstream. We give you a smart calendar with key dates, regional holidays, and viral predictions so your inventory always matches demand.",
+        "f0": { "title": "Trend Prediction", "desc": "Weekly alerts on audios, challenges, and styles that will go viral." },
+        "f1": { "title": "Holiday Plan", "desc": "Strategies for national events months in advance." },
+        "cta": "View Strategic Calendar"
+      }
+    },
+    "learnMore": "Learn more",
+    "exclusive": "Exclusive Services",
+    "activate": "Activate your ",
+    "totalBoost": "Total Boost",
+    "modalFooter": "By joining our subscription, you unlock the strategic accompaniment of experts to scale your business today."
+  },
+  "intelligentRecruitment": {
+    "badge": "Curated Regional Talent",
+    "title1": "Intelligent",
+    "title2": "Recruitment.",
+    "desc1": "We manage your vacancies directly through ",
+    "descBold": "LinkedIn",
+    "desc2": ". We take care of capturing and filtering the best professionals who fit perfectly with your culture and specific interests.",
+    "features": {
+      "f0": { "title": "Elite Sourcing", "desc": "Direct connection with LinkedIn to attract high-level talent actively looking to grow." },
+      "f1": { "title": "Interest Fit", "desc": "We filter properly according to interests and technical skills for a guaranteed match." }
+    },
+    "mock": {
+      "title": "Selection Dashboard",
+      "subtitle": "In real time",
+      "badge": "12 New Candidates",
+      "profiles": {
+        "p0": { "name": "Andrés Silva", "role": "Senior Salesperson", "region": "Pasto, Nariño", "status": "Verified" },
+        "p1": { "name": "Lucía Méndez", "role": "Customer Support", "region": "Ipiales", "status": "Premium" },
+        "p2": { "name": "Carlos Ruiz", "role": "Sales Closing", "region": "Tumaco", "status": "Verified" }
+      },
+      "match": "Match"
+    },
+    "btn": "Start LinkedIn Recruitment"
+  }
+}

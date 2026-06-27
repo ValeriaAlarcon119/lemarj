@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Enums estrictos
+enum Role {
+  admin
+  cliente
+}
+
+enum Provider {
+  meta
+  tiktok
+  stripe
+}
+
+enum Plan {
+  free
+  pro
+  enterprise
+}
+
+enum SubStatus {
+  active
+  past_due
+  canceled
+}
+
+// Modelos
+model User {
+  id            String      @id @default(uuid())
+  email         String      @unique
+  password_hash String
+  role          Role        @default(cliente)
+  created_at    DateTime    @default(now())
+  
+  // Relaciones
+  workspaces    Workspace[]
+  audit_logs    AuditLog[]
+
+  @@map("users")
+}
+
+model Workspace {
+  id         String   @id @default(uuid())
+  name       String
+  owner_id   String
+  created_at DateTime @default(now())
+
+  // Relaciones
+  owner        User          @relation(fields: [owner_id], references: [id], onDelete: Cascade)
+  integrations Integration[]
+  subscriptions Subscription[]
+
+  @@map("workspaces")
+}
+
+model Integration {
+  id           String   @id @default(uuid())
+  provider     Provider
+  workspace_id String
+  created_at   DateTime @default(now())
+
+  // Relaciones
+  workspace Workspace @relation(fields: [workspace_id], references: [id], onDelete: Cascade)
+
+  @@unique([workspace_id, provider])
+  @@map("integrations")
+}
+
+model Subscription {
+  id                 String   @id @default(uuid())
+  workspace_id       String
+  plan               Plan     @default(free)
+  status             SubStatus @default(active)
+  current_period_end DateTime?
+  created_at         DateTime @default(now())
+
+  // Relaciones
+  workspace Workspace @relation(fields: [workspace_id], references: [id], onDelete: Cascade)
+
+  @@map("subscriptions")
+}
+
+model AuditLog {
+  id         String   @id @default(uuid())
+  user_id    String
+  action     String
+  entity     String
+  entity_id  String?
+  timestamp  DateTime @default(now())
+
+  // Relaciones
+  user       User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@map("audit_logs")
+}

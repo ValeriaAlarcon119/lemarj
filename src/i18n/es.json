@@ -1,0 +1,500 @@
+{
+  "hero": {
+    "title1": "Ventas Autónomas.",
+    "title2": "IA con Corazón",
+    "titleHighlight": "Regional.",
+    "subtitle": "La ingeniería de IA más avanzada de Colombia, entrenada con la calidez y el vocabulario de tu región para vender 24/7 sin que muevas un dedo.",
+    "cta": "Quiero mi IA ahora"
+  },
+  "sidebar": {
+    "dashboard": "Mi Panel",
+    "catalog": "Catálogo",
+    "explorer": "Explorador",
+    "ecosystem": "Ecosistema",
+    "chat": "Chat IA",
+    "support": "Soporte",
+    "adminOverview": "Gestión Central",
+    "adminClients": "Clientes",
+    "adminLogs": "Logs IA",
+    "adminSettings": "Ajustes",
+    "home": "Inicio",
+    "engineering": "Ingeniería",
+    "whatsapp": "WhatsApp",
+    "boost": "Impulso",
+    "adminPanel": "Panel Admin",
+    "clientPanel": "Panel Cliente",
+    "logout": "Salir",
+    "session": "Sesión 2026",
+    "activeSales": "Ventas Activas"
+  },
+  "layout": {
+    "languageToggle": "Cambiar idioma",
+    "themeToggle": "Cambiar tema",
+    "login": "Login",
+    "bookDemo": "Agendar Demo"
+  },
+  "auth": {
+    "loginTab": "Iniciar sesión",
+    "registerTab": "Registrarme",
+    "welcome": "Bienvenido",
+    "createAccount": "Crea tu cuenta",
+    "accessAccount": "Accede a tu cuenta",
+    "fullName": "Nombre completo",
+    "email": "Ingresa tu correo",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "phone": "Tu celular",
+    "submitRegister": "Crear cuenta",
+    "submitLogin": "Continuar",
+    "or": "O",
+    "continueWithGoogle": "Continuar con Google",
+    "errorInvalidEmail": "Por favor ingresa un correo electrónico válido",
+    "errorFullName": "Por favor ingresa tu nombre completo",
+    "errorPasswordMatch": "Las contraseñas no coinciden",
+    "errorPasswordLength": "La contraseña debe tener al menos 6 caracteres",
+    "successRegister": "¡Registrado! Ya puedes iniciar sesión con",
+    "errorUnconfirmedEmail": "Debes confirmar tu correo. Por favor revisa tu bandeja de entrada o deshabilita la confirmación en Supabase Auth.",
+    "errorInvalidCredentials": "Correo o contraseña incorrectos. Verifica en Supabase > Users si el usuario existe."
+  },
+  "onboarding": {
+    "stepProfile": "Perfil",
+    "stepSocial": "Red Social",
+    "stepDashboard": "Dashboard",
+    "titleProfile": "Configuración de ",
+    "titleProfileHighlight": "perfil",
+    "roleOwner": "Dueño / Emprendedor",
+    "roleOwnerDesc": "Automatizaré mis ventas y escalaré mi negocio.",
+    "roleExpert": "Agencia / Experto",
+    "roleExpertDesc": "Gestionaré clientes y configuraré integraciones avanzadas.",
+    "nextStep": "Siguiente Paso",
+    "titleSocial": "Conexión de ",
+    "titleSocialHighlight": "primera red social",
+    "socialMeta": "Meta (Facebook/IG)",
+    "socialMetaDesc": "Conecta tu página",
+    "socialTiktok": "TikTok",
+    "socialTiktokDesc": "Conecta tu perfil",
+    "back": "Atrás",
+    "skip": "Omitir",
+    "connect": "Conectar",
+    "titleFinish": "Todo ",
+    "titleFinishHighlight": "listo",
+    "finishDesc": "Tu ecosistema está configurado. Bienvenido a tu nuevo Dashboard principal.",
+    "goToDashboard": "Ir al Dashboard",
+    "next": "Siguiente",
+    "finish": "Comenzar"
+  },
+  "ecosystem": {
+    "title": "Ecosistema de Conexiones",
+    "subtitle": "Conecta tus herramientas favoritas y automatiza tu flujo de trabajo de principio a fin.",
+    "searchPlaceholder": "Buscar conectores o categorías...",
+    "filterAll": "Todos",
+    "filterActives": "Activos",
+    "filterBeta": "Beta",
+    "securityOverview": "Resumen",
+    "securityAccess": "Acceso y roles",
+    "socialContent": "Contenido social",
+    "connectorsOverview": "Resumen de conectores",
+    "connectorsCatalog": "Catálogo",
+    "integrations": "Integraciones",
+    "securingApp": "Asegurando tu aplicación",
+    "promotingApp": "Promocionando tu app",
+    "connectors": "Conectores"
+  },
+  "footer": {
+    "title1": "Automatiza ",
+    "title2": "hoy mismo.",
+    "subtitle": "Déjanos tus datos o escríbenos a WhatsApp. En menos de 24h empezamos a construir tu IA.",
+    "businessName": "Nombre de tu negocio",
+    "emailPlaceholder": "Correo electrónico",
+    "submitBtn": "Solicitar Ingeniería AI",
+    "whatsappBtn": "WhatsApp Directo",
+    "slogan": "Impulsa tus ventas <br /> y mejora tu atención",
+    "copyright": "© 2026 LEMARJ en San Juan de Pasto, Colombia. <br className='sm:hidden' />Todo automatizado, todo seguro."
+  },
+  "pricing": {
+    "badge": "Planes & Precios",
+    "title1": "Planes ",
+    "title2": "personalizados",
+    "subtitle": "No cobramos por módulo, cobramos por impacto. Nos ajustamos a todos los presupuestos según tu flujo en redes.",
+    "popularBadge": "MÁS POPULAR",
+    "plans": {
+      "p0": {
+        "tier": "Iniciación",
+        "name": "Emprendedor IA",
+        "desc": "Para emprendedores locales que inician su viaje digital.",
+        "f0": "1 número de WhatsApp",
+        "f1": "IA con catálogo PDF",
+        "f2": "Respuestas 24/7",
+        "cta": "Solicitar Cotización"
+      },
+      "p1": {
+        "tier": "Crecimiento",
+        "name": "Negocio Pro IA",
+        "desc": "Nuestra ingeniería más avanzada para negocios que escalan.",
+        "note": "El precio se ajusta dinámicamente según tu volumen de mensajes y seguidores.",
+        "f0": "IA con Catálogo Inteligente + Memoria",
+        "f1": "Mensajería Ilimitada con Entrenamiento",
+        "f2": "Notificaciones y Re-engagement CRM",
+        "f3": "Soporte de Ingeniería Prioritario",
+        "cta": "Comenzar Inversión"
+      },
+      "p2": {
+        "tier": "Gran Escala",
+        "name": "Corporativo",
+        "desc": "Estructuras multi-canal y sistemas dedicados.",
+        "f0": "Múltiples números de WhatsApp",
+        "f1": "Integración con ERP/POS Externo",
+        "f2": "Panel de Control Administrativo",
+        "cta": "Hablar con Consultor"
+      }
+    }
+  },
+  "trustBadges": {
+    "title1": "Construido sobre ",
+    "title2": "confianza real",
+    "subtitle": "Garantías sólidas para que tu inversión esté 100% protegida.",
+    "uptime": "Uptime garantizado",
+    "uptimeValue": "99.9%",
+    "uptimeDesc": "Disponibilidad de infraestructura certificada.",
+    "refund": "Garantía de reembolso",
+    "refundValue": "14 días",
+    "refundDesc": "Tiempo para evaluar sin ningún riesgo.",
+    "security": "Seguridad bancaria",
+    "securityValue": "256-bit",
+    "securityDesc": "Cifrado end-to-end y cumplimiento Ley 1581.",
+    "support": "Soporte dedicado",
+    "supportValue": "< 4h",
+    "supportDesc": "Respuesta de ingeniería garantizada."
+  },
+  "legalFooter": {
+    "terms": "Términos y Condiciones",
+    "privacy": "Política de Tratamiento de Datos (Ley 1581)",
+    "rights": "Todos los derechos reservados."
+  },
+  "stats": {
+    "activity": "Actividad de ventas",
+    "fidelity": "Fiel a tu catálogo",
+    "clients": "Clientes a la vez",
+    "various": "Varios"
+  },
+  "salesComparison": {
+    "problemLabel": "El problema común",
+    "problemTitle": "¿Frustrado por esperar una respuesta?",
+    "problemDesc": "Escribes a un negocio y pasan horas (o días). La atención personalizada es lenta, los mensajes se pierden y el cliente termina comprando en otro lugar.",
+    "problemList1": "Visto sin respuesta",
+    "problemList2": "Errores en precios",
+    "problemList3": "Cliente impaciente",
+    "solutionLabel": "Solución LEMARJ",
+    "solutionTitle1": "Ventas inteligentes y ",
+    "solutionTitle2": "asesoría inmediata",
+    "solutionDesc": "Nuestra IA asesora al instante, envía fotos personalizadas de tus productos y documentos PDF en segundos.",
+    "solutionFeature1": "Envío de PDF",
+    "solutionFeature2": "Fotos Pro",
+    "solutionFeature3": "Asesoría 24/7 de Alta Fidelidad"
+  },
+  "featuresTimeline": {
+    "step1Title": "IA con Contexto Regional",
+    "step1Desc": "Un agente amable, no un bot rígido. Entiende el vocabulario de tu región, resuelve dudas complejas y guía directo al pago basándose 100% en tu catálogo.",
+    "step2Title": "Respuesta Inmediata",
+    "step2Desc": "El 90% de las ventas caen a los 5 minutos. Tu IA responde en menos de 2 segundos, cerrando ventas antes de que tu competencia abra.",
+    "step3Title": "Ventas Blindadas",
+    "step3Desc": "Cero riesgos de bloqueos. Usamos la API oficial de Meta para darle a tu negocio el sello de verificación e higiene digital más alto.",
+    "step4Title": "Privacidad de Datos",
+    "step4Desc": "Tus clientes son tuyos. Cumplimiento total de la Ley 1581 con bases cifradas y privadas. Máxima autoridad legal para tu tranquilidad.",
+    "step5Title": "Calidez Humana",
+    "step5Desc": "Recomienda productos y cierra tratos transmitiendo la calidez y el excelente servicio al cliente característico de nuestra región.",
+    "step6Title": "Catálogo Vivo en 24h",
+    "step6Desc": "Cero códigos. Envíanos tu PDF y en menos de un día lo transformamos en el cerebro inteligente de tu negocio. Así de rápido.",
+    "label": "Ingeniería Local",
+    "title1": "Tecnología que ",
+    "title2": "impulsa las ventas en tu región"
+  },
+  "comparisonTable": {
+    "title1": "¿Qué cambia cuando usas ",
+    "title2": "LEMARJ?",
+    "humanTitle": "Personal Humano",
+    "human1": "Disponible solo 8h/día, riesgo de errores humanos.",
+    "human2": "Respuesta lenta durante picos de tráfico y demoras en atención.",
+    "human3": "Altos costos operativos mensuales fijos por salario y prestaciones.",
+    "human4": "Sin capacidad para atender e informar a múltiples clientes a la vez.",
+    "human5": "Dependencia emocional y de horarios para efectuar un buen servicio.",
+    "aiTitle": "Ingeniería LEMARJ",
+    "ai1": "Disponible 24/7, costo 10x menor garantizado.",
+    "ai2": "Respuesta experta y precisa en menos de 2 segundos.",
+    "ai3": "Ventas blindadas sin errores de información ni de inventario.",
+    "ai4": "Capacidad operativa infinita; atiende a 1000 clientes a la vez.",
+    "ai5": "Estandarización de calidad y calidez total en cada mensaje."
+  },
+  "pilares": {
+    "title1": "Ingeniería LEMARJ: ",
+    "title2": "Nuestros 4 Módulos de Potencia",
+    "subtitle": "Arquitectura de software diseñada con precisión para automatizar la confianza, la privacidad y el flujo de caja.",
+    "explore": "Explorar módulo",
+    "moduleLabel": "Módulo de Potencia",
+    "whatsappLink": "Conocer la arquitectura en WhatsApp",
+    "close": "Cerrar",
+    "m1": {
+      "title": "Identidad y Reputación Algorítmica",
+      "desc": "Tu marca tiene un tono único. Entrenamos a la IA para que respete tu voz, use jerga local de tu región y construya confianza en cada chat.",
+      "modalTitle": "Identidad y Reputación Algorítmica",
+      "modalSubtitle": "El ADN de tu negocio, ahora automatizado para vender más.",
+      "modalDesc": "Nuestra ingeniería moldea a la IA para que absorba por completo el tono, la personalidad y hasta la jerga de tu marca. El resultado es un vendedor virtual experto que genera empatía instantánea y confianza absoluta desde el primer mensaje.",
+      "b1": "Mantiene tu misma personalidad, carisma y calidez al 100%.",
+      "b2": "Soporta jerga local (de tu región) e interactúa naturalmente.",
+      "b3": "Evita por completo las respuestas robóticas y menús numéricos aburridos."
+    },
+    "m2": {
+      "title": "Tráfico con Intención de Compra",
+      "desc": "No generamos ruido, generamos conversiones. Optimizamos la llegada de clientes para que la IA los reciba en el momento de máxima intención.",
+      "modalTitle": "Tráfico con Intención de Compra",
+      "modalSubtitle": "Convertimos a los curiosos en compradores leales y frecuentes.",
+      "modalDesc": "Una vez que el cliente hace clic en tus anuncios, la inteligencia artificial lo perfila inteligentemente. En vez de solo responder precios, nuestra tecnología realiza preguntas estratégicas para escalar la intención de compra y guiarlo hasta el pago final.",
+      "b1": "Llamados a la acción dinámicos dependiendo de la intención del cliente.",
+      "b2": "Perfilamiento estratégico para cerrar ventas complejas sin tu intervención.",
+      "b3": "Menos pérdida de tiempo en curiosos, más porcentaje de conversiones."
+    },
+    "m3": {
+      "title": "Arquitectura de Datos y Privacidad",
+      "desc": "Cifrado de extremo a extremo y Ley 1581. Tus datos y los de tus clientes son propiedad privada, custodiados bajo estándares de seguridad bancaria.",
+      "modalTitle": "Arquitectura de Datos y Privacidad",
+      "modalSubtitle": "Seguridad bancaria para la base de datos de tu local.",
+      "modalDesc": "Tus clientes son tu mayor activo y te pertenecen. Estructuramos una plataforma blindada donde cada dato y estadística está completamente protegida bajo cifrado end-to-end, otorgándote autoridad jurídica frente a la ley colombiana.",
+      "b1": "Cumplimiento meticuloso de la Ley 1581 de protección de datos en Colombia.",
+      "b2": "Almacenamiento cifrado en servidores de alta seguridad de última generación.",
+      "b3": "Tus clientes nunca serán compartidos ni filtrados hacia tu competencia."
+    },
+    "m4": {
+      "title": "Autonomía Transaccional 24/7",
+      "desc": "Sincronización exacta con tu catálogo real. La IA no solo responde, guía al cliente directamente al pago (Nequi, Daviplata, etc.).",
+      "modalTitle": "Autonomía Transaccional 24/7",
+      "modalSubtitle": "Tu propia oficina virtual que nunca cierra operaciones.",
+      "modalDesc": "Construimos un flujo transaccional ininterrumpido. El agente digital gestiona tu catálogo en tiempo real con precios actualizados y envía los medios de facturación correctos sin depender del cansancio ni los horarios diurnos.",
+      "b1": "Sincronización milimétrica y al instante de tu catálogo inteligente en WhatsApp.",
+      "b2": "Integración de métodos de cobro directo (Nequi, Daviplata, Bancolombia).",
+      "b3": "Capacidad de facturar transacciones de madrugada mientras descansas."
+    }
+  },
+  "demoSection": {
+    "title1": "Mira cómo tu IA",
+    "title2": "asesora y cierra ventas",
+    "f1Title": "Entiende lenguaje real",
+    "f1Desc": "Funciona aunque el cliente escriba mal, use jerga colombiana o hable muy informal.",
+    "f2Title": "Recomienda productos específicos",
+    "f2Desc": "Con precios exactos de tu catálogo. No inventa ni confunde.",
+    "f3Title": "Cierra el pedido",
+    "f3Desc": "Solicita nombre, dirección y medio de pago de forma natural y amable.",
+    "f4Title": "Procesa fotos y documentos",
+    "f4Desc": "Envía PDFs, entiende fotos que envíe el cliente y responde enviando fotos de tus productos recomendados.",
+    "assistantName": "Asistente Virtual",
+    "onlineStatus": "en línea",
+    "todayLabel": "HOY",
+    "messagePlaceholder": "Mensaje",
+    "msg1": "Hola! Tienen catálogo?",
+    "msg2": "¡Hola! Claro que sí. Tenemos amigurumis, joyería espiritual y cajitas de regalo personalizadas. ¿Te gustaría ver el catálogo completo?",
+    "msg3": "Sí por favor, envíamelo",
+    "msg4": "¡Con gusto! Aquí tienes nuestro catálogo actualizado con precios y existencias en tiempo real.",
+    "pdfName": "Catálogo_Oficial.pdf",
+    "pdfDesc": "2.4 MB • Documento",
+    "msg5": "Me gusta la Box Boda Real, cómo hago el pedido?",
+    "msg6": "¡Excelente elección! Para confirmar necesito tu nombre y dirección. El pago se realiza de forma segura por transferencia bancaria o Nequi."
+  },
+  "personalizationShowcase": {
+    "badge": "CERO MENÚS ROBÓTICOS ABURRIDOS",
+    "title1": "Se lee como tú, ",
+    "title2": "convence como tú.",
+    "desc1": "Eliminamos el molesto \"Oprima 1 para ventas\". Nuestra ingeniería lingüística adapta el cerebro de la IA para que absorba el ",
+    "desc2": "acento, la calidez y el argot específico",
+    "desc3": " que enamora a tus clientes reales.",
+    "choosePersonality": "Elige la Personalidad",
+    "comparisonLabel": "Comparación de Agente en Vivo",
+    "genericBot": "Bot Genérico",
+    "lemarjEngine": "Ingeniería LEMARJ",
+    "t0": {
+      "name": "Cálido y Artesanal",
+      "desc": "Ideal para marcas con alma, que buscan crear conexión emocional al instante.",
+      "robotMsg": "Saludos. Para compras seleccione la opción 3 en el menú principal.",
+      "lemarjMsg": "¡Hola! Qué gusto saludarte. Claro que sí, nuestras cajitas son hechas a mano con mucho cariño. ¿Para quién sería este detalle tan especial?"
+    },
+    "t1": {
+      "name": "Clínico y Profesional",
+      "desc": "Autoridad absoluta. Transmite seguridad, limpieza y estatus profesional.",
+      "robotMsg": "Por favor envíe su requerimiento para programar cita médica.",
+      "lemarjMsg": "Buenas tardes, estimado paciente. Será un placer agendar su valoración odontológica. ¿Le vendría mejor acompañarnos en la jornada de la mañana o en la tarde?"
+    },
+    "t2": {
+      "name": "Urbano Regional",
+      "desc": "Descontracturado, veloz y con el acento exacto de tu local de comidas.",
+      "robotMsg": "El costo de la orden es de 25000 pesos. Envíe confirmación.",
+      "lemarjMsg": "¡Qué más! Listo rey, la promo de hamburguesas dobles te sale en 25K con envío gratis. ¿Te las mando de una vez con salsita extra de la casa?"
+    }
+  },
+  "freeWebsiteOffer": {
+    "badge": "Anuncio Especial LEMARJ",
+    "title1": "¿Quieres impulsar tu",
+    "title2": "visibilidad en línea?",
+    "desc1": "Te obsequiamos tu sitio web totalmente ",
+    "descFree": "GRATIS",
+    "desc2": " con carrito de compras y conectado a todas tus redes.",
+    "f1": "Carrito de Ventas",
+    "f2": "Dominio Propio",
+    "f3": "Conexión Redes",
+    "cta": "Iniciar camino en LEMARJ"
+  },
+  "expertTips": {
+    "badge": "Valor Agregado LEMARJ",
+    "title1": "Más que una herramienta, ",
+    "title2": "tu aliado estratégico",
+    "desc": "Te ayudamos con los mejores tips de diseño, finanzas, marketing, visibilidad en línea y lo más actualizado del comercio para que conectes con tus mejores clientes y proveedores.",
+    "tips": {
+      "design": { "title": "Diseño Viral", "desc": "Imagen de negocio impactante" },
+      "finance": { "title": "Finanzas", "desc": "Optimización de ingresos" },
+      "marketing": { "title": "Marketing", "desc": "Estrategias de crecimiento" },
+      "visibility": { "title": "Visibilidad", "desc": "Presencia digital sólida" }
+    }
+  },
+  "newsBoost": {
+    "badge": "Impulso Viral",
+    "title1": "Noticias e Impulso",
+    "title2": " para tu sector",
+    "desc1": "Visualiza tendencias locales y tips de finanzas. ",
+    "descBold": "Damos los mejores tips para venderte en la web",
+    "desc2": " con estrategias actualizadas semanalmente para tu emprendimiento.",
+    "viewAll": "Ver todas las noticias",
+    "trends": {
+      "t0": { "title": "Ventas 2.0: Lo último para vender maquillaje en tu ciudad", "category": "Maquillaje & Belleza" },
+      "t1": { "title": "Estrategia Viral: Cómo dominar las ventas en TikTok e Instagram", "category": "Social Selling" },
+      "t2": { "title": "TikTok & Reels: Tips para que tus videos se hagan virales en días", "category": "Diseño & Video" }
+    },
+    "readMore": "Leer más",
+    "modalTitle": "Centro de Tendencias",
+    "modalDesc": "Estamos trabajando para traerte todas las noticias actualizadas minuto a minuto de tu sector.",
+    "modalQuote": "\"Los mejores tips para mejorar la imagen de tu negocio con diseño, videos y reels que se harán virales en días.\"",
+    "modalFooter": "Próximamente sección dedicada a contenido viral.",
+    "modalBtn": "Entendido"
+  },
+  "smartAutomations": {
+    "title1": "Automatizaciones",
+    "title2": " que trabajan por ti",
+    "desc": "Liberamos tu tiempo. Nuestros motores de IA gestionan recordatorios, cobranzas y re-conexión de clientes sin que muevas un dedo.",
+    "features": {
+      "t0": { "title": "Recordatorios Inteligentes", "desc": "Notificaciones automáticas para promociones, combos o lanzamientos personalizados." },
+      "t1": { "title": "Activador de Re-conexión", "desc": "Activa automáticamente a usuarios que llevan más de 60 días sin realizar una compra." },
+      "t2": { "title": "Ventas Automáticas 24/7", "desc": "Tu negocio sigue operando y cotizando incluso cuando las puertas físicas están cerradas." }
+    },
+    "mock": {
+      "version": "crm_automations.v1",
+      "name": "Luis Castillo",
+      "inactivity": "Inactividad: 62 días",
+      "trigger": "Trigger Activo",
+      "msg": "WhatsApp enviado: \"¡Te extrañamos Luis! Mira este combo especial para ti.\"",
+      "conversion": "Conversión: Compra realizada ($120.000 COP) - 15:30h",
+      "success": "Éxito de automatización"
+    }
+  },
+  "erpDashboard": {
+    "title1": "Asesoría de Finanzas Personalizadas",
+    "title2": "según tus ventas con IA",
+    "desc1": "Mantenemos actualizando las ",
+    "descBold": "mejores recomendaciones de marketing",
+    "desc2": " para tu sector y tu emprendimiento, impulsadas por un análisis profundo de tu flujo de caja.",
+    "advisor": {
+      "title": "Asesor Financiero",
+      "desc": "Análisis de flujo de caja en tiempo real",
+      "badge": "Conectado a APIs Financieras",
+      "incomeLabel": "Ingresos este mes",
+      "incomeValue": "$12.450.000 COP",
+      "incomeDiff": "+12% vs mes anterior",
+      "expenseLabel": "Gastos operativos",
+      "expenseValue": "$4.200.000 COP",
+      "expenseDiff": "-5% optimizado por IA",
+      "strategyTitle": "Estrategia de Crecimiento",
+      "strategyQuote": "\"Tu sector está mostrando una tendencia alcista en pedidos nocturnos. Recomendamos activar el 'Boost de Marketing' personalizado para tu catálogo actual y optimizar el stock de tus productos estrella para el próximo fin de semana.\"",
+      "strategyBtn": "Activar Recomendación Personalizada"
+    },
+    "recruitment": {
+      "title": "Reclutamiento Inteligente",
+      "searchPlaceholder": "Buscando: Especialista en Ventas...",
+      "roles": {
+        "r0": "Diseñadora Senior",
+        "r1": "Growth Hacker",
+        "r2": "Atención al Cliente"
+      },
+      "publishBtn": "Publicar Vacante"
+    },
+    "inventory": {
+      "title": "Optimización de Inventario",
+      "desc": "Nuestro sistema identifica productos con baja rotación (productos atrasados) y sugiere estrategias de salida para liberar capital de trabajo inmediatamente.",
+      "delayedStock": "Stock Atrasado",
+      "averageRotation": "Rotación Media",
+      "freeCapital": "Liberar Capital",
+      "suggestCombos": "Sugerir combos"
+    }
+  },
+  "wellnessHub": {
+    "title": "Bienestar y red de expertos",
+    "desc1": "No estás solo en esto. Te conectamos con los ",
+    "descBold": "mejores profesionales",
+    "desc2": " y herramientas para crecer exponencialmente sin descuidar tu paz mental.",
+    "cards": {
+      "c0": {
+        "title": "Mentalidad y Bienestar de Negocios",
+        "desc": "Conexión con psicólogos especializados en bienestar emocional para emprendedores.",
+        "tag": "Bienestar",
+        "subtitle": "Tu mente, tu activo más valioso",
+        "details": "Entendemos que el camino del emprendedor es exigente. Te conectamos con una red de psicólogos que entienden el estrés empresarial, brindándote herramientas para mantener el equilibrio y la claridad.",
+        "f0": { "title": "Soporte Emocional", "desc": "Consultas privadas con especialistas en burnout y manejo de estrés." },
+        "f1": { "title": "Productividad Sana", "desc": "Técnicas de enfoque que no sacrifican tu salud mental ni tu descanso." },
+        "cta": "Agendar Sesión de Bienestar"
+      },
+      "c1": {
+        "title": "Hub de Diseño",
+        "desc": "Asesoría en branding, logotipos y publicidad con diseñadores de alto nivel.",
+        "tag": "Creatividad",
+        "subtitle": "Branding que respira tu esencia",
+        "details": "No hacemos logotipos, creamos identidades que enamoran. Nuestro hub de diseñadores transforma tu visión en una marca editorial de lujo, lista para capturar miradas en redes sociales.",
+        "f0": { "title": "Identidad Visual", "desc": "Rediseño completo de marca, paletas de colores y tipografías premium." },
+        "f1": { "title": "Diseño por Catálogo", "desc": "Maquetación profesional de productos con estética de revista de moda." },
+        "cta": "Iniciar Proyecto Creativo"
+      },
+      "c2": {
+        "title": "Calendarización Estratégica",
+        "desc": "Alertas de fechas especiales y tendencias estacionales para ir un paso adelante.",
+        "tag": "Estrategia",
+        "subtitle": "Un paso adelante en el mercado",
+        "details": "Dominamos las tendencias antes de que sean masivas. Te entregamos un calendario inteligente con fechas clave, festividades regionales y predicciones virales para que tu inventario siempre coincida con la demanda.",
+        "f0": { "title": "Predicción de Tendencias", "desc": "Alertas semanales sobre audios, retos y estilos que serán virales." },
+        "f1": { "title": "Plan de Festividades", "desc": "Estrategias para Pasto, Ipiales y eventos nacionales con meses de antelación." },
+        "cta": "Ver Calendario Estratégico"
+      }
+    },
+    "learnMore": "Saber más",
+    "exclusive": "Servicios Exclusivos",
+    "activate": "Activa tu ",
+    "totalBoost": "Impulso Total",
+    "modalFooter": "Al unirte a nuestra suscripción, desbloqueas el acompañamiento estratégico de expertos para escalar tu negocio hoy mismo."
+  },
+  "intelligentRecruitment": {
+    "badge": "Talento Regional Curado",
+    "title1": "Reclutamiento",
+    "title2": "Inteligente.",
+    "desc1": "Gestionamos tus vacantes directamente a través de ",
+    "descBold": "LinkedIn",
+    "desc2": ". Nos encargamos de captar y filtrar a los mejores profesionales que encajen perfectamente con tu cultura e intereses específicos.",
+    "features": {
+      "f0": { "title": "Sourcing Elite", "desc": "Conexión directa con LinkedIn para atraer talento de alto nivel que activamente busca crecer." },
+      "f1": { "title": "Fit de Interés", "desc": "Filtramos adecuadamente según intereses y aptitudes técnicas para un match garantizado." }
+    },
+    "mock": {
+      "title": "Dashboard de Selección",
+      "subtitle": "En tiempo real",
+      "badge": "12 Nuevos Candidatos",
+      "profiles": {
+        "p0": { "name": "Andrés Silva", "role": "Vendedor Senior", "region": "Pasto, Nariño", "status": "Verificado" },
+        "p1": { "name": "Lucía Méndez", "role": "Atención al Cliente", "region": "Ipiales", "status": "Premium" },
+        "p2": { "name": "Carlos Ruiz", "role": "Cierre de Ventas", "region": "Tumaco", "status": "Verificado" }
+      },
+      "match": "Match"
+    },
+    "btn": "Iniciar Reclutamiento LinkedIn"
+  }
+}
