@@ -227,19 +227,18 @@ function StatCard({ icon, value, label }: { icon: React.ReactNode, value: string
   return (
     <motion.div 
       whileHover={{ y: -5, scale: 1.02 }}
-      className="relative group p-[2px] rounded-[3rem] overflow-hidden w-full h-[320px] cursor-default border border-black dark:border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.04)] dark:shadow-none"
+      className="relative group rounded-[3rem] overflow-hidden w-full h-[320px] cursor-default border border-indigo-200 dark:border-indigo-900/30 shadow-sm"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 via-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="absolute inset-0 bg-white/50 dark:bg-zinc-950/50 backdrop-blur-3xl" />
-      <div className="relative h-full bg-white/80 dark:bg-black/60 rounded-[2.9rem] p-10 flex flex-col justify-between">
-        <div className="w-16 h-16 text-indigo-500/80 group-hover:text-indigo-400 group-hover:scale-110 transition-all duration-500">
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-indigo-950/40 dark:via-purple-900/20 dark:to-zinc-950" />
+      <div className="relative h-full rounded-[3rem] p-10 flex flex-col justify-center items-center text-center gap-6">
+        <div className="w-16 h-16 text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform duration-500">
           {icon}
         </div>
         <div>
-          <div className="text-5xl font-black tracking-tighter mb-2 bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
+          <div className="text-5xl font-black tracking-tighter mb-2 text-foreground">
             {value}
           </div>
-          <div className="text-[11px] font-black uppercase tracking-widest text-muted-foreground group-hover:text-foreground/80 transition-colors">
+          <div className="text-[11px] font-black uppercase tracking-[0.2em] text-muted-foreground/80">
             {label}
           </div>
         </div>

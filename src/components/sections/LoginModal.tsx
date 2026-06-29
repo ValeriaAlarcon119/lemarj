@@ -4,6 +4,7 @@ import { X, Loader2, AlertCircle, CheckCircle2, ChevronDown, Eye, EyeOff } from 
 import { useState, useEffect, useRef } from "react"
 import { supabase } from "@/lib/supabase"
 import { useLanguage } from "@/contexts/I18nContext"
+import Image from "next/image"
 
 interface LoginModalProps {
   isOpen: boolean
@@ -444,7 +445,7 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
                 onClick={() => supabase.auth.signInWithOAuth({ provider: "google", options: { redirectTo: window.location.origin } })}
                 className="w-full h-11 rounded-xl border border-black/80 flex items-center justify-center gap-3 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-all text-xs font-black uppercase tracking-widest"
               >
-                <img src="/google.svg" alt="Google" className="w-4 h-4" />
+                <Image src="/google.svg" alt="Google" width={16} height={16} />
                 {t('auth.continueWithGoogle')}
               </button>
               </div> {/* Close overflow-y-auto */}

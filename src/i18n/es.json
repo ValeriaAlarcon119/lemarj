@@ -1,9 +1,9 @@
 {
   "hero": {
     "title1": "Ventas Autónomas.",
-    "title2": "IA con Corazón",
-    "titleHighlight": "Regional.",
-    "subtitle": "La ingeniería de IA más avanzada de Colombia, entrenada con la calidez y el vocabulario de tu región para vender 24/7 sin que muevas un dedo.",
+    "title2": "IA con atención regional",
+    "titleHighlight": "y calidez humana.",
+    "subtitle": "Transformando el comercio con ingeniería de alta fidelidad: la IA más avanzada de Colombia, entrenada con el vocabulario de tu región para atender a tus clientes 24/7 de forma segura, personalizada e inmediata, sin que muevas un dedo.",
     "cta": "Quiero mi IA ahora"
   },
   "sidebar": {
@@ -175,7 +175,7 @@
     "activity": "Actividad de ventas",
     "fidelity": "Fiel a tu catálogo",
     "clients": "Clientes a la vez",
-    "various": "Varios"
+    "various": "Infinitos"
   },
   "salesComparison": {
     "problemLabel": "El problema común",
