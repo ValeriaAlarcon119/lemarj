@@ -278,12 +278,13 @@ function ConnectorCard({ connector, viewMode }: { connector: Connector; viewMode
   )
 }
 
-function CategoryCardComponent({ card }: { card: CategoryCard }) {
+function CategoryCardComponent({ card, onClick }: { card: CategoryCard; onClick?: () => void }) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.97 }}
       animate={{ opacity: 1, scale: 1 }}
       whileHover={{ y: -3 }}
+      onClick={onClick}
       className="bg-white dark:bg-zinc-900/40 border border-slate-100 dark:border-white/5 rounded-2xl p-5 hover:shadow-md transition-all cursor-pointer group"
     >
       <div className={`w-10 h-10 rounded-xl ${card.bgColor} border flex items-center justify-center ${card.color} mb-4 group-hover:scale-110 transition-transform`}>
@@ -361,8 +362,8 @@ function ChatBubble({ msg }: { msg: ChatMessage }) {
 
 // ─── Main Views ───────────────────────────────────────────────────────────────
 
-function ConnectorCatalog() {
-  const [search, setSearch] = useState("")
+function ConnectorCatalog({ searchInitial = "" }: { searchInitial?: string }) {
+  const [search, setSearch] = useState(searchInitial)
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
   const [activeFilter, setActiveFilter] = useState("Todos")
 
@@ -382,7 +383,11 @@ function ConnectorCatalog() {
         <div className="inline-flex items-center gap-1.5 bg-slate-900 dark:bg-white text-white dark:text-zinc-950 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full mb-3">
           <Plug className="w-3 h-3" /> Catálogo de conectores
         </div>
-        <h2 className="text-2xl font-black text-slate-800 dark:text-zinc-100 mb-1">Integraciones disponibles</h2>
+        <h2 
+          className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-teal-400 to-purple-400 mb-1"
+        >
+          Integraciones disponibles
+        </h2>
         <p className="text-slate-400 dark:text-zinc-500 text-sm">Conecta tus herramientas favoritas en segundos. Más de {CONNECTORS.length} conectores activos.</p>
       </div>
 
@@ -430,7 +435,7 @@ function ConnectorCatalog() {
   )
 }
 
-function CategoryExplorer() {
+function CategoryExplorer({ onSelectCategory }: { onSelectCategory: (catName: string) => void }) {
   return (
     <div id="tour-categories" className="h-full flex flex-col gap-6">
       <div>
@@ -443,7 +448,7 @@ function CategoryExplorer() {
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 overflow-y-auto custom-scrollbar pb-4">
         {CATEGORIES.map(cat => (
-          <CategoryCardComponent key={cat.id} card={cat} />
+          <CategoryCardComponent key={cat.id} card={cat} onClick={() => onSelectCategory(cat.name)} />
         ))}
       </div>
     </div>
@@ -655,12 +660,25 @@ function SplitPane({ onClose }: { onClose: () => void }) {
 
   const handleSend = () => {
     if (!input.trim()) return
-    setMessages(prev => [...prev, { type: "user", content: input, timestamp: "Ahora" }])
+    const text = input.trim()
+    setMessages(prev => [...prev, { type: "user", content: text, timestamp: "Ahora" }])
     setInput("")
+
+    const lowercaseInput = text.toLowerCase()
+    let responseText = "Entendido. Procesando tu solicitud con los conectores disponibles..."
+
+    if (lowercaseInput === "hola" || lowercaseInput === "buenas" || lowercaseInput === "buenos dias" || lowercaseInput === "buenas tardes") {
+      responseText = "¡Hola! 👋 Soy tu asistente de integraciones de LEMARJ. ¿En qué puedo ayudarte hoy? Puedes pedirme que te ayude a configurar conectores como Stripe o Wompi para empezar a automatizar tu negocio."
+    } else if (lowercaseInput.includes("stripe") && !connected) {
+      responseText = "He detectado que quieres configurar Stripe. Por favor, revisa y aprueba la solicitud de permisos a la izquierda para establecer el canal seguro."
+    } else if (lowercaseInput.includes("ayuda") || lowercaseInput.includes("soporte")) {
+      responseText = "Claro, estoy aquí para guiarte. Puedes conectar pasarelas de pago, CRMs y canales de comunicación desde el catálogo. Dime qué herramienta te gustaría vincular."
+    }
+
     setTimeout(() => {
       setMessages(prev => [...prev, {
         type: "ai",
-        content: "Entendido. Procesando tu solicitud con los conectores disponibles...",
+        content: responseText,
         timestamp: "Ahora"
       }])
     }, 800)
@@ -876,15 +894,22 @@ export function EcosystemView() {
   const [activeSection, setActiveSection] = useState<SidebarSection>("catalogo")
   const [showSplit, setShowSplit] = useState(false)
 
+  const [categorySearchFilter, setCategorySearchFilter] = useState("")
+
   const renderMainContent = () => {
     switch (activeSection) {
-      case "catalogo":          return <ConnectorCatalog />
-      case "conectores-resumen": return <CategoryExplorer />
+      case "catalogo":          return <ConnectorCatalog searchInitial={categorySearchFilter} />
+      case "conectores-resumen": return <CategoryExplorer onSelectCategory={(catName) => {
+        // Find category short name or base name
+        const cleanName = catName.split(" ")[0] // e.g. "CRM & Ventas" -> "CRM"
+        setCategorySearchFilter(cleanName)
+        setActiveSection("catalogo")
+      }} />
       case "integraciones":      return <IntegrationsPanel onOpenSplit={() => setShowSplit(true)} />
       case "seguridad-resumen":
       case "seguridad-acceso":   return <SecurityView />
       case "social":             return <SocialView />
-      default:                   return <ConnectorCatalog />
+      default:                   return <ConnectorCatalog searchInitial={categorySearchFilter} />
     }
   }
 

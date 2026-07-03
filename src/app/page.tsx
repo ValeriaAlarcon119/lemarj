@@ -90,8 +90,16 @@ export default function Page() {
     )
   }
 
-  // If user is logged in, show Dashboard
+  // If user is logged in, show Dashboard or Onboarding
   if (user && profile) {
+    if (!profile.onboarding_completed) {
+      return (
+        <MainLayout profile={profile} activeTab="onboarding" onTabChange={() => {}}>
+          <OnboardingFlow />
+        </MainLayout>
+      );
+    }
+
     return (
       <MainLayout profile={profile} activeTab={activeTab} onTabChange={setActiveTab}>
         <AnimatePresence mode="wait">
@@ -121,27 +129,65 @@ export default function Page() {
 
       {/* FLOATING NAVBAR */}
       <div className="fixed top-6 inset-x-0 z-50 flex justify-center px-4 pointer-events-none lg:pl-20">
-        <header className="pointer-events-auto flex w-full max-w-2xl items-center justify-between rounded-full border border-white/10 bg-background/60 px-5 h-12 backdrop-blur-xl shadow-2xl transition-all">
-          <div className="flex items-center gap-2 cursor-pointer group" onClick={() => setPublicTab('home')}>
-            <div className="w-9 h-9 rounded-xl overflow-hidden border border-purple-500/50 shadow-[0_0_10px_rgba(168,85,247,0.4)] bg-black shrink-0 relative">
-              <Image src="/logo-lemarj.jpg" alt="LEMARJ Logo" fill className="object-contain p-1" />
+        {/* Main Neon border wrapper for the entire navbar (Red -> Green) */}
+        <div
+          className="pointer-events-auto w-full max-w-2xl rounded-full p-[1.5px] transition-all duration-500"
+          style={{
+            background: 'linear-gradient(90deg, #e11d48, #d946ef, #1e3a8a, #06b6d4, #10b981)',
+            boxShadow: '0 0 22px rgba(217,70,239,0.25), 0 0 44px rgba(124,58,237,0.15)',
+          }}
+        >
+          <header className="flex w-full items-center justify-between rounded-full bg-[#0a0a0c] px-4 h-12 transition-all">
+
+            {/* Logo + brand name */}
+            <div className="flex items-center gap-3 cursor-pointer shrink-0" onClick={() => setPublicTab('home')}>
+              {/* Logo Box with Pink/Purple gradient border */}
+              <div
+                className="rounded-[12px] p-[1.5px] shrink-0 transition-all duration-300 hover:opacity-90 shadow-[0_0_15px_rgba(217,70,239,0.2)]"
+                style={{ background: 'linear-gradient(135deg, #e11d48, #8b5cf6)' }}
+              >
+                <div className="w-9 h-9 rounded-[10px] overflow-hidden bg-[#0a0a0c] relative flex items-center justify-center">
+                  <Image src="/logo-lemarj.jpg" alt="LEMARJ Logo" fill className="object-contain p-1" />
+                </div>
+              </div>
+              <span className="font-black text-lg tracking-tighter text-white whitespace-nowrap hidden sm:block">
+                LEMARJ
+              </span>
             </div>
-            <div className="font-black text-lg tracking-tighter text-foreground whitespace-nowrap hidden sm:block">LEMARJ</div>
-          </div>
-          
-          <div className="flex items-center gap-3">
-            <LanguageToggle />
-            <ModeToggle />
-            <div className="h-4 w-[1px] bg-border/50 mx-1"></div>
-            <button onClick={() => setIsLoginOpen(true)} className="flex items-center justify-center h-10 px-4 rounded-full bg-white/50 dark:bg-zinc-900/50 hover:bg-white dark:hover:bg-zinc-800 border-2 border-pink-200 hover:border-pink-400 dark:border-pink-900/50 dark:hover:border-pink-600 shadow-[0_0_15px_rgba(244,114,182,0.3)] backdrop-blur-md transition-all text-[11px] font-bold text-pink-500 uppercase tracking-widest">
-              {t('layout.login')}
-            </button>
-            <a href="https://wa.me/573017219288?text=Hola%20LEMARJ!%20quiero%20mi%20demo%20gratis" target="_blank" className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground font-black px-4 h-8 text-[10px] uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
-              {t('layout.bookDemo')}
-            </a>
-          </div>
-        </header>
+
+            {/* Right-side controls */}
+            <div className="flex items-center gap-2">
+              <LanguageToggle />
+              <ModeToggle />
+              <div className="h-5 w-[1px] bg-white/10 mx-1" />
+
+              {/* LOGIN — Solid Blue border */}
+              <button
+                onClick={() => setIsLoginOpen(true)}
+                className="flex items-center justify-center h-10 px-5 rounded-full bg-[#0a0a0c] border-[1.5px] border-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.25)] hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:bg-blue-600/10 text-[11px] font-black text-white uppercase tracking-widest transition-all"
+              >
+                {t('layout.login')}
+              </button>
+
+              {/* BOOK DEMO — Purple to Blue gradient fill */}
+              <a
+                href="https://wa.me/573017219288?text=Hola%20LEMARJ!%20quiero%20mi%20demo%20gratis"
+                target="_blank"
+                className="inline-flex items-center justify-center rounded-full font-black px-5 h-10 text-[10px] uppercase tracking-widest text-white hover:scale-105 active:scale-95 transition-all duration-200"
+                style={{
+                  background: 'linear-gradient(90deg, #4c1d95, #1e3a8a)', // Dark Purple to Dark Blue
+                  border: '1px solid rgba(124,58,237,0.5)',
+                  boxShadow: '0 0 15px rgba(124,58,237,0.3)',
+                }}
+              >
+                {t('layout.bookDemo')}
+              </a>
+            </div>
+
+          </header>
+        </div>
       </div>
+
 
       <div className="flex flex-col items-center pt-32 pb-8 w-full">
         
@@ -196,13 +242,13 @@ export default function Page() {
         <SmartAutomations />
 
         {/* Sección del Explorador y Ecosistema integradas directamente en el landing */}
-        <div id="automation" className="w-full max-w-7xl mx-auto px-4 py-16 scroll-mt-32 min-h-[500px]">
+        <div id="automation" className="w-full max-w-7xl mx-auto px-4 py-8 scroll-mt-20 min-h-[400px]">
           <Suspense fallback={<div className="flex items-center justify-center h-64"><div className="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div></div>}>
             <AutomationExplorer />
           </Suspense>
         </div>
 
-        <div id="ecosystem" className="w-full max-w-7xl mx-auto px-4 py-16 scroll-mt-32 min-h-[500px]">
+        <div id="ecosystem" className="w-full max-w-7xl mx-auto px-4 py-8 scroll-mt-20 min-h-[400px]">
           <Suspense fallback={<div className="flex items-center justify-center h-64"><div className="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div></div>}>
             <EcosystemView />
           </Suspense>
@@ -211,7 +257,6 @@ export default function Page() {
         <ErpDashboard />
         <WellnessHub />
         <IntelligentRecruitment />
-        <OnboardingFlow />
         <PricingSection />
         <TrustBadges />
 

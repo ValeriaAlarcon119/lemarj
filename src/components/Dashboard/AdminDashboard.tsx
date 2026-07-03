@@ -1,9 +1,10 @@
 "use client";
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { FileText, Settings, ShieldCheck, Mail, Phone } from "lucide-react"
+import { FileText, Settings, ShieldCheck, Mail, Phone, Users, Grid3X3 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import type { Profile } from "@/lib/auth"
+import { SuperadminUsersTable } from "@/components/Dashboard/SuperadminUsersTable"
 
 export function AdminDashboard() {
   const [profiles, setProfiles] = useState<Profile[]>([])
@@ -45,6 +46,7 @@ export function AdminDashboard() {
   }
 
   const pendingAdmins = profiles.filter(p => p.role_requested === 'admin' && p.role !== 'admin')
+  const [adminView, setAdminView] = useState<'cards' | 'table'>('table')
 
   return (
     <div className="p-8 max-w-7xl mx-auto space-y-12 pb-32">
@@ -58,10 +60,34 @@ export function AdminDashboard() {
           <p className="text-zinc-500 font-bold text-lg">Monitorea y configura todas las cuentas de clientes.</p>
         </div>
         
-        <div className="flex gap-4">
+        <div className="flex items-center gap-4">
           <div className="p-6 bg-white dark:bg-zinc-950 border border-zinc-100 dark:border-zinc-800 rounded-3xl shadow-sm text-center min-w-[140px]">
             <span className="text-3xl font-black text-foreground">{profiles.length}</span>
             <p className="text-[10px] font-black uppercase tracking-widest text-zinc-400 mt-1">Clientes</p>
+          </div>
+
+          {/* View toggle */}
+          <div className="flex items-center gap-1 p-1.5 bg-zinc-100 dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+            <button
+              onClick={() => setAdminView('table')}
+              className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${
+                adminView === 'table'
+                  ? 'bg-white dark:bg-zinc-950 text-foreground shadow-sm'
+                  : 'text-zinc-400 hover:text-zinc-600'
+              }`}
+            >
+              <Grid3X3 className="w-3.5 h-3.5" /> Tabla Pro
+            </button>
+            <button
+              onClick={() => setAdminView('cards')}
+              className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${
+                adminView === 'cards'
+                  ? 'bg-white dark:bg-zinc-950 text-foreground shadow-sm'
+                  : 'text-zinc-400 hover:text-zinc-600'
+              }`}
+            >
+              <Users className="w-3.5 h-3.5" /> Tarjetas
+            </button>
           </div>
         </div>
       </header>
@@ -105,57 +131,62 @@ export function AdminDashboard() {
         </section>
       )}
 
-      <div className="grid grid-cols-1 gap-6">
-        {loading ? (
-          <div className="h-64 flex items-center justify-center">
-            <div className="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin" />
-          </div>
-        ) : (
-          profiles.map((p) => (
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              key={p.id}
-              className="group p-8 rounded-[2.5rem] bg-white dark:bg-zinc-950 border border-zinc-100 dark:border-zinc-800 flex flex-col md:flex-row md:items-center gap-8 hover:shadow-2xl transition-all duration-500"
-            >
-              <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-black text-2xl shadow-lg">
-                {p.full_name?.[0] || '?'}
-              </div>
+      {/* Main content — toggled between Pro Table and Cards */}
+      {adminView === 'table' ? (
+        <SuperadminUsersTable />
+      ) : (
+        <div className="grid grid-cols-1 gap-6">
+          {loading ? (
+            <div className="h-64 flex items-center justify-center">
+              <div className="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin" />
+            </div>
+          ) : (
+            profiles.map((p) => (
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                key={p.id}
+                className="group p-8 rounded-[2.5rem] bg-white dark:bg-zinc-950 border border-zinc-100 dark:border-zinc-800 flex flex-col md:flex-row md:items-center gap-8 hover:shadow-2xl transition-all duration-500"
+              >
+                <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-black text-2xl shadow-lg">
+                  {p.full_name?.[0] || '?'}
+                </div>
 
-              <div className="flex-1 space-y-1">
-                <h4 className="text-2xl font-black text-foreground">{p.full_name || "Sin nombre"}</h4>
-                <div className="flex flex-wrap gap-4 text-zinc-500 text-sm font-medium">
-                  <div className="flex items-center gap-2">
-                    <Mail className="w-4 h-4 text-zinc-400" />
-                    <span>ID: {p.id.slice(0, 8)}...</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-4 h-4 text-zinc-400" />
-                    <span>{p.phone || "Sin teléfono"}</span>
+                <div className="flex-1 space-y-1">
+                  <h4 className="text-2xl font-black text-foreground">{p.full_name || "Sin nombre"}</h4>
+                  <div className="flex flex-wrap gap-4 text-zinc-500 text-sm font-medium">
+                    <div className="flex items-center gap-2">
+                      <Mail className="w-4 h-4 text-zinc-400" />
+                      <span>ID: {p.id.slice(0, 8)}...</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Phone className="w-4 h-4 text-zinc-400" />
+                      <span>{p.phone || "Sin teléfono"}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="flex flex-wrap gap-3">
-                {p.catalog_url && (
-                  <a 
-                    href={p.catalog_url} 
-                    target="_blank" 
-                    className="h-12 px-6 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-black uppercase tracking-widest text-[10px] flex items-center gap-2 hover:bg-indigo-500 hover:text-white transition-all"
-                  >
-                    <FileText className="w-4 h-4" />
-                    Catálogo
-                  </a>
-                )}
-                <button className="h-12 px-6 rounded-xl bg-zinc-50 dark:bg-zinc-900 text-zinc-500 font-black uppercase tracking-widest text-[10px] flex items-center gap-2 hover:bg-zinc-950 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all">
-                  <Settings className="w-4 h-4" />
-                  Configurar
-                </button>
-              </div>
-            </motion.div>
-          ))
-        )}
-      </div>
+                <div className="flex flex-wrap gap-3">
+                  {p.catalog_url && (
+                    <a 
+                      href={p.catalog_url} 
+                      target="_blank" 
+                      className="h-12 px-6 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-black uppercase tracking-widest text-[10px] flex items-center gap-2 hover:bg-indigo-500 hover:text-white transition-all"
+                    >
+                      <FileText className="w-4 h-4" />
+                      Catálogo
+                    </a>
+                  )}
+                  <button className="h-12 px-6 rounded-xl bg-zinc-50 dark:bg-zinc-900 text-zinc-500 font-black uppercase tracking-widest text-[10px] flex items-center gap-2 hover:bg-zinc-950 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all">
+                    <Settings className="w-4 h-4" />
+                    Configurar
+                  </button>
+                </div>
+              </motion.div>
+            ))
+          )}
+        </div>
+      )}
     </div>
   )
 }

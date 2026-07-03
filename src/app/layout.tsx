@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   description: "Plataforma Avanzada",
 };
 
+import { GlobalProvider } from "@/contexts/GlobalContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,9 +28,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <I18nProvider>
-            {children}
-          </I18nProvider>
+          <GlobalProvider>
+            <I18nProvider>
+              {children}
+            </I18nProvider>
+          </GlobalProvider>
         </ThemeProvider>
       </body>
     </html>

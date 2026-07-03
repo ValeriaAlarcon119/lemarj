@@ -104,8 +104,13 @@ export function Sidebar({ profile, onTabChange, activeTab }: SidebarProps) {
       >
         {/* Header */}
         <div className="px-4 mb-10 flex items-center gap-3">
-          <div className={`w-10 h-10 rounded-2xl ${profile?.role === 'admin' ? 'bg-purple-600' : 'bg-indigo-600'} flex items-center justify-center shrink-0 shadow-lg`}>
-            {profile?.role === 'admin' ? <ShieldCheck className="w-6 h-6 text-white" /> : <LayoutDashboard className="w-6 h-6 text-white" />}
+          <div
+            className="rounded-[12px] p-[1.5px] shrink-0 shadow-[0_0_15px_rgba(217,70,239,0.2)]"
+            style={{ background: 'linear-gradient(135deg, #e11d48, #8b5cf6)' }}
+          >
+            <div className="w-10 h-10 rounded-[10px] overflow-hidden bg-[#0a0a0c] relative flex items-center justify-center">
+              <img src="/logo-lemarj.jpg" alt="LEMARJ Logo" className="w-full h-full object-contain p-1" />
+            </div>
           </div>
           <AnimatePresence>
             {(isExpanded || isOpenMobile) && (

@@ -5,6 +5,14 @@ import type { User } from '@supabase/supabase-js'
 
 export type UserRole = 'admin' | 'client' | null
 
+export interface OnboardingData {
+  sector: string;
+  employees: string;
+  collaborators: string[];
+  clients_volume: string;
+  core_solution: string;
+}
+
 export interface Profile {
   id: string
   full_name: string | null
@@ -14,6 +22,11 @@ export interface Profile {
   company_history: string | null
   catalog_url: string | null
   onboarding_completed: boolean
+  status?: 'active' | 'inactive'
+  email?: string | null
+  industry?: string | null
+  company_name?: string | null
+  onboarding_data?: OnboardingData | null
 }
 
 export function useAuth() {
@@ -55,9 +68,9 @@ export function useAuth() {
         .from('profiles')
         .select('*')
         .eq('id', userId)
-        .single()
+        .maybeSingle()
 
-      if (error && error.code === 'PGRST116') {
+      if (!data) {
         console.log("No profile found, attempting to create one...")
         const role = isSuperAdmin ? 'admin' : 'client'
         
@@ -79,7 +92,18 @@ export function useAuth() {
           console.log("Profile created successfully:", newProfile)
           setProfile(newProfile as Profile)
         } else {
-          console.error("Error creating profile:", createError)
+          console.warn("Error creating profile (RLS or permissions):", createError)
+          // Fallback para no bloquear a Valeria con la pantalla roja de "Error de Perfil"
+          setProfile({
+            id: userId,
+            role: isSuperAdmin ? 'admin' : 'client',
+            full_name: authUser?.user_metadata?.full_name || 'Usuario',
+            phone: '',
+            company_history: '',
+            catalog_url: '',
+            onboarding_completed: false,
+            role_requested: isSuperAdmin ? 'admin' : 'client'
+          } as Profile)
         }
       } else if (data) {
         if (isSuperAdmin && data.role !== 'admin') {

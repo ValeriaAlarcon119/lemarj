@@ -12,6 +12,7 @@ import {
   MetaIcon, NotionIcon, TikTokIcon, StripeIcon, WompiIcon,
   GmailIcon, SheetsIcon, DriveIcon, CanvaIcon, HubSpotIcon, CalendarIcon, WhatsAppIcon
 } from "../BrandIcons"
+import { UseIdeaButton } from "@/hooks/useAutomations"
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -495,11 +496,9 @@ function IdeaCardComponent({ card }: { card: IdeaCard }) {
         </div>
       </div>
 
-      {/* CTA on hover */}
+      {/* CTA on hover — connected to /api/automations/instantiate */}
       <div className="px-5 pb-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-        <button className="w-full flex items-center justify-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-zinc-950 text-[11px] font-black uppercase tracking-widest py-2.5 rounded-xl hover:bg-indigo-600 transition-colors">
-          Usar esta idea <ArrowRight className="w-3.5 h-3.5" />
-        </button>
+        <UseIdeaButton templateId={String(card.id)} templateTitle={card.title} />
       </div>
     </motion.div>
   )
@@ -560,13 +559,15 @@ function TemplateCardComponent({ template }: { template: Template }) {
             </div>
           </div>
 
-          <button className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-[11px] font-black uppercase tracking-wide transition-all shadow-sm hover:shadow-md ${
-            template.price === "Gratis"
-              ? "bg-emerald-600 text-white hover:bg-emerald-700"
-              : "bg-slate-900 dark:bg-white text-white dark:text-zinc-950 hover:bg-indigo-700"
-          }`}>
-            <ShoppingCart className="w-3 h-3" />
-            {template.price === "Gratis" ? "Gratis" : `$${template.price}`}
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              alert(`¡Instalando plantilla de Workspace "${template.name}" en tu cuenta de LEMARJ!`)
+            }}
+            className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-[11px] font-black uppercase tracking-wide transition-all shadow-sm hover:shadow-md bg-indigo-600 hover:bg-indigo-700 text-white"
+          >
+            <Zap className="w-3 h-3" />
+            Usar Workspace
           </button>
         </div>
       </div>
@@ -602,7 +603,9 @@ export function AutomationExplorer() {
           <div className="inline-flex items-center gap-2 bg-indigo-50/80 border border-indigo-100/50 backdrop-blur-md rounded-full px-4 py-1.5 text-[11px] font-black text-indigo-600 uppercase tracking-widest mb-5 shadow-sm">
             <Sparkles className="w-3.5 h-3.5" /> Explorador de ideas
           </div>
-          <h2 className="text-3xl md:text-4xl font-black text-slate-800 dark:text-zinc-100 tracking-tight leading-tight mb-3">
+          <h2 
+            className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-teal-400 to-purple-400 tracking-tight leading-tight mb-3"
+          >
             O comienza con una de estas ideas:
           </h2>
           <p className="text-slate-400 dark:text-zinc-500 text-sm max-w-lg mx-auto">
@@ -668,7 +671,14 @@ export function AutomationExplorer() {
 
         {/* "View all" CTA */}
         <div className="text-center mt-10">
-          <button className="inline-flex items-center gap-2 text-[12px] font-black text-slate-500 dark:text-zinc-400 hover:text-indigo-600 transition-colors group">
+          <button 
+            onClick={() => {
+              // Redirect/scroll down to Marketplace Section 2
+              const el = document.getElementById("marketplace-heading")
+              if (el) el.scrollIntoView({ behavior: "smooth" })
+            }}
+            className="inline-flex items-center gap-2 text-[12px] font-black text-slate-500 dark:text-zinc-400 hover:text-indigo-600 transition-colors group"
+          >
             Ver todas las ideas de automatización
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
@@ -687,7 +697,7 @@ export function AutomationExplorer() {
             <div className="inline-flex items-center gap-2 bg-violet-50 border border-violet-100 rounded-full px-4 py-1.5 text-[11px] font-black text-violet-600 uppercase tracking-widest mb-4">
               <Package className="w-3.5 h-3.5" /> Marketplace
             </div>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-800 dark:text-zinc-100 tracking-tight leading-tight">
+            <h2 id="marketplace-heading" className="text-3xl md:text-4xl font-black text-slate-800 dark:text-zinc-100 tracking-tight leading-tight">
               Plantillas de Workspaces
             </h2>
             <p className="text-slate-400 dark:text-zinc-500 text-sm mt-2">
