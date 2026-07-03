@@ -5,6 +5,7 @@ import type { User } from '@supabase/supabase-js'
 
 export type UserRole = 'admin' | 'client' | null
 
+// ── Backwards-compatible minimal OnboardingData (used by legacy code) ──
 export interface OnboardingData {
   sector: string;
   employees: string;
@@ -26,7 +27,10 @@ export interface Profile {
   email?: string | null
   industry?: string | null
   company_name?: string | null
-  onboarding_data?: OnboardingData | null
+  // onboarding_data acepta el tipo completo MasterOnboardingData
+  // importado dinámicamente para evitar ciclos de dependencia
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onboarding_data?: Record<string, any> | null
 }
 
 export function useAuth() {

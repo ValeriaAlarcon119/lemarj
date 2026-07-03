@@ -59,7 +59,7 @@ function GradientBorder({
       className={`relative rounded-xl transition-all duration-300 ${
         show
           ? "p-[1.5px] bg-gradient-to-r from-[#e8caff] via-[#bcd9ff] to-[#b3f0e6]"
-          : "p-[1.5px] bg-zinc-200 dark:bg-zinc-800"
+          : "p-[1.5px] bg-zinc-800"
       }`}
     >
       {children}
@@ -246,25 +246,25 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
             {/* Elegant static glow foundation */}
             <div className="absolute inset-[-1px] rounded-[2.5rem] bg-gradient-to-r from-[#e8caff] via-[#bcd9ff] to-[#b3f0e6] opacity-30 shadow-[0_0_50px_rgba(168,85,247,0.15)]" />
             
-            <div className="relative bg-white dark:bg-zinc-950 rounded-[2.5rem] p-7 sm:p-9 max-h-[85vh] flex flex-col shadow-2xl overflow-hidden border border-white/50 dark:border-white/5">
+            <div className="relative bg-[#0a0a0c] rounded-[2.5rem] p-7 sm:p-9 max-h-[85vh] flex flex-col shadow-2xl overflow-hidden border border-white/10">
               {/* Close */}
               <button 
                 onClick={onClose} 
-                className="absolute top-5 right-5 p-1.5 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors z-[110]"
+                className="absolute top-5 right-5 p-1.5 rounded-full hover:bg-zinc-900 transition-colors z-[110]"
               >
                 <X className="w-4 h-4 text-zinc-400" />
               </button>
 
               <div className="overflow-y-auto custom-scrollbar pr-3 h-full">
 
-              <div className="inline-flex p-1 bg-zinc-100 dark:bg-zinc-900 rounded-2xl mb-7 w-full">
+              <div className="inline-flex p-1 bg-zinc-900 rounded-2xl mb-7 w-full">
                 {[false, true].map((reg) => (
                   <button
                     key={String(reg)}
                     type="button"
                     onClick={() => setIsRegister(reg)}
                     className={`relative flex-1 py-2 rounded-xl text-[11px] font-black uppercase tracking-widest transition-all z-10 ${
-                      isRegister === reg ? "text-foreground" : "text-zinc-400"
+                      isRegister === reg ? "text-zinc-900" : "text-zinc-400"
                     }`}
                   >
                     {isRegister === reg && <span className={`absolute inset-0 rounded-xl ${tabBg}`} />}
@@ -274,7 +274,7 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
               </div>
 
               <div className="text-center mb-6">
-                <h2 className="text-[2rem] font-black tracking-tighter text-foreground">{t('auth.welcome')}</h2>
+                <h2 className="text-[2rem] font-black tracking-tighter text-white">{t('auth.welcome')}</h2>
                 <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-zinc-500 mt-0.5">
                   {isRegister ? t('auth.createAccount') : t('auth.accessAccount')}
                 </p>
@@ -289,7 +289,7 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
                       onFocus={() => setFocusedField("name")}
                       onBlur={() => setFocusedField(null)}
                       placeholder={t('auth.fullName')}
-                      className="w-full h-11 bg-white dark:bg-zinc-950 rounded-[10px] px-4 text-sm font-medium outline-none"
+                      className="w-full h-11 bg-zinc-900 rounded-[10px] px-4 text-sm font-medium outline-none text-white"
                     />
                   </GradientBorder>
                 )}
@@ -301,7 +301,7 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
                     onFocus={() => setFocusedField("email")}
                     onBlur={() => setFocusedField(null)}
                     placeholder={t('auth.email')}
-                    className="w-full h-11 bg-white dark:bg-zinc-950 rounded-[10px] px-4 text-sm font-medium outline-none"
+                    className="w-full h-11 bg-zinc-900 rounded-[10px] px-4 text-sm font-medium outline-none text-white"
                   />
                 </GradientBorder>
 
@@ -316,7 +316,7 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
                       onBlur={() => setFocusedField(null)}
                       placeholder={t('auth.password')}
                       autoComplete="new-password"
-                      className="w-full h-11 bg-white dark:bg-zinc-950 rounded-[10px] pl-4 pr-10 text-sm font-medium outline-none"
+                      className="w-full h-11 bg-zinc-900 rounded-[10px] pl-4 pr-10 text-sm font-medium outline-none text-white"
                     />
                   </GradientBorder>
                   <button
@@ -339,7 +339,7 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
                         onFocus={() => setFocusedField("confirmPassword")}
                         onBlur={() => setFocusedField(null)}
                         placeholder={t('auth.confirmPassword')}
-                        className="w-full h-11 bg-white dark:bg-zinc-950 rounded-[10px] pl-4 pr-10 text-sm font-medium outline-none"
+                        className="w-full h-11 bg-zinc-900 rounded-[10px] pl-4 pr-10 text-sm font-medium outline-none text-white"
                       />
                     </GradientBorder>
                     <button
@@ -359,7 +359,7 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
                         <button
                           type="button"
                           onClick={() => setCountryOpen(o => !o)}
-                          className="flex items-center gap-1.5 h-11 px-3 bg-white dark:bg-zinc-950 rounded-[10px] w-full min-w-[90px] text-xs font-bold text-zinc-600 dark:text-zinc-300"
+                          className="flex items-center gap-1.5 h-11 px-3 bg-zinc-900 rounded-[10px] w-full min-w-[90px] text-xs font-bold text-zinc-300"
                         >
                           <FlagImg iso={country.iso} size={20} />
                           <span className="text-[11px]">{country.code}</span>
@@ -373,7 +373,7 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
                             initial={{ opacity: 0, y: -6, scale: 0.97 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: -6, scale: 0.97 }}
-                            className="absolute top-[calc(100%+6px)] left-0 z-50 w-52 bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl border border-zinc-100 dark:border-zinc-800 overflow-hidden"
+                            className="absolute top-[calc(100%+6px)] left-0 z-50 w-52 bg-zinc-900 rounded-2xl shadow-2xl border border-zinc-800 overflow-hidden"
                           >
                             <div className="max-h-52 overflow-y-auto py-1">
                               {COUNTRIES.map(c => (
@@ -381,10 +381,10 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
                                   key={c.code}
                                   type="button"
                                   onClick={() => { setCountry(c); setCountryOpen(false) }}
-                                  className={`w-full flex items-center gap-2.5 px-3 py-2 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors text-left ${c.code === country.code ? "bg-purple-50 dark:bg-purple-900/20" : ""}`}
+                                  className={`w-full flex items-center gap-2.5 px-3 py-2 hover:bg-zinc-800 transition-colors text-left ${c.code === country.code ? "bg-purple-900/20" : ""}`}
                                 >
                                   <FlagImg iso={c.iso} size={22} />
-                                  <span className="text-xs font-bold text-foreground flex-1">{c.label}</span>
+                                  <span className="text-xs font-bold text-white flex-1">{c.label}</span>
                                   <span className="text-[10px] font-black text-zinc-400">{c.code}</span>
                                 </button>
                               ))}
@@ -402,7 +402,7 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
                           onFocus={() => setFocusedField("phone")}
                           onBlur={() => setFocusedField(null)}
                           placeholder={t('auth.phone')}
-                          className="w-full h-11 bg-white dark:bg-zinc-950 rounded-[10px] px-4 text-sm font-medium outline-none"
+                          className="w-full h-11 bg-zinc-900 rounded-[10px] px-4 text-sm font-medium outline-none text-white"
                         />
                       </GradientBorder>
                     </div>
@@ -434,16 +434,16 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
               </form>
 
               <div className="relative py-6">
-                <div className="absolute inset-0 flex items-center"><span className="w-full border-t border-zinc-100 dark:border-zinc-800" /></div>
+                <div className="absolute inset-0 flex items-center"><span className="w-full border-t border-zinc-800" /></div>
                 <div className="relative flex justify-center">
-                  <span className="bg-white dark:bg-zinc-950 px-4 text-[10px] font-black uppercase tracking-[0.15em] text-zinc-400">{t('auth.or')}</span>
+                  <span className="bg-[#0a0a0c] px-4 text-[10px] font-black uppercase tracking-[0.15em] text-zinc-400">{t('auth.or')}</span>
                 </div>
               </div>
 
               <button
                 type="button"
                 onClick={() => supabase.auth.signInWithOAuth({ provider: "google", options: { redirectTo: window.location.origin } })}
-                className="w-full h-11 rounded-xl border border-black/80 flex items-center justify-center gap-3 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-all text-xs font-black uppercase tracking-widest"
+                className="w-full h-11 rounded-xl bg-white text-zinc-900 border border-zinc-200 flex items-center justify-center gap-3 hover:bg-zinc-100 transition-all text-xs font-black uppercase tracking-widest"
               >
                 <Image src="/google.svg" alt="Google" width={16} height={16} />
                 {t('auth.continueWithGoogle')}

@@ -137,7 +137,7 @@ export default function Page() {
             boxShadow: '0 0 22px rgba(217,70,239,0.25), 0 0 44px rgba(124,58,237,0.15)',
           }}
         >
-          <header className="flex w-full items-center justify-between rounded-full bg-[#0a0a0c] px-4 h-12 transition-all">
+          <header className="flex w-full items-center justify-between rounded-full bg-white dark:bg-[#0a0a0c] px-4 h-12 transition-all">
 
             {/* Logo + brand name */}
             <div className="flex items-center gap-3 cursor-pointer shrink-0" onClick={() => setPublicTab('home')}>
@@ -146,25 +146,25 @@ export default function Page() {
                 className="rounded-[12px] p-[1.5px] shrink-0 transition-all duration-300 hover:opacity-90 shadow-[0_0_15px_rgba(217,70,239,0.2)]"
                 style={{ background: 'linear-gradient(135deg, #e11d48, #8b5cf6)' }}
               >
-                <div className="w-9 h-9 rounded-[10px] overflow-hidden bg-[#0a0a0c] relative flex items-center justify-center">
+                <div className="w-9 h-9 rounded-[10px] overflow-hidden bg-white dark:bg-[#0a0a0c] relative flex items-center justify-center">
                   <Image src="/logo-lemarj.jpg" alt="LEMARJ Logo" fill className="object-contain p-1" />
                 </div>
               </div>
-              <span className="font-black text-lg tracking-tighter text-white whitespace-nowrap hidden sm:block">
+              <span className="font-black text-lg tracking-tighter text-slate-900 dark:text-white whitespace-nowrap hidden sm:block">
                 LEMARJ
               </span>
             </div>
 
             {/* Right-side controls */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-4 md:gap-6">
               <LanguageToggle />
               <ModeToggle />
-              <div className="h-5 w-[1px] bg-white/10 mx-1" />
+              <div className="h-5 w-[1px] bg-slate-300 dark:bg-white/10 mx-1" />
 
               {/* LOGIN — Solid Blue border */}
               <button
                 onClick={() => setIsLoginOpen(true)}
-                className="flex items-center justify-center h-10 px-5 rounded-full bg-[#0a0a0c] border-[1.5px] border-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.25)] hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:bg-blue-600/10 text-[11px] font-black text-white uppercase tracking-widest transition-all"
+                className="flex items-center justify-center h-10 px-5 rounded-full bg-white dark:bg-[#0a0a0c] border-[1.5px] border-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.25)] hover:shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:bg-blue-50 dark:hover:bg-blue-600/10 text-[11px] font-black text-slate-900 dark:text-white uppercase tracking-widest transition-all"
               >
                 {t('layout.login')}
               </button>

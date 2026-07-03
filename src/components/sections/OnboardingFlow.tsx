@@ -80,19 +80,41 @@ export function OnboardingFlow() {
 
   const finishOnboarding = async () => {
     setIsSaving(true);
-    // Save onboarding data
-    await updateOnboardingState({
-      sector,
-      employees,
-      collaborators: collaborators.split(',').map(c => c.trim()).filter(Boolean),
-      clients_volume: clientsVolume,
-      core_solution: coreSolution
-    });
+    try {
+      // Save onboarding data
+      await updateOnboardingState({
+        sector,
+        employees,
+        collaborators: collaborators.split(',').map(c => c.trim()).filter(Boolean),
+        clients_volume: clientsVolume,
+        core_solution: coreSolution
+      });
 
-    // Mark as completed
-    if (profile?.id) {
-      await supabase.from('profiles').update({ onboarding_completed: true }).eq('id', profile.id);
-      await refreshProfile();
+      // Mark as completed
+      if (profile?.id) {
+        const { error } = await supabase
+          .from('profiles')
+          .update({ onboarding_completed: true })
+          .eq('id', profile.id);
+        
+        if (error) {
+          console.error("Error updating onboarding_completed:", error);
+          alert("Error al guardar: " + error.message);
+          return; // Do not proceed if it failed to save
+        }
+        
+        await refreshProfile();
+        
+        // As a fallback, if refreshProfile doesn't trigger a re-render for some reason, force reload
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      }
+    } catch (err: any) {
+      console.error("Unexpected error finishing onboarding:", err);
+      alert("Error inesperado: " + err.message);
+    } finally {
+      setIsSaving(false);
     }
   };
 
