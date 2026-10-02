@@ -66,7 +66,7 @@ export function DemoSection() {
   const [messages, setMessages] = useState<ChatMsg[]>([])
   const [showTyping, setShowTyping] = useState(false)
   const chatRef = useRef<HTMLDivElement>(null)
-  const bottomRef = useRef<HTMLDivElement>(null)
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
 
   const now = () => new Date().toLocaleTimeString('es', { hour: '2-digit', minute: '2-digit' })
 
@@ -159,7 +159,12 @@ export function DemoSection() {
 
   // Auto-scroll
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTo({
+        top: scrollContainerRef.current.scrollHeight,
+        behavior: 'smooth'
+      })
+    }
   }, [messages, showTyping])
 
   return (
@@ -265,7 +270,9 @@ export function DemoSection() {
             </div>
 
             {/* Chat Area */}
-            <div className="flex-1 px-3 py-2 overflow-y-auto flex flex-col gap-2 bg-[#0b141a]"
+            <div 
+              ref={scrollContainerRef}
+              className="flex-1 px-3 py-2 overflow-y-auto flex flex-col gap-2 bg-[#0b141a]"
               style={{
                 backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83-1.66 1.66-.83-.83.83-.83zM5.373 60l-.83-.83 1.66-1.66.83.83-.83.83zM42.3 35.842l2.302-2.302 1.623 1.624-2.302 2.301-1.623-1.623zM14.654 26.634l2.302-2.303 1.623 1.624-2.302 2.302-1.623-1.623z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E")`,
               }}
@@ -322,7 +329,6 @@ export function DemoSection() {
               {/* Typing indicator */}
               {showTyping && <TypingDots />}
 
-              <div ref={bottomRef} />
             </div>
 
             {/* Bottom Input Bar */}
