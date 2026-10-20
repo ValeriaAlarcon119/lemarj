@@ -120,7 +120,12 @@
     "submitBtn": "Solicitar Ingeniería AI",
     "whatsappBtn": "WhatsApp Directo",
     "slogan": "Impulsa tus ventas <br /> y mejora tu atención",
-    "copyright": "© 2026 LEMARJ en San Juan de Pasto, Colombia. <br className='sm:hidden' />Todo automatizado, todo seguro."
+    "copyright": "© 2026 LEMARJ en San Juan de Pasto, Colombia. <br className='sm:hidden' />Todo automatizado, todo seguro.",
+    "waIntro": "Hola LEMARJ, quiero solicitar Ingeniería AI para mi negocio.",
+    "waBusiness": "Negocio",
+    "waEmail": "Correo",
+    "errorBusiness": "Escribe el nombre de tu negocio",
+    "sent": "Abrimos WhatsApp con tus datos. Envíanos el mensaje y empezamos."
   },
   "pricing": {
     "badge": "Planes & Precios",

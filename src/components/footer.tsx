@@ -1,66 +1,100 @@
 "use client";
-import { WhatsAppIcon } from "./comparison-table"
+import { useState } from "react"
+import { ArrowRight, CheckCircle2 } from "lucide-react"
+import { WhatsAppIcon } from "@/components/BrandIcons"
 import { useLanguage } from "@/contexts/I18nContext"
+
+const WHATSAPP_NUMBER = "573017219288"
 
 export function Footer() {
   const { t } = useLanguage()
+  const [business, setBusiness] = useState("")
+  const [email, setEmail] = useState("")
+  const [error, setError] = useState("")
+  const [sent, setSent] = useState(false)
+
+  // El formulario abre WhatsApp con los datos ya escritos para que el lead llegue directo al chat.
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!business.trim()) return setError(t('footer.errorBusiness'))
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) return setError(t('auth.errorInvalidEmail'))
+    setError("")
+    const text = [
+      t('footer.waIntro'),
+      `${t('footer.waBusiness')}: ${business.trim()}`,
+      `${t('footer.waEmail')}: ${email.trim()}`,
+    ].join("\n")
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer")
+    setSent(true)
+  }
+
+  const inputClass = "w-full bg-background/70 border border-foreground/10 rounded-xl px-4 h-12 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-indigo-400/60 focus:ring-4 focus:ring-indigo-500/10 transition-all font-medium text-sm"
+
   return (
     <>
-      {/* SECCIÓN FORMULARIO / DEMO - ESTILO SLIM & PRO */}
-      <section id="contacto" className="py-20 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="bg-white/40 dark:bg-black/40 backdrop-blur-2xl border border-white/20 dark:border-white/5 rounded-[3.5rem] p-8 sm:p-14 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] flex flex-col lg:flex-row items-center justify-between gap-12 group">
-          
-          {/* Fondo animado sutil - Más vibrante */}
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-500/10 dark:bg-indigo-500/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none group-hover:scale-110 transition-transform duration-1000" />
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 dark:bg-cyan-500/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none group-hover:scale-110 transition-transform duration-1000" />
-          
-          <div className="flex-1 space-y-6 relative z-10 text-center lg:text-left">
-            <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black tracking-tight leading-[1.1] text-foreground">
+      {/* SECCIÓN FORMULARIO / DEMO */}
+      <section id="contacto" className="py-24 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative scroll-mt-24">
+        <div className="relative overflow-hidden rounded-[2rem] bg-zinc-950 text-white p-8 sm:p-14 flex flex-col lg:flex-row items-center justify-between gap-12 border-glow">
+          <div className="absolute inset-0 hero-dots opacity-50 pointer-events-none" />
+          <div className="absolute -top-40 -right-32 w-[520px] h-[520px] bg-indigo-600/35 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute -bottom-40 -left-32 w-[460px] h-[460px] bg-cyan-500/20 blur-[120px] rounded-full pointer-events-none" />
+
+          <div className="flex-1 space-y-5 relative z-10 text-center lg:text-left">
+            <h2 className="text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold tracking-[-0.03em] leading-[1.05]">
               {t('footer.title1')} <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 drop-shadow-sm">
-                {t('footer.title2')}
-              </span>
+              <span className="text-gradient-brand">{t('footer.title2')}</span>
             </h2>
-            <p className="text-lg text-muted-foreground/70 max-w-sm mx-auto lg:mx-0 font-medium leading-relaxed">
+            <p className="text-lg text-white/65 max-w-sm mx-auto lg:mx-0 font-medium leading-relaxed">
               {t('footer.subtitle')}
             </p>
           </div>
 
           <div className="flex-1 w-full max-w-md relative z-10">
-            <div className="bg-white/40 dark:bg-white/5 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-[2.5rem] p-6 sm:p-8 space-y-4 shadow-sm relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-cyan-500/5 pointer-events-none" />
-              <input 
-                type="text" 
-                placeholder={t('footer.businessName')} 
-                className="w-full bg-white/60 dark:bg-black/20 border border-border/30 rounded-2xl px-5 h-14 text-foreground placeholder-muted-foreground/40 focus:outline-none focus:ring-2 ring-indigo-500/30 transition-all font-bold relative z-10 text-sm"
+            <form onSubmit={handleSubmit} noValidate className="bg-white dark:bg-zinc-900/80 text-foreground rounded-2xl p-6 sm:p-7 space-y-3 shadow-2xl shadow-black/40 ring-1 ring-white/10">
+              <input
+                type="text"
+                value={business}
+                onChange={(e) => setBusiness(e.target.value)}
+                placeholder={t('footer.businessName')}
+                aria-label={t('footer.businessName')}
+                className={inputClass}
               />
-              <input 
-                type="email" 
-                placeholder={t('footer.emailPlaceholder')} 
-                className="w-full bg-white/60 dark:bg-black/20 border border-border/30 rounded-2xl px-5 h-14 text-foreground placeholder-muted-foreground/40 focus:outline-none focus:ring-2 ring-indigo-500/30 transition-all font-bold relative z-10 text-sm"
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={t('footer.emailPlaceholder')}
+                aria-label={t('footer.emailPlaceholder')}
+                className={inputClass}
               />
-              <button className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:scale-[1.01] active:scale-95 text-white font-black uppercase tracking-widest text-[10px] h-14 rounded-2xl shadow-xl shadow-indigo-500/10 flex items-center justify-center gap-3 group relative z-10 transition-all">
+              {error && <p className="text-xs font-semibold text-rose-500 px-1" role="alert">{error}</p>}
+              {sent && !error && (
+                <p className="flex items-start gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400 px-1" role="status">
+                  <CheckCircle2 className="w-4 h-4 shrink-0" /> {t('footer.sent')}
+                </p>
+              )}
+              <button type="submit" className="group w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 text-white font-bold text-sm h-12 rounded-xl shadow-[0_12px_30px_-10px_rgba(99,102,241,0.7)] hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 transition-all">
                 {t('footer.submitBtn')}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
-              
-              <div className="relative flex items-center py-1 z-10">
-                <div className="flex-grow border-t border-border/20"></div>
-                <span className="flex-shrink-0 mx-4 text-muted-foreground/30 text-[9px] font-black uppercase tracking-[0.3em]">O</span>
-                <div className="flex-grow border-t border-border/20"></div>
+
+              <div className="relative flex items-center py-1">
+                <div className="flex-grow border-t border-foreground/10" />
+                <span className="flex-shrink-0 mx-4 text-muted-foreground/60 text-[10px] font-semibold uppercase tracking-[0.25em]">O</span>
+                <div className="flex-grow border-t border-foreground/10" />
               </div>
 
-              <a 
-                href="https://wa.me/573017219288?text=Hola%20LEMARJ!%20quiero%20una%20demo%20para%20mi%20negocio" 
-                target="_blank" 
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20LEMARJ!%20quiero%20una%20demo%20para%20mi%20negocio`}
+                target="_blank"
                 rel="noreferrer"
-                className="w-full bg-emerald-500/5 hover:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-bold h-12 rounded-xl transition-all flex items-center justify-center gap-2 text-sm"
+                className="w-full bg-emerald-500/10 hover:bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 ring-1 ring-emerald-500/25 font-bold h-12 rounded-xl transition-all flex items-center justify-center gap-2 text-sm"
               >
-                <WhatsAppIcon className="w-4 h-4" />
+                <WhatsAppIcon size={16} />
                 {t('footer.whatsappBtn')}
               </a>
-            </div>
+            </form>
           </div>
-
         </div>
       </section>
 

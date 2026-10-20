@@ -1,6 +1,7 @@
 "use client";
 import { CheckCircle2, MessageSquare, ClipboardList, ImagePlus, ArrowLeft, UserCircle2, Zap } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
+import { motion } from "framer-motion"
 import { useLanguage } from "@/contexts/I18nContext"
 
 // ── Types ──────────────────────────────────────────────────────────────────────
@@ -168,80 +169,105 @@ export function DemoSection() {
   }, [messages, showTyping])
 
   return (
-    <section id="demo" className="py-20 relative overflow-hidden bg-transparent">
+    <section id="demo" className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 scroll-mt-24">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-indigo-500/5 blur-[100px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[520px] h-[520px] bg-gradient-to-br from-indigo-500/15 via-purple-400/10 to-cyan-400/15 blur-[110px] rounded-full pointer-events-none -z-10" />
 
-      <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
         {/* ── TEXT SIDE ── */}
         <div className="space-y-10">
-          <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-[11px] font-black uppercase tracking-[0.15em] px-3 py-1.5 rounded-full">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-4"
+          >
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-semibold tracking-wide bg-indigo-500/10 text-indigo-600 dark:text-indigo-300 border border-indigo-500/20">
+              <span className="relative flex w-1.5 h-1.5">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+                <span className="relative inline-flex w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              </span>
               <Zap className="w-3.5 h-3.5" />
               Demo en vivo — Interacción real
-            </div>
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight pb-2">
+            </span>
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] leading-[1.1]">
               {t('demoSection.title1')} <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c4b5fd] to-[#93c5fd]">
+              <span className="text-gradient-brand">
                 {t('demoSection.title2')}
               </span>
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-lg text-muted-foreground font-medium leading-relaxed">
               Mira cómo una IA entrenada con el ADN de tu negocio atiende, recomienda y cierra ventas de forma completamente autónoma.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="space-y-7">
+          <div className="space-y-3">
             <FeatureRow
-              icon={<MessageSquare className="w-6 h-6 text-indigo-400" />}
+              icon={<MessageSquare className="w-5 h-5" />}
+              tint="bg-indigo-500/10 text-indigo-600 dark:text-indigo-300 ring-indigo-500/20"
               title={t('demoSection.f1Title')}
               desc={t('demoSection.f1Desc')}
+              index={0}
             />
             <FeatureRow
-              icon={<ClipboardList className="w-6 h-6 text-blue-400" />}
+              icon={<ClipboardList className="w-5 h-5" />}
+              tint="bg-cyan-500/10 text-cyan-600 dark:text-cyan-300 ring-cyan-500/20"
               title={t('demoSection.f2Title')}
               desc={t('demoSection.f2Desc')}
+              index={1}
             />
             <FeatureRow
-              icon={<CheckCircle2 className="w-6 h-6 text-emerald-400" />}
+              icon={<CheckCircle2 className="w-5 h-5" />}
+              tint="bg-emerald-500/10 text-emerald-600 dark:text-emerald-300 ring-emerald-500/20"
               title={t('demoSection.f3Title')}
               desc={t('demoSection.f3Desc')}
+              index={2}
             />
             <FeatureRow
-              icon={<ImagePlus className="w-6 h-6 text-purple-400" />}
+              icon={<ImagePlus className="w-5 h-5" />}
+              tint="bg-purple-500/10 text-purple-600 dark:text-purple-300 ring-purple-500/20"
               title={t('demoSection.f4Title')}
               desc={t('demoSection.f4Desc')}
+              index={3}
             />
           </div>
 
           {/* Stats strip */}
-          <div className="grid grid-cols-3 gap-4 pt-2">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="grid grid-cols-3 gap-3"
+          >
             {[
               { value: '<2s', label: 'Tiempo de respuesta' },
               { value: '24/7', label: 'Disponibilidad total' },
               { value: '98%', label: 'Satisfacción cliente' },
             ].map(s => (
-              <div key={s.label} className="text-center p-3 rounded-2xl bg-white/5 border border-white/10">
-                <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">{s.value}</div>
-                <div className="text-[11px] text-muted-foreground mt-1 leading-tight">{s.label}</div>
+              <div key={s.label} className="card-premium text-center p-4 rounded-2xl hover:-translate-y-1">
+                <div className="text-2xl font-extrabold tracking-tight text-gradient-brand">{s.value}</div>
+                <div className="text-[11px] text-muted-foreground font-medium mt-1 leading-tight">{s.label}</div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
         {/* ── PHONE SIDE ── */}
         <div className="relative mx-auto w-full max-w-[340px]">
 
           {/* Glow under phone */}
-          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[220px] h-[60px] bg-indigo-500/20 blur-2xl rounded-full pointer-events-none" />
+          <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[260px] h-[80px] bg-gradient-to-r from-indigo-500/30 via-purple-400/20 to-cyan-400/30 blur-2xl rounded-full pointer-events-none" />
+          <div className="absolute inset-x-0 -inset-y-10 sm:-inset-10 bg-gradient-to-br from-indigo-500/15 to-cyan-400/10 blur-3xl rounded-full pointer-events-none" />
 
           {/* Phone frame */}
           <div
             ref={chatRef}
             id="chat-container"
             className="relative bg-[#0b141a] border-[8px] border-[#111b21] rounded-[2.5rem] h-[660px] overflow-hidden shadow-2xl flex flex-col font-sans"
-            style={{ boxShadow: '0 0 0 1px rgba(255,255,255,0.06), 0 25px 60px rgba(0,0,0,0.7)' }}
+            style={{ boxShadow: '0 0 0 1px rgba(255,255,255,0.06), 0 30px 70px -20px rgba(15,23,42,0.55), 0 40px 90px -30px rgba(99,102,241,0.45)' }}
           >
             {/* Status bar */}
             <div className="bg-[#111b21] px-5 pt-2 pb-1 flex items-center justify-between text-[10px] text-[#8696a0] shrink-0">
@@ -350,16 +376,22 @@ export function DemoSection() {
   )
 }
 
-function FeatureRow({ icon, title, desc }: { icon: React.ReactNode, title: string, desc: string }) {
+function FeatureRow({ icon, tint, title, desc, index }: { icon: React.ReactNode, tint: string, title: string, desc: string, index: number }) {
   return (
-    <div className="flex items-start gap-4 group">
-      <div className="shrink-0 w-12 h-12 rounded-2xl bg-background border border-border shadow-sm flex items-center justify-center group-hover:scale-105 transition-transform">
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.07 }}
+      className="group flex items-start gap-4 rounded-2xl p-3 -mx-3 hover:bg-foreground/[0.03] transition-colors"
+    >
+      <div className={`shrink-0 w-10 h-10 rounded-xl ring-1 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 ${tint}`}>
         {icon}
       </div>
       <div>
-        <h3 className="text-lg font-bold">{title}</h3>
+        <h3 className="text-lg font-bold tracking-tight">{title}</h3>
         <p className="text-muted-foreground mt-0.5 text-sm leading-relaxed">{desc}</p>
       </div>
-    </div>
+    </motion.div>
   )
 }

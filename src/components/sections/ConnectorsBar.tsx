@@ -6,23 +6,24 @@ import {
 } from "@/components/BrandIcons"
 import { useLanguage } from "@/contexts/I18nContext"
 
+// Color oficial de cada marca: tiñe el brillo y el borde al pasar el cursor.
 const LOGOS = [
-  { name: "WhatsApp", Icon: WhatsAppIcon },
-  { name: "Meta", Icon: MetaIcon },
-  { name: "TikTok", Icon: TikTokIcon, className: "text-black dark:text-white" },
-  { name: "Wompi", Icon: WompiIcon },
-  { name: "Stripe", Icon: StripeIcon },
-  { name: "Gmail", Icon: GmailIcon },
-  { name: "Sheets", Icon: SheetsIcon },
-  { name: "Drive", Icon: DriveIcon },
-  { name: "Calendar", Icon: CalendarIcon },
-  { name: "Notion", Icon: NotionIcon },
-  { name: "HubSpot", Icon: HubSpotIcon },
-  { name: "LinkedIn", Icon: LinkedInIcon },
-  { name: "Canva", Icon: CanvaIcon },
-  { name: "OpenAI", Icon: OpenAIIcon, className: "text-black dark:text-white" },
-  { name: "Supabase", Icon: SupabaseIcon },
-  { name: "GitHub", Icon: GitHubIcon, className: "text-black dark:text-white" },
+  { name: "WhatsApp", Icon: WhatsAppIcon, color: "#25D366" },
+  { name: "Meta", Icon: MetaIcon, color: "#0081FB" },
+  { name: "TikTok", Icon: TikTokIcon, color: "#FE2C55", className: "text-black" },
+  { name: "Wompi", Icon: WompiIcon, color: "#6A1B9A" },
+  { name: "Stripe", Icon: StripeIcon, color: "#635BFF" },
+  { name: "Gmail", Icon: GmailIcon, color: "#EA4335" },
+  { name: "Sheets", Icon: SheetsIcon, color: "#0F9D58" },
+  { name: "Drive", Icon: DriveIcon, color: "#FBBC05" },
+  { name: "Calendar", Icon: CalendarIcon, color: "#4285F4" },
+  { name: "Notion", Icon: NotionIcon, color: "#9CA3AF" },
+  { name: "HubSpot", Icon: HubSpotIcon, color: "#FF7A59" },
+  { name: "LinkedIn", Icon: LinkedInIcon, color: "#0A66C2" },
+  { name: "Canva", Icon: CanvaIcon, color: "#00C4CC" },
+  { name: "OpenAI", Icon: OpenAIIcon, color: "#10A37F" },
+  { name: "Supabase", Icon: SupabaseIcon, color: "#3ECF8E" },
+  { name: "GitHub", Icon: GitHubIcon, color: "#8B5CF6" },
 ]
 
 // Resumen del ecosistema en el Home; el catálogo completo vive en la vista "Integraciones".
@@ -49,13 +50,16 @@ export function ConnectorsBar({ onOpen }: { onOpen: () => void }) {
           <div className="flex w-max animate-slow-marquee hover:[animation-play-state:paused]">
             {[0, 1].map((dup) => (
               <div key={dup} className="flex shrink-0 gap-3 pr-3" aria-hidden={dup === 1}>
-                {LOGOS.map(({ name, Icon, className }) => (
+                {LOGOS.map(({ name, Icon, className, color }) => (
                   <div
                     key={name}
-                    className="group flex items-center gap-2.5 h-12 px-4 rounded-xl bg-foreground/[0.03] ring-1 ring-foreground/[0.07] grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:ring-indigo-400/40 transition-all duration-300"
+                    style={{ "--brand": color } as React.CSSProperties}
+                    className="group flex items-center gap-3 h-14 pl-2 pr-5 rounded-2xl bg-foreground/[0.04] ring-1 ring-foreground/[0.08] hover:ring-[color:var(--brand)] hover:shadow-[0_8px_28px_-8px_var(--brand)] hover:-translate-y-0.5 transition-all duration-300"
                   >
-                    <Icon size={20} className={className} />
-                    <span className="text-sm font-semibold text-foreground/80">{name}</span>
+                    <span className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-sm ring-1 ring-black/5 group-hover:scale-105 transition-transform">
+                      <Icon size={22} className={className} />
+                    </span>
+                    <span className="text-sm font-semibold text-foreground">{name}</span>
                   </div>
                 ))}
               </div>

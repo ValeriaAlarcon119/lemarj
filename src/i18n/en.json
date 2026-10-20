@@ -120,7 +120,12 @@
     "submitBtn": "Request AI Engineering",
     "whatsappBtn": "Direct WhatsApp",
     "slogan": "Boost your sales <br /> and improve your service",
-    "copyright": "© 2026 LEMARJ in San Juan de Pasto, Colombia. <br className='sm:hidden' />Everything automated, everything secure."
+    "copyright": "© 2026 LEMARJ in San Juan de Pasto, Colombia. <br className='sm:hidden' />Everything automated, everything secure.",
+    "waIntro": "Hi LEMARJ, I'd like to request AI Engineering for my business.",
+    "waBusiness": "Business",
+    "waEmail": "Email",
+    "errorBusiness": "Enter your business name",
+    "sent": "We opened WhatsApp with your details. Send us the message and we'll get started."
   },
   "pricing": {
     "badge": "Plans & Pricing",

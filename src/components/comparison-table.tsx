@@ -1,5 +1,6 @@
 "use client";
-import { Check, X, Frown, Zap } from "lucide-react"
+import { motion } from "framer-motion"
+import { Check, X, Frown, Zap, Scale } from "lucide-react"
 import { useLanguage } from "@/contexts/I18nContext"
 
 export const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -18,59 +19,79 @@ export const WhatsAppIcon = ({ className }: { className?: string }) => (
 export function ComparisonTable() {
   const { t } = useLanguage()
   return (
-    <section className="py-20 relative w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center space-y-6 mb-16 relative z-10">
-        <h2 
-          className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight pb-2 text-[#0a0a0a] dark:text-white leading-[1.1]"
-          dangerouslySetInnerHTML={{
-            __html: `${t('comparisonTable.title1')} <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-400 to-cyan-400">${t('comparisonTable.title2')}</span>`
-          }}
-        />
-      </div>
+    <section className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 scroll-mt-24 relative">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-14 space-y-4 relative z-10"
+      >
+        <span aria-hidden="true" className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-300 border border-indigo-500/20">
+          <Scale className="w-4 h-4" />
+        </span>
+        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-[-0.03em] leading-[1.1]">
+          {t('comparisonTable.title1')}
+          <span className="text-gradient-brand">{t('comparisonTable.title2')}</span>
+        </h2>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-        
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 relative z-10 items-stretch">
+
         {/* ASESOR HUMANO */}
-        <div className="rounded-[2.5rem] bg-white/40 dark:bg-zinc-900/30 backdrop-blur-md border border-red-500/10 dark:border-red-500/5 p-8 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] flex flex-col gap-6 relative overflow-hidden group">
-          <div className="absolute top-0 right-0 -m-10 w-40 h-40 bg-red-500/5 blur-[50px] pointer-events-none transition-all duration-500 group-hover:bg-red-500/10" />
-          <div className="flex items-center gap-4 border-b border-red-500/10 pb-6 relative z-10 w-full">
-            <div className="w-12 h-12 rounded-2xl bg-red-50 dark:bg-red-950/30 flex items-center justify-center shrink-0">
-              <Frown className="w-6 h-6 text-red-500" />
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="card-premium group rounded-3xl p-8 sm:p-10 flex flex-col gap-6 relative overflow-hidden hover:-translate-y-1"
+        >
+          <div className="absolute -top-24 -right-24 w-56 h-56 rounded-full bg-rose-500/10 blur-3xl pointer-events-none" />
+          <div className="flex items-center gap-4 border-b border-foreground/10 pb-6 relative z-10 w-full">
+            <div className="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-600 dark:text-rose-300 ring-1 ring-rose-500/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-500">
+              <Frown className="w-5 h-5" />
             </div>
-            <h3 className="text-2xl font-bold text-[#0a0a0a] dark:text-red-400">
+            <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">
               {t('comparisonTable.humanTitle')}
             </h3>
           </div>
-          <div className="space-y-6 flex-1 pt-2 relative z-10">
+          <div className="space-y-5 flex-1 relative z-10">
             <RowBad text={t('comparisonTable.human1')} />
             <RowBad text={t('comparisonTable.human2')} />
             <RowBad text={t('comparisonTable.human3')} />
             <RowBad text={t('comparisonTable.human4')} />
             <RowBad text={t('comparisonTable.human5')} />
           </div>
-        </div>
+        </motion.div>
 
         {/* LEMARJ IA */}
-        <div className="rounded-[2.5rem] bg-white/70 dark:bg-zinc-900/60 backdrop-blur-xl border border-emerald-400/60 dark:border-emerald-500/60 ring-1 ring-emerald-400/40 dark:ring-emerald-500/40 p-8 sm:p-10 shadow-[0_0_30px_rgba(16,185,129,0.15)] dark:shadow-[0_0_35px_rgba(16,185,129,0.15)] flex flex-col gap-6 relative overflow-hidden group transition-all duration-500 hover:shadow-[0_0_40px_rgba(16,185,129,0.3)]">
-           <div className="absolute top-0 left-0 -m-10 w-60 h-60 bg-emerald-500/10 blur-[60px] pointer-events-none transition-all duration-500 group-hover:bg-emerald-500/20" />
-           <div className="absolute bottom-0 right-0 -m-10 w-60 h-60 bg-indigo-500/10 blur-[60px] pointer-events-none transition-all duration-500 group-hover:bg-indigo-500/20" />
-           
-          <div className="flex items-center gap-4 border-b border-emerald-500/20 pb-6 relative z-10 w-full">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 dark:bg-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.4)] flex items-center justify-center shrink-0">
-              <Zap className="w-6 h-6 text-emerald-600 dark:text-emerald-400 fill-emerald-600 dark:fill-emerald-400 animate-pulse" />
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="border-glow rounded-3xl p-8 sm:p-10 bg-zinc-950 text-white flex flex-col gap-6 relative overflow-hidden hover:-translate-y-1 transition-transform duration-500"
+        >
+          <div className="absolute inset-0 hero-dots opacity-40 pointer-events-none" />
+          <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-indigo-600/40 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-28 -right-20 w-64 h-64 rounded-full bg-cyan-500/20 blur-3xl pointer-events-none" />
+
+          <div className="flex items-center gap-4 border-b border-white/10 pb-6 relative z-10 w-full">
+            <div className="w-10 h-10 rounded-xl bg-white/10 ring-1 ring-white/15 text-cyan-300 flex items-center justify-center shrink-0">
+              <Zap className="w-5 h-5" />
             </div>
-            <h3 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-cyan-600 dark:from-emerald-400 dark:to-cyan-400">
+            <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-gradient-brand">
               {t('comparisonTable.aiTitle')}
             </h3>
           </div>
-          <div className="space-y-6 flex-1 pt-2 relative z-10">
+          <div className="space-y-5 flex-1 relative z-10">
             <RowGood text={t('comparisonTable.ai1')} />
             <RowGood text={t('comparisonTable.ai2')} />
             <RowGood text={t('comparisonTable.ai3')} />
             <RowGood text={t('comparisonTable.ai4')} />
             <RowGood text={t('comparisonTable.ai5')} />
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>
@@ -79,8 +100,10 @@ export function ComparisonTable() {
 
 function RowBad({ text }: { text: string }) {
   return (
-    <div className="flex items-start gap-4 text-muted-foreground text-[15px] sm:text-base font-medium">
-      <div className="bg-red-500/10 rounded-full p-1.5 shrink-0 mt-0.5"><X className="w-4 h-4 text-red-500 stroke-[3]" /></div>
+    <div className="flex items-start gap-3.5 text-muted-foreground text-[15px] sm:text-base font-medium">
+      <span className="w-6 h-6 rounded-lg bg-rose-500/10 ring-1 ring-rose-500/20 flex items-center justify-center shrink-0 mt-0.5 text-rose-600 dark:text-rose-300">
+        <X className="w-3.5 h-3.5 stroke-[2.5]" />
+      </span>
       <span className="leading-snug pt-0.5">{text}</span>
     </div>
   )
@@ -88,10 +111,10 @@ function RowBad({ text }: { text: string }) {
 
 function RowGood({ text }: { text: string }) {
   return (
-    <div className="flex items-start gap-4 text-foreground text-[15px] sm:text-base font-medium">
-      <div className="bg-emerald-500/10 dark:bg-emerald-500/20 rounded-full p-1.5 shadow-[0_0_10px_rgba(16,185,129,0.2)] shrink-0 mt-0.5">
-        <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400 stroke-[3]" />
-      </div>
+    <div className="flex items-start gap-3.5 text-white/90 text-[15px] sm:text-base font-medium">
+      <span className="w-6 h-6 rounded-lg bg-emerald-400/15 ring-1 ring-emerald-400/30 flex items-center justify-center shrink-0 mt-0.5 text-emerald-300">
+        <Check className="w-3.5 h-3.5 stroke-[2.5]" />
+      </span>
       <span className="leading-snug pt-0.5">{text}</span>
     </div>
   )
