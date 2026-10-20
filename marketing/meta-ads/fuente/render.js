@@ -17,7 +17,7 @@ const NAMES = { A: 'respuesta-2s', B: 'filtra-posibles-ventas', C: 'cero-perdida
   for (const c of cArg.split(',')) for (const f of fArg.split(',')) {
     const page = await browser.newPage();
     await page.setViewport({ width: 1080, height: H[f], deviceScaleFactor: 1 });
-    const url = 'file:///' + path.join(adsDir, 'ads.html').replace(/\\/g, '/') + `?c=${c}&f=${f}` + (mode === 'image' ? '&static=1' : '');
+    const url = 'file:///' + path.resolve(adsDir, 'ads.html').replace(/\\/g, '/') + `?c=${c}&f=${f}` + (mode === 'image' ? '&static=1' : '');
     await page.goto(url, { waitUntil: 'networkidle0' });
     await page.evaluate(() => window.ready);
     const stage = await page.$('#stage');
