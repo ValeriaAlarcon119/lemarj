@@ -630,7 +630,30 @@
     "v0Desc": "The customer writes and the AI answers in under 2 seconds.",
     "v1Title": "Lead handling and closing",
     "v1Desc": "How it profiles the customer, recommends and confirms the order professionally.",
-    "placeholder": "Video coming soon"
+    "placeholder": "Video coming soon",
+    "scenes": {
+      "client": "Customer",
+      "ai": "LEMARJ AI",
+      "catalog": "Your catalog",
+      "question": "Do you have a catalog?",
+      "pdf": "Catalog.pdf",
+      "prices": "Updated prices",
+      "time": "< 2 s",
+      "route": "Lead journey",
+      "n0": "New lead",
+      "n0s": "WhatsApp",
+      "n1": "Profiles the customer",
+      "n1s": "Strategic questions",
+      "n2": "Potential sale",
+      "n2s": "Filters out the curious",
+      "curious": "Browser",
+      "n3": "Recommends",
+      "n3s": "Based on your catalog",
+      "n4": "Confirms the order",
+      "n4s": "Contact details",
+      "n5": "Payment",
+      "n5s": "Nequi · Daviplata · Bancolombia"
+    }
   },
   "connectorsBar": {
     "cta": "See integrations"

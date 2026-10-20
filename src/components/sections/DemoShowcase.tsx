@@ -2,10 +2,11 @@
 import { motion } from "framer-motion"
 import { Play, Zap, Handshake } from "lucide-react"
 import { useLanguage } from "@/contexts/I18nContext"
+import { RealtimeScene, ClosingScene } from "./DemoScenes"
 
-// Rutas de los videos de demostración. Sube los archivos a /public/demos/
+// Rutas de videos grabados (opcional). Sube los archivos a /public/demos/
 // y escribe aquí la ruta (ej. "/demos/respuesta-tiempo-real.mp4").
-// Mientras estén vacías se muestra el contenedor listo con "Video próximamente".
+// Mientras estén vacías se muestran las escenas animadas de DemoScenes.
 export const DEMO_MEDIA = {
   realtime: { src: "", poster: "" },
   closing: { src: "", poster: "" },
@@ -50,7 +51,7 @@ export function DemoShowcase() {
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/80" />
                 <div className="ml-3 flex-1 max-w-xs h-5 rounded-md bg-white/5 ring-1 ring-white/10 text-[10px] text-white/40 flex items-center px-2 font-mono">lemarj.com</div>
               </div>
-              <VideoSlot media={DEMO_MEDIA.realtime} label={t("demoShowcase.placeholder")} aspect="aspect-video" />
+              <VideoSlot media={DEMO_MEDIA.realtime} aspect="aspect-video" scene={<RealtimeScene />} />
             </div>
           </div>
           <Caption icon={<Zap className="w-4 h-4" />} title={t("demoShowcase.v0Title")} desc={t("demoShowcase.v0Desc")} />
@@ -69,7 +70,7 @@ export function DemoShowcase() {
             <div className="relative rounded-[2.8rem] p-2.5 bg-zinc-900 ring-1 ring-white/15 shadow-2xl">
               <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-6 rounded-full bg-black z-10" />
               <div className="rounded-[2.2rem] overflow-hidden bg-zinc-950">
-                <VideoSlot media={DEMO_MEDIA.closing} label={t("demoShowcase.placeholder")} aspect="aspect-[9/19]" />
+                <VideoSlot media={DEMO_MEDIA.closing} aspect="aspect-[9/19]" scene={<ClosingScene />} />
               </div>
             </div>
           </div>
@@ -80,7 +81,7 @@ export function DemoShowcase() {
   )
 }
 
-function VideoSlot({ media, label, aspect }: { media: { src: string; poster: string }; label: string; aspect: string }) {
+function VideoSlot({ media, aspect, scene }: { media: { src: string; poster: string }; aspect: string; scene: React.ReactNode }) {
   if (media.src) {
     return (
       <video
@@ -96,18 +97,9 @@ function VideoSlot({ media, label, aspect }: { media: { src: string; poster: str
     )
   }
   return (
-    <div className={`relative w-full ${aspect} flex items-center justify-center overflow-hidden`}>
-      <div className="absolute inset-0 hero-dots opacity-70" />
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/25 via-transparent to-cyan-500/20" />
-      <div className="relative flex flex-col items-center gap-3">
-        <div className="relative">
-          <span className="absolute inset-0 rounded-full bg-white/20 animate-ping" />
-          <div className="relative w-16 h-16 rounded-full bg-white/10 backdrop-blur ring-1 ring-white/30 flex items-center justify-center">
-            <Play className="w-6 h-6 text-white translate-x-0.5" fill="currentColor" />
-          </div>
-        </div>
-        <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/60">{label}</span>
-      </div>
+    <div className={`relative w-full ${aspect} overflow-hidden bg-[#0b0b12]`}>
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/15 via-transparent to-cyan-500/10" />
+      {scene}
     </div>
   )
 }

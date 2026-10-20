@@ -630,7 +630,30 @@
     "v0Desc": "El cliente escribe y la IA responde en menos de 2 segundos.",
     "v1Title": "Atención y cierre de leads",
     "v1Desc": "Cómo perfila al cliente, recomienda y confirma el pedido de forma profesional.",
-    "placeholder": "Video próximamente"
+    "placeholder": "Video próximamente",
+    "scenes": {
+      "client": "Cliente",
+      "ai": "IA LEMARJ",
+      "catalog": "Tu catálogo",
+      "question": "¿Tienen catálogo?",
+      "pdf": "Catálogo.pdf",
+      "prices": "Precios actualizados",
+      "time": "< 2 s",
+      "route": "Recorrido del lead",
+      "n0": "Nuevo lead",
+      "n0s": "WhatsApp",
+      "n1": "Perfila al cliente",
+      "n1s": "Preguntas estratégicas",
+      "n2": "Posible venta",
+      "n2s": "Filtra a los curiosos",
+      "curious": "Curioso",
+      "n3": "Recomienda",
+      "n3s": "Según tu catálogo",
+      "n4": "Confirma el pedido",
+      "n4s": "Datos de contacto",
+      "n5": "Pago",
+      "n5s": "Nequi · Daviplata · Bancolombia"
+    }
   },
   "connectorsBar": {
     "cta": "Ver integraciones"
