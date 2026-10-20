@@ -8,7 +8,9 @@ import {
   Sparkles,
   Search,
   MessageCircle,
-  Menu
+  Menu,
+  Newspaper,
+  LayoutTemplate
 } from "lucide-react"
 
 interface BottomNavProps {
@@ -28,9 +30,11 @@ export function BottomNav({ activeTab, onTabChange, isPublic }: BottomNavProps) 
   ]
 
   const publicItems = [
-    { id: 'home', icon: <LayoutDashboard className="w-5 h-5" />, labelKey: 'sidebar.home' },
-    { id: 'pilares', icon: <Sparkles className="w-5 h-5" />, labelKey: 'sidebar.engineering' },
-    { id: 'ecosystem', icon: <Plug className="w-5 h-5" />, labelKey: 'sidebar.ecosystem' },
+    { id: 'home', icon: <LayoutDashboard className="w-5 h-5" />, labelKey: 'sidebar.home', hash: '' },
+    { id: 'news', icon: <Newspaper className="w-5 h-5" />, labelKey: 'sidebar.news', hash: '#noticias' },
+    { id: 'automations', icon: <Sparkles className="w-5 h-5" />, labelKey: 'sidebar.automations', hash: '#automatizaciones' },
+    { id: 'workspaces', icon: <LayoutTemplate className="w-5 h-5" />, labelKey: 'sidebar.workspaces', hash: '#workspaces' },
+    { id: 'integrations', icon: <Plug className="w-5 h-5" />, labelKey: 'sidebar.integrations', hash: '#integraciones' },
   ]
 
   const items = isPublic ? publicItems : clientItems
@@ -46,11 +50,7 @@ export function BottomNav({ activeTab, onTabChange, isPublic }: BottomNavProps) 
               key={item.id}
               onClick={() => {
                 if (isPublic) {
-                   if(item.id === 'home') {
-                      window.location.hash = ''
-                   } else {
-                      window.location.hash = '#' + item.id
-                   }
+                  window.location.hash = ('hash' in item && typeof item.hash === 'string') ? item.hash : ''
                 }
                 onTabChange(item.id)
               }}
@@ -59,7 +59,7 @@ export function BottomNav({ activeTab, onTabChange, isPublic }: BottomNavProps) 
               }`}
             >
               {item.icon}
-              <span className="text-[10px] font-bold">{t(item.labelKey)}</span>
+              <span className="text-[10px] font-bold text-center leading-tight line-clamp-2 px-0.5">{t(item.labelKey)}</span>
               
               {isActive && (
                 <motion.div

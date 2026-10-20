@@ -4,7 +4,14 @@
     "title2": "AI with a",
     "titleHighlight": "Regional Heart.",
     "subtitle": "The most advanced AI engineering in Colombia, trained with your region's warmth and vocabulary to sell 24/7 without lifting a finger.",
-    "cta": "I want my AI now"
+    "cta": "I want my AI now",
+    "typed": "Autonomous sales with regional AI.",
+    "rotatingLead": "Your AI",
+    "r0": "answers your customers in under 2 seconds.",
+    "r1": "filters out the curious and spots your potential sales.",
+    "r2": "sends your PDF catalog and product photos.",
+    "r3": "guides every customer straight to payment.",
+    "r4": "works 24/7 using your region's vocabulary."
   },
   "sidebar": {
     "dashboard": "My Dashboard",
@@ -25,7 +32,11 @@
     "clientPanel": "Client Panel",
     "logout": "Logout",
     "session": "2026 Session",
-    "activeSales": "Active Sales"
+    "activeSales": "Active Sales",
+    "news": "News & Trends",
+    "automations": "Automation Library",
+    "workspaces": "Workspace Marketplace",
+    "integrations": "Integrations"
   },
   "layout": {
     "languageToggle": "Change Language",
@@ -164,7 +175,8 @@
     "securityDesc": "End-to-end encryption and Law 1581 compliance.",
     "support": "Dedicated support",
     "supportValue": "< 4h",
-    "supportDesc": "Guaranteed engineering response."
+    "supportDesc": "Guaranteed engineering response.",
+    "eyebrow": "Quality backing"
   },
   "legalFooter": {
     "terms": "Terms and Conditions",
@@ -172,7 +184,7 @@
     "rights": "All rights reserved."
   },
   "stats": {
-    "activity": "Sales activity",
+    "activity": "filtering your potential sales",
     "fidelity": "True to your catalog",
     "clients": "Clients at once",
     "various": "Multiple"
@@ -338,10 +350,22 @@
     "title2": "your strategic ally",
     "desc": "We help you with the best tips on design, finances, marketing, online visibility, and the latest in commerce so you can connect with your best clients and suppliers.",
     "tips": {
-      "design": { "title": "Viral Design", "desc": "Striking business image" },
-      "finance": { "title": "Finances", "desc": "Income optimization" },
-      "marketing": { "title": "Marketing", "desc": "Growth strategies" },
-      "visibility": { "title": "Visibility", "desc": "Solid digital presence" }
+      "design": {
+        "title": "Viral Design",
+        "desc": "Striking business image"
+      },
+      "finance": {
+        "title": "Finances",
+        "desc": "Income optimization"
+      },
+      "marketing": {
+        "title": "Marketing",
+        "desc": "Growth strategies"
+      },
+      "visibility": {
+        "title": "Visibility",
+        "desc": "Solid digital presence"
+      }
     }
   },
   "newsBoost": {
@@ -353,9 +377,18 @@
     "desc2": " with strategies updated weekly for your entrepreneurship.",
     "viewAll": "View all news",
     "trends": {
-      "t0": { "title": "Sales 2.0: The latest to sell makeup in your city", "category": "Makeup & Beauty" },
-      "t1": { "title": "Viral Strategy: How to dominate sales on TikTok and Instagram", "category": "Social Selling" },
-      "t2": { "title": "TikTok & Reels: Tips to make your videos go viral in days", "category": "Design & Video" }
+      "t0": {
+        "title": "Sales 2.0: The latest to sell makeup in your city",
+        "category": "Makeup & Beauty"
+      },
+      "t1": {
+        "title": "Viral Strategy: How to dominate sales on TikTok and Instagram",
+        "category": "Social Selling"
+      },
+      "t2": {
+        "title": "TikTok & Reels: Tips to make your videos go viral in days",
+        "category": "Design & Video"
+      }
     },
     "readMore": "Read more",
     "modalTitle": "Trend Center",
@@ -369,9 +402,18 @@
     "title2": " that work for you",
     "desc": "We free up your time. Our AI engines manage reminders, collections, and customer reconnection without you lifting a finger.",
     "features": {
-      "t0": { "title": "Smart Reminders", "desc": "Automatic notifications for promotions, combos, or personalized launches." },
-      "t1": { "title": "Re-connection Trigger", "desc": "Automatically activates users who haven't made a purchase in over 60 days." },
-      "t2": { "title": "24/7 Automatic Sales", "desc": "Your business keeps operating and quoting even when physical doors are closed." }
+      "t0": {
+        "title": "Smart Reminders",
+        "desc": "Automatic notifications for promotions, combos, or personalized launches."
+      },
+      "t1": {
+        "title": "Re-connection Trigger",
+        "desc": "Automatically activates users who haven't made a purchase in over 60 days."
+      },
+      "t2": {
+        "title": "24/7 Automatic Sales",
+        "desc": "Your business keeps operating and quoting even when physical doors are closed."
+      }
     },
     "mock": {
       "version": "crm_automations.v1",
@@ -434,8 +476,14 @@
         "tag": "Wellness",
         "subtitle": "Your mind, your most valuable asset",
         "details": "We understand that the entrepreneur's path is demanding. We connect you with a network of psychologists who understand business stress, giving you tools to maintain balance and clarity.",
-        "f0": { "title": "Emotional Support", "desc": "Private consultations with specialists in burnout and stress management." },
-        "f1": { "title": "Healthy Productivity", "desc": "Focus techniques that don't sacrifice your mental health or your rest." },
+        "f0": {
+          "title": "Emotional Support",
+          "desc": "Private consultations with specialists in burnout and stress management."
+        },
+        "f1": {
+          "title": "Healthy Productivity",
+          "desc": "Focus techniques that don't sacrifice your mental health or your rest."
+        },
         "cta": "Schedule Wellness Session"
       },
       "c1": {
@@ -444,8 +492,14 @@
         "tag": "Creativity",
         "subtitle": "Branding that breathes your essence",
         "details": "We don't make logos, we create identities that make you fall in love. Our hub of designers transforms your vision into a luxury editorial brand, ready to capture eyes on social media.",
-        "f0": { "title": "Visual Identity", "desc": "Complete brand redesign, color palettes, and premium typography." },
-        "f1": { "title": "Catalog Design", "desc": "Professional product layout with fashion magazine aesthetics." },
+        "f0": {
+          "title": "Visual Identity",
+          "desc": "Complete brand redesign, color palettes, and premium typography."
+        },
+        "f1": {
+          "title": "Catalog Design",
+          "desc": "Professional product layout with fashion magazine aesthetics."
+        },
         "cta": "Start Creative Project"
       },
       "c2": {
@@ -454,8 +508,14 @@
         "tag": "Strategy",
         "subtitle": "One step ahead in the market",
         "details": "We master trends before they go mainstream. We give you a smart calendar with key dates, regional holidays, and viral predictions so your inventory always matches demand.",
-        "f0": { "title": "Trend Prediction", "desc": "Weekly alerts on audios, challenges, and styles that will go viral." },
-        "f1": { "title": "Holiday Plan", "desc": "Strategies for national events months in advance." },
+        "f0": {
+          "title": "Trend Prediction",
+          "desc": "Weekly alerts on audios, challenges, and styles that will go viral."
+        },
+        "f1": {
+          "title": "Holiday Plan",
+          "desc": "Strategies for national events months in advance."
+        },
         "cta": "View Strategic Calendar"
       }
     },
@@ -473,20 +533,126 @@
     "descBold": "LinkedIn",
     "desc2": ". We take care of capturing and filtering the best professionals who fit perfectly with your culture and specific interests.",
     "features": {
-      "f0": { "title": "Elite Sourcing", "desc": "Direct connection with LinkedIn to attract high-level talent actively looking to grow." },
-      "f1": { "title": "Interest Fit", "desc": "We filter properly according to interests and technical skills for a guaranteed match." }
+      "f0": {
+        "title": "Elite Sourcing",
+        "desc": "Direct connection with LinkedIn to attract high-level talent actively looking to grow."
+      },
+      "f1": {
+        "title": "Interest Fit",
+        "desc": "We filter properly according to interests and technical skills for a guaranteed match."
+      }
     },
     "mock": {
       "title": "Selection Dashboard",
       "subtitle": "In real time",
       "badge": "12 New Candidates",
       "profiles": {
-        "p0": { "name": "Andrés Silva", "role": "Senior Salesperson", "region": "Pasto, Nariño", "status": "Verified" },
-        "p1": { "name": "Lucía Méndez", "role": "Customer Support", "region": "Ipiales", "status": "Premium" },
-        "p2": { "name": "Carlos Ruiz", "role": "Sales Closing", "region": "Tumaco", "status": "Verified" }
+        "p0": {
+          "name": "Andrés Silva",
+          "role": "Senior Salesperson",
+          "region": "Pasto, Nariño",
+          "status": "Verified"
+        },
+        "p1": {
+          "name": "Lucía Méndez",
+          "role": "Customer Support",
+          "region": "Ipiales",
+          "status": "Premium"
+        },
+        "p2": {
+          "name": "Carlos Ruiz",
+          "role": "Sales Closing",
+          "region": "Tumaco",
+          "status": "Verified"
+        }
       },
       "match": "Match"
     },
     "btn": "Start LinkedIn Recruitment"
+  },
+  "whatIs": {
+    "badge": "What LEMARJ is",
+    "title1": "What it is and ",
+    "title2": "what it solves",
+    "whatLabel": "What it is",
+    "whatDesc": "LEMARJ is an Artificial Intelligence sales platform that serves your customers on WhatsApp, understands your region's vocabulary, answers with your real catalog and guides them to payment, 24/7.",
+    "solvesLabel": "What it solves",
+    "solvesDesc": "It removes customer-service bottlenecks: unanswered messages, leads that go cold and ad budget lost in conversations with no follow-up.",
+    "v1Title": "Efficient AI-powered sales",
+    "v1Desc": "Every conversation is handled instantly and guided toward closing, regardless of business hours or available staff.",
+    "v2Title": "Organizational budget optimization",
+    "v2Desc": "Cut fixed operating costs and make every peso spent on ads count: no message you paid for goes unanswered.",
+    "v3Title": "Zero losses",
+    "zeroTime": "Zero wasted time",
+    "zeroLeads": "Zero lost leads",
+    "zeroBudget": "Zero wasted budget"
+  },
+  "painPoints": {
+    "badge": "Bottlenecks",
+    "title1": "What holds back ",
+    "title2": "your company's sales",
+    "subtitle": "Common problems in organizations and businesses that send customers to buy somewhere else.",
+    "flowAds": "Ads",
+    "flowMessages": "Messages",
+    "flowBottleneck": "Bottleneck",
+    "flowSales": "Sales",
+    "p0": {
+      "title": "After-hours messages",
+      "desc": "Customers write at night and on weekends; by the time your team replies, they already bought elsewhere."
+    },
+    "p1": {
+      "title": "Leads going cold",
+      "desc": "90% of sales happen within 5 minutes. Every minute of waiting lowers purchase intent."
+    },
+    "p2": {
+      "title": "Wasted ad budget",
+      "desc": "You pay for every message your ads bring in, but without follow-up that investment is lost."
+    },
+    "p3": {
+      "title": "Overloaded team",
+      "desc": "Your reps spend hours answering the same questions instead of closing sales."
+    },
+    "p4": {
+      "title": "Pricing and inventory errors",
+      "desc": "Outdated information creates distrust and lost sales."
+    },
+    "p5": {
+      "title": "Time-consuming browsers",
+      "desc": "Without a filter, your team treats the casual browser the same as the customer ready to buy."
+    }
+  },
+  "demoShowcase": {
+    "badge": "Demo",
+    "title1": "Watch it work ",
+    "title2": "in real time",
+    "subtitle": "This is how LEMARJ's AI answers, serves and closes leads.",
+    "v0Title": "Real-time response",
+    "v0Desc": "The customer writes and the AI answers in under 2 seconds.",
+    "v1Title": "Lead handling and closing",
+    "v1Desc": "How it profiles the customer, recommends and confirms the order professionally.",
+    "placeholder": "Video coming soon"
+  },
+  "connectorsBar": {
+    "cta": "See integrations"
+  },
+  "scalability": {
+    "badge": "For companies",
+    "title1": "Borderless Scalability",
+    "title2": "Grow without multiplying your costs",
+    "subtitle": "LEMARJ lets your company absorb 10x more sales volume, open new locations or handle traffic peaks like massive campaigns, without hiring more staff for repetitive tasks.",
+    "c0": {
+      "title": "Adaptive Regional Coverage",
+      "desc": "Open new locations and cities: the AI adapts to each region's vocabulary and catalog from day one."
+    },
+    "c1": {
+      "title": "Capacity for Massive Traffic Peaks",
+      "desc": "Launches and massive campaigns with no waiting lines: serve thousands of customers at once with the same quality."
+    },
+    "c2": {
+      "title": "Operating Cost Efficiency",
+      "desc": "Absorb 10x more sales volume without multiplying payroll; your team focuses on closing, not repeating answers."
+    },
+    "volume": "Sales volume",
+    "cost": "Operating cost"
   }
 }

@@ -577,7 +577,7 @@ function TemplateCardComponent({ template }: { template: Template }) {
 
 // ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
 
-export function AutomationExplorer() {
+export function AutomationExplorer({ view = "all" }: { view?: "all" | "ideas" | "templates" } = {}) {
   const [activeCategory, setActiveCategory] = useState<Category>("Negocios")
   const [templateFilter, setTemplateFilter] = useState("Todas")
   const [searchTemplates, setSearchTemplates] = useState("")
@@ -596,6 +596,7 @@ export function AutomationExplorer() {
     <div className="min-h-screen bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-indigo-50/40 via-slate-50 to-white text-slate-700 dark:text-zinc-200 transition-all duration-300">
 
       {/* ─── SECTION 1: AUTOMATION IDEAS EXPLORER ─────────────────────────── */}
+      {view !== "templates" && (
       <section className="px-6 md:px-10 lg:px-16 py-14">
 
         {/* Section header */}
@@ -684,11 +685,13 @@ export function AutomationExplorer() {
           </button>
         </div>
       </section>
+      )}
 
       {/* Divider */}
-      <div className="mx-10 lg:mx-16 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+      {view === "all" && <div className="mx-10 lg:mx-16 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />}
 
       {/* ─── SECTION 2: TEMPLATES MARKETPLACE ────────────────────────────── */}
+      {view !== "ideas" && (
       <section className="px-6 md:px-10 lg:px-16 py-14">
 
         {/* Section header */}
@@ -790,6 +793,7 @@ export function AutomationExplorer() {
           </div>
         </div>
       </section>
+      )}
     </div>
   )
 }

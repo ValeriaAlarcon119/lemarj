@@ -10,7 +10,13 @@ import { PersonalizationShowcase } from "@/components/personalization-showcase"
 import { Footer } from "@/components/footer"
 import { PricingSection } from "@/components/pricing-section"
 import { TrustBadges } from "@/components/trust-badges"
-import { MoonStar, BookOpenCheck, Infinity as InfinityIcon, ArrowRight } from "lucide-react"
+import { MoonStar, BookOpenCheck, Infinity as InfinityIcon } from "lucide-react"
+import { HeroPremium } from "@/components/sections/HeroPremium"
+import { WhatIsSection } from "@/components/sections/WhatIsSection"
+import { PainPoints } from "@/components/sections/PainPoints"
+import { DemoShowcase } from "@/components/sections/DemoShowcase"
+import { Scalability } from "@/components/sections/Scalability"
+import { ConnectorsBar } from "@/components/sections/ConnectorsBar"
 import { NewsBoost } from "@/components/sections/NewsBoost"
 import { SmartAutomations } from "@/components/sections/SmartAutomations"
 import { ErpDashboard } from "@/components/sections/ErpDashboard"
@@ -35,6 +41,14 @@ import Image from "next/image"
 const AutomationExplorer = React.lazy(() => import("@/components/Dashboard/AutomationExplorer").then(m => ({ default: m.AutomationExplorer })))
 const EcosystemView = React.lazy(() => import("@/components/Dashboard/EcosystemView").then(m => ({ default: m.EcosystemView })))
 
+// Secciones que salieron del Home y ahora son vistas del menú lateral
+const PUBLIC_VIEW_HASH = {
+  news: '#noticias',
+  automations: '#automatizaciones',
+  workspaces: '#workspaces',
+  integrations: '#integraciones',
+} as const
+
 export default function Page() {
   const [isLoginOpen, setIsLoginOpen] = useState(false)
   const [activeTab, setActiveTab] = useState('dashboard')
@@ -48,6 +62,34 @@ export default function Page() {
     const t_out = setTimeout(() => setAuthTimeout(true), 2500)
     return () => clearTimeout(t_out)
   }, [])
+
+  // Vistas públicas del menú lateral: se abren desde el hash (#noticias, #integraciones…)
+  useEffect(() => {
+    const fromHash = () => {
+      const view = Object.entries(PUBLIC_VIEW_HASH).find(([, h]) => h === window.location.hash)?.[0]
+      setPublicTab(prev => view ?? (prev in PUBLIC_VIEW_HASH ? 'home' : prev))
+    }
+    fromHash()
+    window.addEventListener('hashchange', fromHash)
+    return () => window.removeEventListener('hashchange', fromHash)
+  }, [])
+
+  // Al cambiar de vista: arriba si es una vista, o a la sección del Home pedida por el hash
+  useEffect(() => {
+    if (publicTab in PUBLIC_VIEW_HASH) {
+      window.scrollTo({ top: 0 })
+      return
+    }
+    const id = window.location.hash.slice(1)
+    if (!id) return
+    const timer = setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 80)
+    return () => clearTimeout(timer)
+  }, [publicTab])
+
+  const openPublicView = (view: keyof typeof PUBLIC_VIEW_HASH) => {
+    window.location.hash = PUBLIC_VIEW_HASH[view]
+    setPublicTab(view)
+  }
 
   const handleUpdateProfile = (newData: any) => {
     if (profile) {
@@ -140,7 +182,7 @@ export default function Page() {
           <header className="flex w-full items-center justify-between rounded-full bg-white dark:bg-[#0a0a0c] px-4 h-12 transition-all">
 
             {/* Logo + brand name */}
-            <div className="flex items-center gap-3 cursor-pointer shrink-0" onClick={() => setPublicTab('home')}>
+            <div className="flex items-center gap-3 cursor-pointer shrink-0" onClick={() => { if (window.location.hash) history.replaceState(null, '', window.location.pathname); setPublicTab('home'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>
               {/* Logo Box with Pink/Purple gradient border */}
               <div
                 className="rounded-[12px] p-[1.5px] shrink-0 transition-all duration-300 hover:opacity-90 shadow-[0_0_15px_rgba(217,70,239,0.2)]"
@@ -189,32 +231,28 @@ export default function Page() {
       </div>
 
 
-      <div className="flex flex-col items-center pt-32 pb-8 w-full">
-        
+      <div className="flex flex-col items-center pb-8 w-full">
+        {publicTab in PUBLIC_VIEW_HASH ? (
+          <PublicView>
+            <Suspense fallback={<ViewSpinner />}>
+              {publicTab === 'news' && <NewsBoost />}
+              {publicTab === 'automations' && <AutomationExplorer view="ideas" />}
+              {publicTab === 'workspaces' && <AutomationExplorer view="templates" />}
+              {publicTab === 'integrations' && <EcosystemView />}
+            </Suspense>
+          </PublicView>
+        ) : (
+        <>
+
         {/* HERO SECTION */}
-        <section className="flex flex-col items-center justify-center text-center space-y-10 min-h-[60vh] relative pt-10 px-4 w-full max-w-5xl mx-auto">
-          <h1 className="text-5xl sm:text-6xl md:text-[5.5rem] font-extrabold tracking-tight leading-[1.05] max-w-4xl mx-auto text-foreground drop-shadow-sm">
-            {t('hero.title1')} <br />{t('hero.title2')} <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-400 to-cyan-400">{t('hero.titleHighlight')}</span>
-          </h1>
-          
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto font-medium leading-relaxed">
-            {t('hero.subtitle')}
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full justify-center">
-            <a href="https://wa.me/573017219288" className="inline-flex h-16 px-10 items-center justify-center rounded-2xl bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 font-black uppercase tracking-[0.2em] text-[11px] hover:scale-105 transition-all shadow-2xl shadow-indigo-500/10 group">
-              {t('hero.cta')} <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
-        </section>
+        <HeroPremium />
 
         {/* STATS BANNER */}
-        <section className="w-full relative py-20 overflow-hidden">
+        <section className="w-full relative py-10 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
           <div className="flex overflow-hidden">
-            <div className="flex animate-marquee gap-8 py-4 px-4 h-full group hover:[animation-play-state:paused]">
+            <div className="flex animate-marquee gap-6 py-4 px-3 h-full group hover:[animation-play-state:paused]">
               {[...Array(2)].map((_, i) => (
-                <div key={i} className="flex gap-8 shrink-0 items-center h-full">
+                <div key={i} className="flex gap-6 shrink-0 items-center h-full">
                   <div className="w-[320px] shrink-0">
                     <StatCard icon={<MoonStar strokeWidth={1.5} className="w-full h-full" />} value="24/7" label={t('stats.activity')} />
                   </div>
@@ -230,35 +268,30 @@ export default function Page() {
           </div>
         </section>
 
+        <WhatIsSection />
+        <TrustBadges />
+        <PainPoints />
         <SalesComparison />
+        <Scalability />
         <FeaturesTimeline />
         <ComparisonTable />
         <PilaresSection />
+        <DemoShowcase />
         <DemoSection />
         <PersonalizationShowcase />
         <FreeWebsiteOffer />
         <ExpertTips />
-        <NewsBoost />
         <SmartAutomations />
 
-        {/* Sección del Explorador y Ecosistema integradas directamente en el landing */}
-        <div id="automation" className="w-full max-w-7xl mx-auto px-4 py-8 scroll-mt-20 min-h-[400px]">
-          <Suspense fallback={<div className="flex items-center justify-center h-64"><div className="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div></div>}>
-            <AutomationExplorer />
-          </Suspense>
-        </div>
-
-        <div id="ecosystem" className="w-full max-w-7xl mx-auto px-4 py-8 scroll-mt-20 min-h-[400px]">
-          <Suspense fallback={<div className="flex items-center justify-center h-64"><div className="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div></div>}>
-            <EcosystemView />
-          </Suspense>
-        </div>
+        {/* Del ecosistema solo queda la barra de logos; el catálogo completo está en la vista Integraciones */}
+        <ConnectorsBar onOpen={() => openPublicView('integrations')} />
 
         <ErpDashboard />
         <WellnessHub />
         <IntelligentRecruitment />
         <PricingSection />
-        <TrustBadges />
+        </>
+        )}
 
         <Footer />
         <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
@@ -268,22 +301,34 @@ export default function Page() {
   )
 }
 
+function PublicView({ children }: { children: React.ReactNode }) {
+  return <div className="w-full max-w-7xl mx-auto px-4 pt-28 pb-8 min-h-[70vh]">{children}</div>
+}
+
+function ViewSpinner() {
+  return (
+    <div className="flex items-center justify-center h-64">
+      <div className="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin" />
+    </div>
+  )
+}
+
 function StatCard({ icon, value, label }: { icon: React.ReactNode, value: string, label: string }) {
   return (
-    <motion.div 
-      whileHover={{ y: -5, scale: 1.02 }}
-      className="relative group rounded-[3rem] overflow-hidden w-full h-[320px] cursor-default border border-indigo-200 dark:border-indigo-900/30 shadow-sm"
+    <motion.div
+      whileHover={{ y: -4 }}
+      className="card-premium relative group rounded-3xl overflow-hidden w-full h-[132px] cursor-default"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-indigo-950/40 dark:via-purple-900/20 dark:to-zinc-950" />
-      <div className="relative h-full rounded-[3rem] p-10 flex flex-col justify-center items-center text-center gap-6">
-        <div className="w-16 h-16 text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform duration-500">
+      <div className="absolute -top-16 -right-10 w-40 h-40 rounded-full bg-gradient-to-br from-indigo-500/25 via-purple-400/20 to-cyan-400/20 blur-2xl pointer-events-none" />
+      <div className="relative h-full px-6 flex items-center gap-5">
+        <div className="w-14 h-14 shrink-0 p-3 rounded-2xl bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-500 text-white shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform duration-500">
           {icon}
         </div>
-        <div>
-          <div className="text-5xl font-black tracking-tighter mb-2 text-foreground">
+        <div className="min-w-0 text-left">
+          <div className="text-4xl font-black tracking-tighter leading-none text-gradient-brand">
             {value}
           </div>
-          <div className="text-[11px] font-black uppercase tracking-[0.2em] text-muted-foreground/80">
+          <div className="mt-1.5 text-sm font-semibold text-foreground/80 leading-snug">
             {label}
           </div>
         </div>

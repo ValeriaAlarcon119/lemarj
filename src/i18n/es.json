@@ -4,7 +4,14 @@
     "title2": "IA con atención regional",
     "titleHighlight": "y calidez humana.",
     "subtitle": "Transformando el comercio con ingeniería de alta fidelidad: la IA más avanzada de Colombia, entrenada con el vocabulario de tu región para atender a tus clientes 24/7 de forma segura, personalizada e inmediata, sin que muevas un dedo.",
-    "cta": "Quiero mi IA ahora"
+    "cta": "Quiero mi IA ahora",
+    "typed": "Ventas autónomas con IA regional.",
+    "rotatingLead": "Tu IA",
+    "r0": "responde a tus clientes en menos de 2 segundos.",
+    "r1": "filtra a los curiosos y detecta tus posibles ventas.",
+    "r2": "envía tu catálogo en PDF y fotos de tus productos.",
+    "r3": "guía a cada cliente directo al pago.",
+    "r4": "atiende 24/7 con el vocabulario de tu región."
   },
   "sidebar": {
     "dashboard": "Mi Panel",
@@ -25,7 +32,11 @@
     "clientPanel": "Panel Cliente",
     "logout": "Salir",
     "session": "Sesión 2026",
-    "activeSales": "Ventas Activas"
+    "activeSales": "Ventas Activas",
+    "news": "Noticias & Tendencias",
+    "automations": "Librería de Automatizaciones",
+    "workspaces": "Marketplace de Workspaces",
+    "integrations": "Integraciones"
   },
   "layout": {
     "languageToggle": "Cambiar idioma",
@@ -164,7 +175,8 @@
     "securityDesc": "Cifrado end-to-end y cumplimiento Ley 1581.",
     "support": "Soporte dedicado",
     "supportValue": "< 4h",
-    "supportDesc": "Respuesta de ingeniería garantizada."
+    "supportDesc": "Respuesta de ingeniería garantizada.",
+    "eyebrow": "Respaldo de calidad"
   },
   "legalFooter": {
     "terms": "Términos y Condiciones",
@@ -172,7 +184,7 @@
     "rights": "Todos los derechos reservados."
   },
   "stats": {
-    "activity": "Actividad de ventas",
+    "activity": "filtrando sus posibles ventas",
     "fidelity": "Fiel a tu catálogo",
     "clients": "Clientes a la vez",
     "various": "Infinitos"
@@ -338,10 +350,22 @@
     "title2": "tu aliado estratégico",
     "desc": "Te ayudamos con los mejores tips de diseño, finanzas, marketing, visibilidad en línea y lo más actualizado del comercio para que conectes con tus mejores clientes y proveedores.",
     "tips": {
-      "design": { "title": "Diseño Viral", "desc": "Imagen de negocio impactante" },
-      "finance": { "title": "Finanzas", "desc": "Optimización de ingresos" },
-      "marketing": { "title": "Marketing", "desc": "Estrategias de crecimiento" },
-      "visibility": { "title": "Visibilidad", "desc": "Presencia digital sólida" }
+      "design": {
+        "title": "Diseño Viral",
+        "desc": "Imagen de negocio impactante"
+      },
+      "finance": {
+        "title": "Finanzas",
+        "desc": "Optimización de ingresos"
+      },
+      "marketing": {
+        "title": "Marketing",
+        "desc": "Estrategias de crecimiento"
+      },
+      "visibility": {
+        "title": "Visibilidad",
+        "desc": "Presencia digital sólida"
+      }
     }
   },
   "newsBoost": {
@@ -353,9 +377,18 @@
     "desc2": " con estrategias actualizadas semanalmente para tu emprendimiento.",
     "viewAll": "Ver todas las noticias",
     "trends": {
-      "t0": { "title": "Ventas 2.0: Lo último para vender maquillaje en tu ciudad", "category": "Maquillaje & Belleza" },
-      "t1": { "title": "Estrategia Viral: Cómo dominar las ventas en TikTok e Instagram", "category": "Social Selling" },
-      "t2": { "title": "TikTok & Reels: Tips para que tus videos se hagan virales en días", "category": "Diseño & Video" }
+      "t0": {
+        "title": "Ventas 2.0: Lo último para vender maquillaje en tu ciudad",
+        "category": "Maquillaje & Belleza"
+      },
+      "t1": {
+        "title": "Estrategia Viral: Cómo dominar las ventas en TikTok e Instagram",
+        "category": "Social Selling"
+      },
+      "t2": {
+        "title": "TikTok & Reels: Tips para que tus videos se hagan virales en días",
+        "category": "Diseño & Video"
+      }
     },
     "readMore": "Leer más",
     "modalTitle": "Centro de Tendencias",
@@ -369,9 +402,18 @@
     "title2": " que trabajan por ti",
     "desc": "Liberamos tu tiempo. Nuestros motores de IA gestionan recordatorios, cobranzas y re-conexión de clientes sin que muevas un dedo.",
     "features": {
-      "t0": { "title": "Recordatorios Inteligentes", "desc": "Notificaciones automáticas para promociones, combos o lanzamientos personalizados." },
-      "t1": { "title": "Activador de Re-conexión", "desc": "Activa automáticamente a usuarios que llevan más de 60 días sin realizar una compra." },
-      "t2": { "title": "Ventas Automáticas 24/7", "desc": "Tu negocio sigue operando y cotizando incluso cuando las puertas físicas están cerradas." }
+      "t0": {
+        "title": "Recordatorios Inteligentes",
+        "desc": "Notificaciones automáticas para promociones, combos o lanzamientos personalizados."
+      },
+      "t1": {
+        "title": "Activador de Re-conexión",
+        "desc": "Activa automáticamente a usuarios que llevan más de 60 días sin realizar una compra."
+      },
+      "t2": {
+        "title": "Ventas Automáticas 24/7",
+        "desc": "Tu negocio sigue operando y cotizando incluso cuando las puertas físicas están cerradas."
+      }
     },
     "mock": {
       "version": "crm_automations.v1",
@@ -434,8 +476,14 @@
         "tag": "Bienestar",
         "subtitle": "Tu mente, tu activo más valioso",
         "details": "Entendemos que el camino del emprendedor es exigente. Te conectamos con una red de psicólogos que entienden el estrés empresarial, brindándote herramientas para mantener el equilibrio y la claridad.",
-        "f0": { "title": "Soporte Emocional", "desc": "Consultas privadas con especialistas en burnout y manejo de estrés." },
-        "f1": { "title": "Productividad Sana", "desc": "Técnicas de enfoque que no sacrifican tu salud mental ni tu descanso." },
+        "f0": {
+          "title": "Soporte Emocional",
+          "desc": "Consultas privadas con especialistas en burnout y manejo de estrés."
+        },
+        "f1": {
+          "title": "Productividad Sana",
+          "desc": "Técnicas de enfoque que no sacrifican tu salud mental ni tu descanso."
+        },
         "cta": "Agendar Sesión de Bienestar"
       },
       "c1": {
@@ -444,8 +492,14 @@
         "tag": "Creatividad",
         "subtitle": "Branding que respira tu esencia",
         "details": "No hacemos logotipos, creamos identidades que enamoran. Nuestro hub de diseñadores transforma tu visión en una marca editorial de lujo, lista para capturar miradas en redes sociales.",
-        "f0": { "title": "Identidad Visual", "desc": "Rediseño completo de marca, paletas de colores y tipografías premium." },
-        "f1": { "title": "Diseño por Catálogo", "desc": "Maquetación profesional de productos con estética de revista de moda." },
+        "f0": {
+          "title": "Identidad Visual",
+          "desc": "Rediseño completo de marca, paletas de colores y tipografías premium."
+        },
+        "f1": {
+          "title": "Diseño por Catálogo",
+          "desc": "Maquetación profesional de productos con estética de revista de moda."
+        },
         "cta": "Iniciar Proyecto Creativo"
       },
       "c2": {
@@ -454,8 +508,14 @@
         "tag": "Estrategia",
         "subtitle": "Un paso adelante en el mercado",
         "details": "Dominamos las tendencias antes de que sean masivas. Te entregamos un calendario inteligente con fechas clave, festividades regionales y predicciones virales para que tu inventario siempre coincida con la demanda.",
-        "f0": { "title": "Predicción de Tendencias", "desc": "Alertas semanales sobre audios, retos y estilos que serán virales." },
-        "f1": { "title": "Plan de Festividades", "desc": "Estrategias para Pasto, Ipiales y eventos nacionales con meses de antelación." },
+        "f0": {
+          "title": "Predicción de Tendencias",
+          "desc": "Alertas semanales sobre audios, retos y estilos que serán virales."
+        },
+        "f1": {
+          "title": "Plan de Festividades",
+          "desc": "Estrategias para Pasto, Ipiales y eventos nacionales con meses de antelación."
+        },
         "cta": "Ver Calendario Estratégico"
       }
     },
@@ -473,20 +533,126 @@
     "descBold": "LinkedIn",
     "desc2": ". Nos encargamos de captar y filtrar a los mejores profesionales que encajen perfectamente con tu cultura e intereses específicos.",
     "features": {
-      "f0": { "title": "Sourcing Elite", "desc": "Conexión directa con LinkedIn para atraer talento de alto nivel que activamente busca crecer." },
-      "f1": { "title": "Fit de Interés", "desc": "Filtramos adecuadamente según intereses y aptitudes técnicas para un match garantizado." }
+      "f0": {
+        "title": "Sourcing Elite",
+        "desc": "Conexión directa con LinkedIn para atraer talento de alto nivel que activamente busca crecer."
+      },
+      "f1": {
+        "title": "Fit de Interés",
+        "desc": "Filtramos adecuadamente según intereses y aptitudes técnicas para un match garantizado."
+      }
     },
     "mock": {
       "title": "Dashboard de Selección",
       "subtitle": "En tiempo real",
       "badge": "12 Nuevos Candidatos",
       "profiles": {
-        "p0": { "name": "Andrés Silva", "role": "Vendedor Senior", "region": "Pasto, Nariño", "status": "Verificado" },
-        "p1": { "name": "Lucía Méndez", "role": "Atención al Cliente", "region": "Ipiales", "status": "Premium" },
-        "p2": { "name": "Carlos Ruiz", "role": "Cierre de Ventas", "region": "Tumaco", "status": "Verificado" }
+        "p0": {
+          "name": "Andrés Silva",
+          "role": "Vendedor Senior",
+          "region": "Pasto, Nariño",
+          "status": "Verificado"
+        },
+        "p1": {
+          "name": "Lucía Méndez",
+          "role": "Atención al Cliente",
+          "region": "Ipiales",
+          "status": "Premium"
+        },
+        "p2": {
+          "name": "Carlos Ruiz",
+          "role": "Cierre de Ventas",
+          "region": "Tumaco",
+          "status": "Verificado"
+        }
       },
       "match": "Match"
     },
     "btn": "Iniciar Reclutamiento LinkedIn"
+  },
+  "whatIs": {
+    "badge": "Qué es LEMARJ",
+    "title1": "Qué es y ",
+    "title2": "qué resuelve",
+    "whatLabel": "Qué es",
+    "whatDesc": "LEMARJ es una plataforma de ventas con Inteligencia Artificial que atiende a tus clientes por WhatsApp, entiende el vocabulario de tu región, responde con tu catálogo real y los guía hasta el pago, 24/7.",
+    "solvesLabel": "Qué resuelve",
+    "solvesDesc": "Elimina los cuellos de botella de la atención: mensajes sin responder, leads que se enfrían y presupuesto de pauta que se pierde en conversaciones sin seguimiento.",
+    "v1Title": "Ventas eficientes impulsadas por IA",
+    "v1Desc": "Cada conversación se atiende al instante y se guía hacia el cierre, sin depender de horarios ni de personal disponible.",
+    "v2Title": "Optimización de presupuestos organizacionales",
+    "v2Desc": "Reduce costos operativos fijos y aprovecha cada peso invertido en pauta: ningún mensaje que pagaste se queda sin respuesta.",
+    "v3Title": "Cero pérdidas",
+    "zeroTime": "Cero pérdida de tiempo",
+    "zeroLeads": "Cero pérdida de leads",
+    "zeroBudget": "Cero pérdida de presupuesto"
+  },
+  "painPoints": {
+    "badge": "Cuellos de botella",
+    "title1": "Lo que frena las ventas ",
+    "title2": "de tu empresa",
+    "subtitle": "Problemas comunes en organizaciones y negocios que hacen que el cliente termine comprando en otro lugar.",
+    "flowAds": "Anuncios",
+    "flowMessages": "Mensajes",
+    "flowBottleneck": "Cuello de botella",
+    "flowSales": "Ventas",
+    "p0": {
+      "title": "Mensajes fuera de horario",
+      "desc": "Los clientes escriben de noche y los fines de semana; cuando el equipo responde, ya compraron en otro lugar."
+    },
+    "p1": {
+      "title": "Leads que se enfrían",
+      "desc": "El 90% de las ventas caen a los 5 minutos. Cada minuto de espera reduce la intención de compra."
+    },
+    "p2": {
+      "title": "Presupuesto de pauta desperdiciado",
+      "desc": "Pagas por cada mensaje que traen tus anuncios, pero sin seguimiento esa inversión se pierde."
+    },
+    "p3": {
+      "title": "Equipo saturado",
+      "desc": "Tus asesores gastan horas respondiendo las mismas preguntas en lugar de cerrar ventas."
+    },
+    "p4": {
+      "title": "Errores en precios e inventario",
+      "desc": "La información desactualizada genera desconfianza y ventas caídas."
+    },
+    "p5": {
+      "title": "Curiosos que consumen tiempo",
+      "desc": "Sin filtro, tu equipo atiende igual al que pregunta por curiosidad que al que está listo para comprar."
+    }
+  },
+  "demoShowcase": {
+    "badge": "Demostración",
+    "title1": "Mírala atender ",
+    "title2": "en tiempo real",
+    "subtitle": "Así responde, atiende y cierra leads la IA de LEMARJ.",
+    "v0Title": "Respuesta en tiempo real",
+    "v0Desc": "El cliente escribe y la IA responde en menos de 2 segundos.",
+    "v1Title": "Atención y cierre de leads",
+    "v1Desc": "Cómo perfila al cliente, recomienda y confirma el pedido de forma profesional.",
+    "placeholder": "Video próximamente"
+  },
+  "connectorsBar": {
+    "cta": "Ver integraciones"
+  },
+  "scalability": {
+    "badge": "Para empresas",
+    "title1": "Escalabilidad sin Fronteras",
+    "title2": "Crece sin multiplicar tus costos",
+    "subtitle": "LEMARJ permite a tu empresa absorber 10x más volumen de ventas, abrir nuevas sedes o atender picos de tráfico como campañas masivas, sin contratar más personal para tareas repetitivas.",
+    "c0": {
+      "title": "Cobertura Regional Adaptativa",
+      "desc": "Abre nuevas sedes y ciudades: la IA se adapta al vocabulario y al catálogo de cada región desde el primer día."
+    },
+    "c1": {
+      "title": "Capacidad para Picos Masivos de Tráfico",
+      "desc": "Lanzamientos y campañas masivas sin filas de espera: atiende a miles de clientes a la vez con la misma calidad."
+    },
+    "c2": {
+      "title": "Eficiencia en Costo Operativo",
+      "desc": "Absorbe 10x más volumen de ventas sin multiplicar la nómina; tu equipo se enfoca en cerrar, no en repetir respuestas."
+    },
+    "volume": "Volumen de ventas",
+    "cost": "Costo operativo"
   }
 }

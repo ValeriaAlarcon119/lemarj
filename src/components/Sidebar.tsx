@@ -48,9 +48,11 @@ const homeItems: MenuItem[] = [
   { id: 'home', labelKey: 'sidebar.home', emoji: "🏠", href: '#', color: "bg-blue-500/20 text-blue-500" },
   { id: 'pilares', labelKey: 'sidebar.engineering', emoji: "⚙️", href: '#pilares', color: "bg-indigo-500/20 text-indigo-500" },
   { id: 'demo', labelKey: 'sidebar.whatsapp', emoji: "📱", href: '#demo', color: "bg-emerald-500/20 text-emerald-500" },
-  { id: 'news', labelKey: 'sidebar.boost', emoji: "🚀", href: '#news', color: "bg-orange-500/20 text-orange-500" },
-  { id: 'automation', labelKey: 'sidebar.explorer', emoji: "⚡", href: '#automation', color: "bg-violet-500/20 text-violet-500" },
-  { id: 'ecosystem', labelKey: 'sidebar.ecosystem', emoji: "🔌", href: '#ecosystem', color: "bg-orange-500/20 text-orange-500" },
+  // Vistas independientes (antes eran secciones del Home)
+  { id: 'news', labelKey: 'sidebar.news', emoji: "📰", href: '#noticias', color: "bg-orange-500/20 text-orange-500" },
+  { id: 'automations', labelKey: 'sidebar.automations', emoji: "⚡", href: '#automatizaciones', color: "bg-violet-500/20 text-violet-500" },
+  { id: 'workspaces', labelKey: 'sidebar.workspaces', emoji: "🧩", href: '#workspaces', color: "bg-fuchsia-500/20 text-fuchsia-500" },
+  { id: 'integrations', labelKey: 'sidebar.integrations', emoji: "🔌", href: '#integraciones', color: "bg-cyan-500/20 text-cyan-500" },
 ]
 
 export function Sidebar({ profile, onTabChange, activeTab }: SidebarProps) {
@@ -95,7 +97,7 @@ export function Sidebar({ profile, onTabChange, activeTab }: SidebarProps) {
         onMouseEnter={() => setIsExpanded(true)}
         onMouseLeave={() => setIsExpanded(false)}
         animate={{ 
-          width: (isExpanded || isOpenMobile) ? 240 : 75,
+          width: (isExpanded || isOpenMobile) ? 270 : 75,
           x: (isOpenMobile || (typeof window !== 'undefined' && window.innerWidth >= 1024)) ? 0 : -300
         }}
         className={`fixed left-0 top-0 bottom-0 z-[60] bg-white/90 dark:bg-zinc-950/90 backdrop-blur-3xl border-r border-border/50 flex flex-col py-6 overflow-hidden transition-all duration-500 ease-in-out shadow-2xl ${
