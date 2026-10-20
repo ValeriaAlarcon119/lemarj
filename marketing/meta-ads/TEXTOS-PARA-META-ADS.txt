@@ -1,0 +1,70 @@
+LEMARJ · Anuncios para Meta Ads (Facebook e Instagram)
+Objetivo de campaña: Interacción → Mensajes → WhatsApp
+Botón (CTA) en Meta: «Enviar mensaje de WhatsApp»  ·  Número: +57 301 721 9288
+Todos los textos salen de lo que ya dice la web de LEMARJ.
+
+ARCHIVOS
+videos/   → 10 segundos, MP4 30 fps, sin audio (agrega una música de la biblioteca de Meta si quieres)
+imagenes/ → PNG
+Formatos por concepto:
+  9x16 → Reels e Historias (1080×1920)
+  4x5  → Feed de Instagram y Facebook (1080×1350)
+  1x1  → Todas las ubicaciones (1080×1080)
+En Meta, crea un solo anuncio por concepto y sube las tres medidas con «Personalizar recurso por ubicación».
+
+
+────────────────────────────────────────
+CONCEPTO A · «Respuesta en menos de 2 segundos»
+Archivos: LEMARJ_respuesta-2s_*
+Idea: un cliente escribe a las 11:47 p. m. y la IA responde al instante con el catálogo en PDF.
+
+Texto principal:
+¿Tus clientes te escriben de noche y responden cuando ya compraron en otro lado? 🌙
+Tu IA responde en menos de 2 segundos, envía tu catálogo en PDF y guía a cada cliente directo al pago. 24/7, con el vocabulario de tu región.
+
+Título:
+Tu IA vende mientras descansas
+
+Descripción:
+Agenda tu demo gratis por WhatsApp
+
+
+────────────────────────────────────────
+CONCEPTO B · «24/7 filtrando sus posibles ventas»
+Archivos: LEMARJ_filtra-posibles-ventas_*
+Idea: el mapa del recorrido del lead; los curiosos se filtran y las posibles ventas llegan al pago.
+
+Texto principal:
+Menos pérdida de tiempo en curiosos, más porcentaje de conversiones. 🎯
+LEMARJ perfila a cada cliente con preguntas estratégicas, recomienda según tu catálogo, confirma el pedido y lo lleva al pago con Nequi, Daviplata o Bancolombia.
+
+Título:
+24/7 filtrando sus posibles ventas
+
+Descripción:
+Ventas autónomas con IA regional
+
+
+────────────────────────────────────────
+CONCEPTO C · «Cero pérdidas»
+Archivos: LEMARJ_cero-perdidas_*
+Idea: los cuellos de botella (leads que se enfrían, pauta desperdiciada, equipo saturado) se convierten en cero pérdidas.
+
+Texto principal:
+Pagas por cada mensaje que traen tus anuncios, pero sin seguimiento esa inversión se pierde. 💸
+Con LEMARJ: cero pérdida de tiempo, cero pérdida de leads y cero pérdida de presupuesto. Ventas eficientes impulsadas por IA.
+
+Título:
+Ventas eficientes impulsadas por IA
+
+Descripción:
+Quiero mi IA ahora
+
+
+────────────────────────────────────────
+MENSAJE DE BIENVENIDA SUGERIDO PARA WHATSAPP (plantilla de Meta)
+«¡Hola! 👋 Gracias por escribir a LEMARJ. ¿Quieres agendar tu demo gratis para ver cómo tu IA atiende y cierra ventas 24/7?»
+Respuestas rápidas: «Sí, quiero mi demo» · «Ver planes» · «Hablar con un asesor»
+
+RECOMENDACIÓN DE PRUEBA
+Lanza los 3 conceptos en el mismo conjunto de anuncios (Advantage+ ubicaciones) y deja que Meta reparta el presupuesto. A los 3–5 días, pausa el de mayor costo por conversación iniciada.

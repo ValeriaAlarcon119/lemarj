@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>LEMARJ Ads</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&display=block" rel="stylesheet">
+<style>
+  :root { --indigo:#6366f1; --purple:#c084fc; --cyan:#22d3ee; --rose:#fb7185; --emerald:#34d399; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #07070c; overflow: hidden; }
+  body { font-family: Inter, "Segoe UI", system-ui, sans-serif; color: #fff; -webkit-font-smoothing: antialiased; }
+  #stage { position: relative; width: 1080px; overflow: hidden; background: #0a0a12; }
+  .bg { position: absolute; inset: 0; pointer-events: none; }
+  .blob { position: absolute; border-radius: 50%; filter: blur(110px); }
+  #dots { position: absolute; inset: -60px; background-image: radial-gradient(circle at 1.5px 1.5px, rgba(192,132,252,0.22) 1.5px, transparent 0); background-size: 44px 44px; -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, #000 35%, transparent 80%); }
+  #content { position: absolute; inset: 0; display: flex; flex-direction: column; }
+  #top { text-align: center; }
+  .kicker { display: inline-flex; align-items: center; gap: 12px; padding: 10px 22px; border-radius: 999px; font-weight: 700; font-size: 26px; letter-spacing: .01em; background: rgba(99,102,241,.14); border: 1.5px solid rgba(129,140,248,.35); color: #c7d2fe; }
+  .kicker.rose { background: rgba(251,113,133,.12); border-color: rgba(251,113,133,.35); color: #fecdd3; }
+  .kicker .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--emerald); box-shadow: 0 0 14px var(--emerald); }
+  h1 { font-weight: 800; letter-spacing: -0.035em; line-height: 1.04; margin-top: 26px; }
+  h1 .w { display: inline-block; margin-right: .22em; }
+  .grad { background: linear-gradient(90deg, var(--indigo), var(--purple) 50%, var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sub { margin: 18px auto 0; color: rgba(255,255,255,.68); font-weight: 500; line-height: 1.35; max-width: 860px; }
+  #mid { flex: 1; position: relative; display: flex; align-items: center; justify-content: center; min-height: 0; }
+  #visual { position: relative; width: 620px; height: 820px; flex-shrink: 0; transform-origin: center center; }
+  #brand { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .logo-row { display: flex; align-items: center; gap: 18px; }
+  .logo { width: 74px; height: 74px; border-radius: 18px; overflow: hidden; border: 2px solid rgba(192,132,252,.6); box-shadow: 0 0 26px rgba(192,132,252,.35); background: #000; }
+  .logo img { width: 100%; height: 100%; object-fit: cover; }
+  .brandname { font-weight: 900; font-size: 34px; letter-spacing: -0.02em; }
+  .brandtag { font-size: 18px; color: rgba(255,255,255,.55); font-weight: 600; margin-top: 2px; }
+  .cta { display: inline-flex; align-items: center; gap: 14px; height: 84px; padding: 0 36px; border-radius: 999px; font-weight: 800; font-size: 30px; color: #fff; background: linear-gradient(90deg, #4f46e5, #7c3aed 50%, #0891b2); box-shadow: 0 18px 44px -14px rgba(99,102,241,.8), inset 0 1px 0 rgba(255,255,255,.25); white-space: nowrap; }
+  .cta svg { width: 36px; height: 36px; }
+
+  /* Chat (concepto A) */
+  .phone { position: absolute; left: 80px; top: 0; width: 460px; height: 820px; border-radius: 56px; background: #0b141a; border: 10px solid #1d1d27; box-shadow: 0 40px 100px -30px rgba(99,102,241,.6), 0 0 0 1.5px rgba(255,255,255,.12); overflow: hidden; }
+  .notch { position: absolute; top: 12px; left: 50%; transform: translateX(-50%); width: 120px; height: 30px; background: #000; border-radius: 20px; z-index: 3; }
+  .chat-h { position: absolute; top: 0; left: 0; right: 0; height: 118px; padding: 52px 20px 0; display: flex; align-items: center; gap: 12px; background: #202c33; }
+  .chat-h .av { width: 46px; height: 46px; border-radius: 50%; overflow: hidden; border: 1.5px solid rgba(192,132,252,.6); }
+  .chat-h .av img { width: 100%; height: 100%; object-fit: cover; }
+  .chat-h .n { font-size: 19px; font-weight: 700; color: #e9edef; }
+  .chat-h .s { font-size: 14px; color: #34d399; font-weight: 600; }
+  .chat { position: absolute; top: 132px; left: 14px; right: 14px; display: flex; flex-direction: column; gap: 12px; }
+  .b { max-width: 82%; padding: 12px 15px 8px; border-radius: 16px; font-size: 18px; line-height: 1.32; color: #e9edef; box-shadow: 0 1px 1px rgba(0,0,0,.2); }
+  .b .tm { display: block; text-align: right; font-size: 12px; color: rgba(233,237,239,.55); margin-top: 3px; }
+  .b.out { align-self: flex-end; background: #005c4b; border-top-right-radius: 4px; }
+  .b.in { align-self: flex-start; background: #202c33; border-top-left-radius: 4px; }
+  .pdf { display: flex; align-items: center; gap: 12px; margin-top: 10px; padding: 10px; background: #111b21; border-radius: 12px; border: 1px solid rgba(255,255,255,.08); }
+  .pdf .ic { width: 44px; height: 44px; border-radius: 10px; background: rgba(239,68,68,.22); color: #f87171; font-weight: 900; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+  .pdf .nm { font-size: 16px; font-weight: 700; } .pdf .sz { font-size: 13px; color: #8696a0; }
+  .opt { margin-top: 8px; border: 1.5px solid rgba(0,168,132,.55); color: #00a884; border-radius: 12px; padding: 9px; text-align: center; font-size: 16px; font-weight: 600; }
+  .typing { align-self: flex-start; background: #202c33; border-radius: 16px; padding: 16px 18px; display: flex; gap: 6px; }
+  .typing i { width: 9px; height: 9px; border-radius: 50%; background: #8696a0; display: block; }
+  .speed { position: absolute; right: 0; padding: 14px 22px; border-radius: 999px; background: rgba(34,211,238,.14); border: 2px solid var(--cyan); color: var(--cyan); font-weight: 900; font-size: 30px; box-shadow: 0 0 40px rgba(34,211,238,.35); backdrop-filter: blur(8px); white-space: nowrap; }
+
+  /* Tarjetas (concepto C) */
+  .flip { position: absolute; left: 30px; right: 30px; height: 238px; perspective: 1400px; }
+  .flip .face { position: absolute; inset: 0; border-radius: 34px; display: flex; align-items: center; gap: 28px; padding: 0 40px; backface-visibility: hidden; }
+  .face.pain { background: linear-gradient(135deg, rgba(251,113,133,.14), rgba(251,113,133,.04)); border: 2px solid rgba(251,113,133,.35); }
+  .face.win { background: linear-gradient(135deg, rgba(99,102,241,.22), rgba(34,211,238,.10)); border: 2px solid rgba(129,140,248,.5); box-shadow: 0 30px 70px -30px rgba(99,102,241,.7); }
+  .face .x { width: 92px; height: 92px; border-radius: 26px; background: rgba(251,113,133,.16); color: var(--rose); font-size: 52px; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .face .zero { font-size: 150px; font-weight: 900; line-height: 1; letter-spacing: -0.06em; width: 110px; text-align: center; flex-shrink: 0; }
+  .face .tt { font-size: 38px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
+
+  /* Cierre */
+  #end { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: radial-gradient(ellipse at 50% 40%, rgba(79,70,229,.35), transparent 60%), #08080f; }
+  #end .biglogo { width: 300px; height: 300px; border-radius: 64px; overflow: hidden; border: 3px solid rgba(192,132,252,.7); box-shadow: 0 0 80px rgba(192,132,252,.45); }
+  #end .biglogo img { width: 100%; height: 100%; object-fit: cover; }
+  #end .tag { font-size: 64px; font-weight: 800; letter-spacing: -0.035em; line-height: 1.05; margin-top: 54px; max-width: 900px; }
+  #end .cta { margin-top: 54px; height: 108px; font-size: 40px; padding: 0 52px; }
+  #end .num { margin-top: 24px; font-size: 28px; color: rgba(255,255,255,.6); font-weight: 600; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="bg">
+    <div class="blob" id="b1" style="width:760px;height:760px;background:rgba(79,70,229,.55)"></div>
+    <div class="blob" id="b2" style="width:640px;height:640px;background:rgba(8,145,178,.45)"></div>
+    <div class="blob" id="b3" style="width:560px;height:560px;background:rgba(192,38,211,.28)"></div>
+    <div id="dots"></div>
+  </div>
+  <div id="content">
+    <div id="top"></div>
+    <div id="mid"><div id="visual"></div></div>
+    <div id="brand">
+      <div class="logo-row">
+        <div class="logo"><img src="logo.jpg"></div>
+        <div><div class="brandname">LEMARJ</div><div class="brandtag">Tecnología en automatización inteligente</div></div>
+      </div>
+      <div class="cta" id="ctaSmall"></div>
+    </div>
+  </div>
+  <div id="end"></div>
+</div>
+<script>
+const Q = new URLSearchParams(location.search);
+const CONCEPT = Q.get('c') || 'A';
+const FMT = Q.get('f') || '916';
+const STATIC = Q.get('static') === '1';
+const SIZES = { '916': 1920, '45': 1350, '11': 1080 };
+const H = SIZES[FMT];
+const PAD = { '916': [250, 80, 330], '45': [80, 70, 80], '11': [64, 64, 64] }[FMT]; // top, lados, abajo (zona segura de Reels)
+const HEAD = { '916': 88, '45': 70, '11': 58 }[FMT];
+const SUB = { '916': 34, '45': 28, '11': 25 }[FMT];
+
+const WA = '<svg viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.5 2 2.02 6.48 2.02 12c0 1.9.53 3.66 1.44 5.18L2 22l4.94-1.3A9.95 9.95 0 0 0 12.04 22C17.56 22 22 17.52 22 12S17.56 2 12.04 2zm5.73 13.91c-.24.69-1.22 1.25-1.69 1.31-.46.06-1.04.09-1.68-.11-.39-.12-.88-.29-1.52-.56-2.67-1.15-4.42-3.84-4.55-4.02-.13-.18-1.09-1.45-1.09-2.76 0-1.31.69-1.96.93-2.23.24-.27.53-.33.71-.33h.51c.16 0 .38-.06.6.46.22.53.75 1.83.82 1.96.07.13.11.29.02.46-.09.18-.13.29-.27.44-.13.16-.28.35-.4.47-.13.13-.27.28-.12.55.16.27.69 1.13 1.47 1.83 1.01.9 1.86 1.18 2.13 1.31.27.13.42.11.58-.07.16-.18.67-.78.85-1.05.18-.27.36-.22.6-.13.24.09 1.55.73 1.82.86.27.13.44.2.51.31.07.11.07.64-.17 1.33z"/></svg>';
+const CTA_TXT = 'Quiero mi IA ahora';
+
+const stage = document.getElementById('stage');
+stage.style.height = H + 'px';
+const content = document.getElementById('content');
+content.style.padding = `${PAD[0]}px ${PAD[1]}px ${PAD[2]}px`;
+content.style.gap = FMT === '916' ? '40px' : '28px';
+document.getElementById('ctaSmall').innerHTML = WA + CTA_TXT;
+if (FMT === '11') { document.querySelector('.brandtag').style.display = 'none'; const c = document.getElementById('ctaSmall'); c.style.height = '72px'; c.style.fontSize = '26px'; }
+
+const cl = x => Math.max(0, Math.min(1, x));
+const seg = (t, a, b) => cl((t - a) / (b - a));
+const eo = x => 1 - Math.pow(1 - x, 3);
+const eio = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const $ = (h) => { const d = document.createElement('div'); d.innerHTML = h.trim(); return d.firstChild; };
+function show(el, p, dy = 26, sc = false) {
+  el.style.opacity = p;
+  el.style.transform = `translateY(${(1 - p) * dy}px)` + (sc ? ` scale(${0.94 + 0.06 * p})` : '');
+}
+function words(text, gradFrom = 99) {
+  return text.split(' ').map((w, i) => `<span class="w${i >= gradFrom ? ' grad' : ''}">${w}</span>`).join('');
+}
+
+/* ───────── Encabezados por concepto ───────── */
+const topEl = document.getElementById('top');
+const visual = document.getElementById('visual');
+let headA, headB, kick, kick2, sub;
+
+if (CONCEPT === 'A') {
+  topEl.innerHTML = `<div class="kicker"><span class="dot"></span>Mensajes fuera de horario</div>
+    <h1 style="font-size:${HEAD}px">${words('Tu IA responde a tus clientes en menos de 2 segundos.', 6)}</h1>`;
+} else if (CONCEPT === 'B') {
+  topEl.innerHTML = `<div class="kicker"><span class="dot"></span>Tráfico con intención de compra</div>
+    <h1 style="font-size:${HEAD}px">${words('24/7 filtrando sus posibles ventas', 1)}</h1>
+    <p class="sub" style="font-size:${SUB}px">Menos pérdida de tiempo en curiosos, más porcentaje de conversiones.</p>`;
+} else {
+  topEl.innerHTML = `<div style="position:relative">
+      <div id="hA"><div class="kicker rose">Cuellos de botella</div><h1 style="font-size:${HEAD}px">${words('Lo que frena las ventas de tu empresa', 4)}</h1></div>
+      <div id="hB" style="position:absolute;inset:0"><div class="kicker"><span class="dot"></span>Solución LEMARJ</div><h1 style="font-size:${HEAD}px">${words('Ventas eficientes impulsadas por IA', 2)}</h1></div>
+    </div>`;
+}
+const topWords = [...topEl.querySelectorAll('h1 .w')];
+kick = topEl.querySelector('.kicker'); sub = topEl.querySelector('.sub');
+
+/* ───────── Concepto A: chat que responde en < 2 s ───────── */
+let A = {};
+if (CONCEPT === 'A') {
+  visual.innerHTML = `
+    <div class="phone"><div class="notch"></div>
+      <div class="chat-h"><div class="av"><img src="logo.jpg"></div><div><div class="n">Asistente Virtual IA</div><div class="s">en línea</div></div></div>
+      <div class="chat">
+        <div class="b out" id="m1">Quiero ver sus productos, tienen catálogo?<span class="tm">11:47 p. m. ✓✓</span></div>
+        <div class="typing" id="ty1"><i></i><i></i><i></i></div>
+        <div class="b in" id="m2">¡Por supuesto! Te comparto nuestro catálogo completo con precios actualizados 📋
+          <div class="pdf"><div class="ic">PDF</div><div><div class="nm">Catálogo.pdf</div><div class="sz">Documento PDF</div></div></div><span class="tm">11:47 p. m.</span></div>
+        <div class="b out" id="m3">Muchas gracias! Qué me recomiendas?<span class="tm">11:48 p. m. ✓✓</span></div>
+        <div class="typing" id="ty2"><i></i><i></i><i></i></div>
+        <div class="b in" id="m4">Claro, con gusto te oriento 🎯 ¿Qué tipo de solución estás buscando?
+          <div class="opt">💼 Para mi empresa / negocio</div><div class="opt">👤 Para uso personal</div></div>
+      </div>
+    </div>
+    <div class="speed" id="speed">⚡ &lt; 2 s</div>`;
+  A = { m1: m1, ty1: ty1, m2: m2, m3: m3, ty2: ty2, m4: m4, speed: speed };
+}
+function renderA(t) {
+  const vis = (el, a, b) => { const p = eo(seg(t, a, a + 0.35)) * (b ? 1 - seg(t, b, b + 0.2) : 1); show(el, p, 18); el.style.display = (b && t > b + 0.2) || p === 0 && t < a ? 'none' : ''; };
+  vis(A.m1, 1.0); vis(A.ty1, 1.55, 2.45); vis(A.m2, 2.65);
+  vis(A.m3, 4.5); vis(A.ty2, 5.0, 5.7); vis(A.m4, 5.9);
+  [...A.ty1.children, ...A.ty2.children].forEach((d, i) => d.style.transform = `translateY(${-6 * Math.max(0, Math.sin(t * 9 - (i % 3) * 0.9))}px)`);
+  const sp = eo(seg(t, 2.9, 3.3));
+  A.speed.style.opacity = sp; A.speed.style.top = '320px';
+  A.speed.style.transform = `translateX(${(1 - sp) * 40}px) scale(${0.8 + 0.2 * sp + 0.03 * Math.sin(t * 4)})`;
+}
+
+/* ───────── Concepto B: mapa del recorrido del lead ───────── */
+let B = {};
+if (CONCEPT === 'B') {
+  const nodes = [[90, 70, 'Nuevo lead', 'WhatsApp', 'r'], [530, 210, 'Perfila al cliente', 'Preguntas estratégicas', 'l'], [90, 370, 'Posible venta', 'Filtra a los curiosos', 'r'], [530, 520, 'Recomienda', 'Según tu catálogo', 'l'], [90, 660, 'Confirma el pedido', 'Datos de contacto', 'r'], [400, 780, 'Pago', 'Nequi · Daviplata · Bancolombia', 'l']];
+  const route = 'M90 70 C 300 70, 530 110, 530 210 C 530 310, 90 270, 90 370 C 90 470, 530 420, 530 520 C 530 620, 90 560, 90 660 C 90 740, 400 700, 400 780';
+  const branch = 'M90 370 C 160 410, 230 430, 300 440';
+  let svg = `<svg viewBox="0 0 620 820" width="620" height="820" style="overflow:visible">
+    <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6366f1"/><stop offset=".5" stop-color="#c084fc"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>`;
+  for (let i = 0; i < 7; i++) svg += `<path d="M-60 ${60 + i * 120} C 120 ${20 + i * 120}, 300 ${130 + i * 120}, 460 ${70 + i * 120} S 640 ${50 + i * 120}, 700 ${90 + i * 120}" fill="none" stroke="#fff" stroke-opacity=".05" stroke-width="2"/>`;
+  svg += `<path id="rt" d="${route}" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="3" stroke-dasharray="6 10"/>
+    <path id="rtOn" d="${route}" fill="none" stroke="url(#g)" stroke-width="5" stroke-linecap="round"/>
+    <path id="br" d="${branch}" fill="none" stroke="#fb7185" stroke-opacity=".55" stroke-width="3" stroke-dasharray="6 8"/>
+    <text id="cur" x="300" y="478" text-anchor="middle" fill="#fb7185" font-size="24" font-weight="800">✕ Curioso</text>`;
+  nodes.forEach((n, i) => {
+    const r = n[4] === 'r', tx = r ? n[0] + 40 : n[0] - 40, an = r ? 'start' : 'end';
+    svg += `<g id="n${i}"><circle class="ring" cx="${n[0]}" cy="${n[1]}" r="20" fill="none" stroke="${i === 5 ? '#22d3ee' : '#c084fc'}" stroke-width="2"/>
+      <circle cx="${n[0]}" cy="${n[1]}" r="20" fill="#0b0b12" class="core" stroke-width="3.5"/>
+      <path class="chk" d="M${n[0] - 8} ${n[1]} l6 6 l11 -12" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1"/>
+      <text x="${tx}" y="${n[1] - 2}" text-anchor="${an}" fill="#fff" font-size="27" font-weight="800">${n[2]}</text>
+      <text x="${tx}" y="${n[1] + 26}" text-anchor="${an}" fill="rgba(255,255,255,.6)" font-size="${i === 5 ? 18 : 20}" font-weight="500">${n[3]}</text></g>`;
+  });
+  for (let i = 0; i < 7; i++) svg += `<circle id="ld${i}" r="10" fill="#fff"/>`;
+  svg += '</svg>';
+  visual.innerHTML = svg;
+  const rt = document.getElementById('rt');
+  B = { rt, len: rt.getTotalLength(), br: document.getElementById('br'), brLen: document.getElementById('br').getTotalLength(), rtOn: document.getElementById('rtOn'), cur: document.getElementById('cur'), nodes, fr: [0, 0.205, 0.4, 0.6, 0.8, 1] };
+  B.rtOn.style.strokeDasharray = B.len; B.br.style.strokeDasharray = `${B.brLen}`;
+}
+function renderB(t) {
+  // Ruta iluminada
+  const drawn = eio(seg(t, 0.6, 4.2));
+  B.rtOn.style.strokeDashoffset = B.len * (1 - drawn);
+  // Leads: los impares de la lista curiosa se desvían en "Posible venta"
+  const curious = [1, 4];
+  const lit = [0, 0, 0, 0, 0, 0];
+  for (let i = 0; i < 7; i++) {
+    const el = document.getElementById('ld' + i);
+    const start = 0.7 + i * 0.85, dur = 3.4;
+    const p = seg(t, start, start + dur);
+    if (t < start) { el.style.opacity = 0; continue; }
+    const isCur = curious.includes(i);
+    let pt, op = 1, color = '#fff';
+    if (isCur && p > 0.4 / 1) {
+      const q = seg(p, 0.4, 0.62);
+      pt = B.br.getPointAtLength(B.brLen * eio(q)); color = '#fb7185'; op = 1 - seg(p, 0.62, 0.75);
+    } else {
+      const f = isCur ? Math.min(p, 0.4) : p;
+      pt = B.rt.getPointAtLength(B.len * f);
+      if (!isCur && p >= 1) op = 1 - seg(t, start + dur, start + dur + 0.4);
+    }
+    el.setAttribute('cx', pt.x); el.setAttribute('cy', pt.y);
+    el.style.opacity = op; el.setAttribute('fill', color);
+    el.style.filter = `drop-shadow(0 0 10px ${isCur && p > 0.4 ? '#fb7185' : '#22d3ee'})`;
+    B.fr.forEach((fr, k) => { if ((isCur ? Math.min(p, 0.4) : p) >= fr - 0.001) lit[k] = 1; });
+  }
+  const curOp = Math.max(...[1, 4].map(i => { const s = 0.7 + i * 0.85; const p = seg(t, s, s + 3.4); return p > 0.4 && p < 0.9 ? 1 : 0; }));
+  B.br.style.strokeDashoffset = 0; B.br.style.opacity = 0.25 + 0.75 * curOp; B.cur.style.opacity = 0.35 + 0.65 * curOp;
+  B.nodes.forEach((n, k) => {
+    const g = document.getElementById('n' + k), on = lit[k] || t > 6.4;
+    g.querySelector('.core').setAttribute('stroke', on ? (k === 5 ? '#22d3ee' : '#c084fc') : 'rgba(255,255,255,.3)');
+    g.querySelector('.chk').style.strokeDashoffset = on ? 0 : 1;
+    const ring = g.querySelector('.ring'); const ph = (t * 0.8 + k * 0.3) % 1;
+    ring.setAttribute('r', 20 + ph * 26); ring.style.opacity = on ? (1 - ph) * 0.8 : 0;
+    g.style.opacity = on ? 1 : 0.45;
+  });
+}
+
+/* ───────── Concepto C: de pérdidas a cero pérdidas ───────── */
+let C = {};
+if (CONCEPT === 'C') {
+  const items = [['Leads que se enfrían', 'Cero pérdida de leads'], ['Presupuesto de pauta desperdiciado', 'Cero pérdida de presupuesto'], ['Equipo saturado', 'Cero pérdida de tiempo']];
+  visual.innerHTML = items.map((it, i) => `<div class="flip" style="top:${30 + i * 270}px"><div class="inner" style="position:absolute;inset:0;transform-style:preserve-3d">
+      <div class="face pain"><div class="x">✕</div><div class="tt">${it[0]}</div></div>
+      <div class="face win" style="transform:rotateX(180deg)"><div class="zero grad">0</div><div class="tt">${it[1]}</div></div>
+    </div></div>`).join('');
+  C = { flips: [...visual.querySelectorAll('.flip')], hA: document.getElementById('hA'), hB: document.getElementById('hB') };
+}
+function renderC(t) {
+  C.flips.forEach((f, i) => {
+    const inP = eo(seg(t, 0.5 + i * 0.25, 0.95 + i * 0.25));
+    const fl = eio(seg(t, 3.6 + i * 0.45, 4.3 + i * 0.45));
+    f.style.opacity = inP;
+    f.style.transform = `translateY(${(1 - inP) * 40}px) scale(${1 + 0.02 * Math.sin(Math.PI * fl)})`;
+    f.firstChild.style.transform = `rotateX(${fl * 180}deg)`;
+  });
+  const sw = eio(seg(t, 3.4, 3.9));
+  C.hA.style.opacity = 1 - sw; C.hA.style.transform = `translateY(${-sw * 30}px)`;
+  C.hB.style.opacity = sw; C.hB.style.transform = `translateY(${(1 - sw) * 30}px)`;
+}
+
+/* ───────── Cierre ───────── */
+const end = document.getElementById('end');
+end.innerHTML = `<div class="biglogo"><img src="logo.jpg"></div>
+  <div class="tag">Ventas autónomas con <span class="grad">IA regional.</span></div>
+  <div class="cta">${WA}${CTA_TXT}</div>
+  <div class="num">WhatsApp +57 301 721 9288</div>`;
+if (FMT === '11') { end.querySelector('.biglogo').style.cssText += 'width:220px;height:220px'; end.querySelector('.tag').style.cssText += 'font-size:54px;margin-top:36px'; end.querySelector('.cta').style.marginTop = '36px'; }
+const endEls = [...end.children];
+
+/* ───────── Ajuste del visual al espacio disponible ───────── */
+function fit() {
+  const mid = document.getElementById('mid').getBoundingClientRect();
+  const s = Math.min(mid.width / 620, mid.height / 820, FMT === '916' ? 1.35 : 1.2);
+  visual.style.transform = `scale(${s})`;
+}
+
+window.render = function (t) {
+  // Fondo vivo
+  b1.style.transform = `translate(${-200 + 180 * Math.sin(t * 0.5)}px, ${-200 + 120 * Math.cos(t * 0.4)}px)`;
+  b2.style.transform = `translate(${560 + 140 * Math.cos(t * 0.45)}px, ${H * 0.35 + 140 * Math.sin(t * 0.35)}px)`;
+  b3.style.transform = `translate(${200 + 160 * Math.sin(t * 0.3 + 1)}px, ${H * 0.7 + 100 * Math.cos(t * 0.5)}px)`;
+  dots.style.transform = `translate(${(t * 6) % 44}px, ${(t * 3) % 44}px)`;
+  // Entrada del encabezado palabra por palabra
+  show(kick, eo(seg(t, 0.1, 0.5)), 16);
+  topWords.forEach((w, i) => {
+    const p = eo(seg(t, 0.25 + (i % 8) * 0.07, 0.65 + (i % 8) * 0.07));
+    w.style.opacity = p; w.style.transform = `translateY(${(1 - p) * 30}px)`; w.style.filter = `blur(${(1 - p) * 8}px)`;
+  });
+  if (sub) show(sub, eo(seg(t, 0.9, 1.3)), 14);
+  show(document.getElementById('brand'), eo(seg(t, 0.4, 0.9)), 20);
+  if (CONCEPT === 'A') renderA(t); else if (CONCEPT === 'B') renderB(t); else renderC(t);
+  // Cierre 7.6 s → 10 s
+  const e = STATIC ? 0 : eio(seg(t, 7.5, 8.1));
+  end.style.opacity = e; end.style.display = e ? 'flex' : 'none';
+  endEls.forEach((el, i) => show(el, eo(seg(t, 7.8 + i * 0.18, 8.3 + i * 0.18)), 30, true));
+  const pulse = 1 + 0.035 * Math.max(0, Math.sin((t - 8.6) * 5));
+  if (t > 8.6) endEls[2].style.transform = `scale(${pulse})`;
+};
+
+window.ready = (async () => { await document.fonts.ready; await Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => i.onload = i.onerror = r))); fit(); window.render(STATIC ? 7.2 : 0); return true; })();
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+Cómo regenerar los anuncios (videos e imágenes)
+
+1. Instala Node.js y, en esta carpeta, ejecuta:
+   npm init -y
+   npm install puppeteer-core@23.11.1 ffmpeg-static@5.2.0
+
+2. En render.js, ajusta la ruta de EDGE si tu navegador está en otro lugar
+   (sirve Microsoft Edge o Google Chrome).
+
+3. Genera:
+   node render.js . ../imagenes image
+   node render.js . ../videos video
+
+   Conceptos: A = respuesta en < 2 s, B = filtra posibles ventas, C = cero pérdidas.
+   Formatos: 916 (9:16), 45 (4:5), 11 (1:1).
+   Ejemplo de uno solo: node render.js . ../videos video A 916
+
+Los textos de cada anuncio se editan dentro de ads.html.
+Vista previa en el navegador: abre ads.html?c=A&f=916 y en la consola ejecuta render(3.5) (segundo 3,5).
